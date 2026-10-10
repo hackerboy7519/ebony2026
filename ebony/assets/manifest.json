@@ -1,0 +1,68 @@
+{
+  "manifestVersion": "1.0.0",
+  "brand": "EBONY",
+  "generatedWith": "gemini-3.1-flash-image-preview",
+  "palette": ["#FBFBF9", "#F0EFEA", "#0B0B0C", "#B8923A", "#7C5F16"],
+  "images": [
+    {
+      "id": "hero-kitchen",
+      "file": "/img/hero-kitchen.jpg",
+      "ratio": "16:9",
+      "width": 1920,
+      "prompt": "Wide view of a luxury modular kitchen, white and ebony fluted cabinetry, brushed gold handles, long island, tall window with golden-hour light on the floor.",
+      "alt": "Luxury modular kitchen by EBONY — pearl white cabinetry with brushed gold hardware",
+      "model": "gemini-3.1-flash-image-preview",
+      "generatedAt": "2026-10-10T10:12:20Z",
+      "aiGenerated": true,
+      "status": "approved"
+    },
+    {
+      "id": "kitchen-card",
+      "file": "/img/kitchen-card.jpg",
+      "ratio": "4:5",
+      "width": 900,
+      "prompt": "Close, elegant detail of a modular kitchen run, gold handle and ebony grain panel, shallow depth of field.",
+      "alt": "Luxury modular kitchen with ebony cabinetry and gold handles",
+      "model": "gemini-3.1-flash-image-preview",
+      "generatedAt": "2026-10-10T10:12:32Z",
+      "aiGenerated": true,
+      "status": "approved"
+    },
+    {
+      "id": "wardrobe-card",
+      "file": "/img/wardrobe-card.jpg",
+      "ratio": "4:5",
+      "width": 900,
+      "prompt": "Walk-in wardrobe with ebony fluted doors, gold rails, soft backlit shelves, pale daylight.",
+      "alt": "Walk-in wardrobe with ebony fluted doors and gold rails",
+      "model": "gemini-3.1-flash-image-preview",
+      "generatedAt": "2026-10-10T10:12:46Z",
+      "aiGenerated": true,
+      "status": "approved"
+    },
+    {
+      "id": "bedroom-card",
+      "file": "/img/bedroom-card.jpg",
+      "ratio": "4:5",
+      "width": 900,
+      "prompt": "Master bedroom with ebony upholstered headboard bed set and matching side tables, white linen, soft morning light.",
+      "alt": "Master bedroom with ebony upholstered headboard and gold accents",
+      "model": "gemini-3.1-flash-image-preview",
+      "generatedAt": "2026-10-10T10:13:10Z",
+      "aiGenerated": true,
+      "status": "approved"
+    },
+    {
+      "id": "process-engineering",
+      "file": "/img/process-engineering.jpg",
+      "ratio": "3:2",
+      "width": 1200,
+      "prompt": "Precision machining of a white laminate panel, clean modern workshop, German CNC machinery, no brand marks.",
+      "alt": "Precision engineering of modular interior panel in modern German CNC workshop",
+      "model": "gemini-3.1-flash-image-preview",
+      "generatedAt": "2026-10-10T10:13:25Z",
+      "aiGenerated": true,
+      "status": "approved"
+    }
+  ]
+}

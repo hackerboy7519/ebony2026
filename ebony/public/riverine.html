@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#03080B">
+  <title>riverine.ai — Where Regeneration Fuels Future Thinking</title>
+
+  <!-- Google Font Fallbacks for exact matching -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Urbanist:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ═══════════════════════════════════════════════════════
+       1. EXACT @font-face DECLARATIONS & TYPEFACE STACKS
+       ═══════════════════════════════════════════════════════ */
+    @font-face {
+      font-family: "RV Display";
+      font-weight: 300;
+      src: url("assets/fonts/rv-display.woff2") format("woff2");
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: "RV Brand";
+      font-weight: 600;
+      src: url("assets/fonts/rv-brand.woff2") format("woff2");
+      font-display: block;
+    }
+
+    @font-face {
+      font-family: "RV Text";
+      font-weight: 400;
+      src: url("assets/fonts/rv-text.woff2") format("woff2");
+      font-display: block;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       2. REFERENCE UNIT & COLOR SYSTEM
+       ═══════════════════════════════════════════════════════ */
+    :root {
+      --u: max(0.62px, min(100vw / 1280, 100dvh / 960));
+      --gutter: calc(48 * var(--u));
+
+      /* Colors */
+      --shade: rgb(3, 8, 11);
+      --ink: #F5FAF6;
+      --ink-2: #ECF1EF;
+      --teal: #88DECC;
+      --icon-teal: #7EC4B5;
+      --chevron: #7CCBBA;
+      --moth: #315352;
+      --cream-pills: #EEF1EA;
+      --pine-discs: #122B2A;
+      --pine-discs-hover: #26504d;
+      --logo-disc: #030909;
+
+      /* Type Stacks */
+      --font-headline: "RV Display", "Poppins", "Helvetica Neue", Arial, sans-serif;
+      --font-brand: "RV Brand", "Urbanist", "Helvetica Neue", Arial, sans-serif;
+      --font-text: "RV Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #03080B;
+      color: var(--ink);
+      font-family: var(--font-text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--teal) !important;
+      outline-offset: 2px !important;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       3. BACKGROUND VIDEO & SHADE LAYERS
+       ═══════════════════════════════════════════════════════ */
+    .viewport {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 40%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+      .video-bg {
+        object-position: 50% 24%;
+      }
+    }
+
+    /* Horizontal Gradient Layer */
+    .shade-horizontal {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+        to right,
+        rgba(3, 8, 11, 0.683) 0%,
+        rgba(3, 8, 11, 0.595) 20%,
+        rgba(3, 8, 11, 0.458) 40%,
+        rgba(3, 8, 11, 0.221) 60%,
+        rgba(3, 8, 11, 0.039) 80%,
+        rgba(3, 8, 11, 0.054) 100%
+      );
+    }
+
+    /* Vertical Gradient Layer */
+    .shade-vertical {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        rgba(3, 8, 11, 0.060) 0%,
+        rgba(3, 8, 11, 0.023) 20%,
+        rgba(3, 8, 11, 0.152) 40%,
+        rgba(3, 8, 11, 0.300) 60%,
+        rgba(3, 8, 11, 0.394) 80%,
+        rgba(3, 8, 11, 0.632) 100%
+      );
+    }
+
+    /* Bottom-Left Radial Ellipse */
+    .shade-radial {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      background: radial-gradient(
+        ellipse 93.8% 41.3% at 0% 100%,
+        rgba(3, 8, 11, 1) 0%,
+        rgba(3, 8, 11, 0) 100%
+      );
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       4. TOP BAR & NAVIGATION
+       ═══════════════════════════════════════════════════════ */
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      padding-top: max(calc(40 * var(--u)), env(safe-area-inset-top));
+      padding-left: max(calc(48 * var(--u)), env(safe-area-inset-left));
+      padding-right: max(calc(48 * var(--u)), env(safe-area-inset-right));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .header > * {
+      pointer-events: auto;
+    }
+
+    /* Top Left: 104x46 Glass Pill */
+    .logo-pill {
+      width: calc(104 * var(--u));
+      height: calc(46 * var(--u));
+      border-radius: calc(23 * var(--u));
+      background: rgba(150, 220, 130, 0.035);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      padding: 0 calc(2 * var(--u));
+      position: relative;
+    }
+
+    .logo-disc {
+      width: calc(46 * var(--u));
+      height: calc(46 * var(--u));
+      border-radius: 50%;
+      background: var(--logo-disc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-disc svg {
+      width: calc(46 * var(--u));
+      height: calc(46 * var(--u));
+    }
+
+    .logo-moth {
+      margin-left: calc(8 * var(--u));
+      width: calc(39 * var(--u) * 0.72);
+      height: calc(30 * var(--u) * 0.72);
+      flex-shrink: 0;
+    }
+
+    /* Top Right of Center: Black 442x47 Pill */
+    .nav-pill {
+      position: absolute;
+      left: calc(644 * var(--u));
+      width: calc(442 * var(--u));
+      height: calc(47 * var(--u));
+      border-radius: calc(24 * var(--u));
+      background: #000000;
+      display: flex;
+      align-items: center;
+      padding-left: calc(24 * var(--u));
+      padding-right: calc(4 * var(--u));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: calc(20 * var(--u));
+      font-size: calc(13.5 * var(--u));
+      color: var(--ink-2);
+      flex: 1;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: calc(5 * var(--u));
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      color: var(--teal);
+    }
+
+    .nav-link.current {
+      color: var(--ink);
+    }
+
+    .nav-link.current svg {
+      color: var(--chevron);
+    }
+
+    /* Cream "Partner" Pill */
+    .partner-pill {
+      height: calc(39 * var(--u));
+      padding: 0 calc(6 * var(--u)) 0 calc(18 * var(--u));
+      background: var(--cream-pills);
+      color: #03080B;
+      border-radius: calc(20 * var(--u));
+      display: inline-flex;
+      align-items: center;
+      gap: calc(10 * var(--u));
+      font-family: var(--font-text);
+      font-size: calc(13.5 * var(--u));
+      font-weight: 500;
+      white-space: nowrap;
+      transition: background-color 0.25s ease;
+    }
+
+    .partner-disc {
+      width: calc(27 * var(--u));
+      height: calc(27 * var(--u));
+      border-radius: 50%;
+      background: var(--pine-discs);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.25s ease;
+      color: #FFFFFF;
+    }
+
+    .partner-pill:hover .partner-disc {
+      background-color: var(--pine-discs-hover);
+    }
+
+    /* Far Top Right: 48px Dark Blurred Circle */
+    .sound-btn {
+      width: calc(48 * var(--u));
+      height: calc(48 * var(--u));
+      border-radius: 50%;
+      background: rgba(3, 8, 11, 0.55);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--teal);
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .sound-btn:hover {
+      background: rgba(3, 8, 11, 0.8);
+      transform: scale(1.04);
+    }
+
+    .sound-waves {
+      transition: opacity 0.3s ease;
+    }
+
+    .sound-btn[aria-pressed="false"] .sound-waves {
+      opacity: 0.25;
+    }
+
+    /* Mobile Menu Button (hidden on desktop) */
+    .menu-btn {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      z-index: 30;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       5. BOTTOM LEFT HERO & ACTIONS
+       ═══════════════════════════════════════════════════════ */
+    .hero {
+      position: absolute;
+      left: max(calc(48 * var(--u)), env(safe-area-inset-left));
+      bottom: max(calc(48 * var(--u)), env(safe-area-inset-bottom));
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      max-width: calc(880 * var(--u));
+    }
+
+    .hero-brand {
+      font-family: var(--font-brand);
+      font-weight: 600;
+      color: var(--teal);
+      font-size: calc(18 * var(--u));
+      letter-spacing: -0.01em;
+      margin-bottom: calc(14 * var(--u));
+    }
+
+    .hero-title {
+      font-family: var(--font-headline);
+      font-weight: 300;
+      font-size: calc(72 * var(--u));
+      line-height: 0.98;
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      margin-bottom: calc(24 * var(--u));
+    }
+
+    .headline-clip {
+      overflow: hidden;
+      display: block;
+    }
+
+    .headline-line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .line-1 {
+      letter-spacing: -0.015em;
+    }
+
+    .line-2 {
+      letter-spacing: -0.025em;
+    }
+
+    .line-3 {
+      letter-spacing: -0.02em;
+    }
+
+    .hero-lede {
+      font-family: var(--font-text);
+      font-weight: 400;
+      font-size: calc(18 * var(--u));
+      line-height: 1.45;
+      color: var(--ink-2);
+      margin-bottom: calc(34 * var(--u));
+    }
+
+    .lede-line {
+      display: block;
+    }
+
+    /* Action Row */
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: calc(32 * var(--u));
+    }
+
+    .cta-pill {
+      height: calc(46 * var(--u));
+      padding: 0 calc(8 * var(--u)) 0 calc(24 * var(--u));
+      background: var(--cream-pills);
+      color: #03080B;
+      border-radius: calc(23 * var(--u));
+      display: inline-flex;
+      align-items: center;
+      gap: calc(14 * var(--u));
+      font-family: var(--font-text);
+      font-size: calc(15 * var(--u));
+      font-weight: 500;
+      white-space: nowrap;
+      transition: background-color 0.25s ease;
+    }
+
+    .cta-disc {
+      width: calc(32 * var(--u));
+      height: calc(32 * var(--u));
+      border-radius: 50%;
+      background: var(--pine-discs);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.25s ease;
+      color: #FFFFFF;
+    }
+
+    .cta-pill:hover .cta-disc {
+      background-color: var(--pine-discs-hover);
+    }
+
+    .text-link {
+      font-family: var(--font-text);
+      font-size: calc(15 * var(--u));
+      font-weight: 400;
+      color: var(--ink);
+      white-space: nowrap;
+      transition: color 0.25s ease;
+    }
+
+    .text-link:hover {
+      color: var(--teal);
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       6. BOTTOM RIGHT SCROLL CUE
+       ═══════════════════════════════════════════════════════ */
+    .scroll-cue {
+      position: absolute;
+      right: max(calc(48 * var(--u)), env(safe-area-inset-right));
+      bottom: max(calc(48 * var(--u)), env(safe-area-inset-bottom));
+      z-index: 10;
+      display: inline-flex;
+      align-items: center;
+      gap: calc(10 * var(--u));
+      font-family: var(--font-text);
+      font-size: calc(14 * var(--u));
+      color: var(--ink);
+      transition: color 0.25s ease;
+    }
+
+    .scroll-cue svg {
+      color: var(--chevron);
+      transition: transform 0.25s ease, color 0.25s ease;
+    }
+
+    .scroll-cue:hover {
+      color: var(--teal);
+    }
+
+    .scroll-cue:hover svg {
+      transform: translateY(3px);
+      color: var(--teal);
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       7. ENTRANCE ANIMATION INITIAL STATE (OPACITY 0)
+       ═══════════════════════════════════════════════════════ */
+    .is-loading .logo-pill,
+    .is-loading .nav-pill,
+    .is-loading .sound-btn,
+    .is-loading .menu-btn,
+    .is-loading .hero-brand,
+    .is-loading .headline-line,
+    .is-loading .lede-line,
+    .is-loading .cta-pill,
+    .is-loading .text-link,
+    .is-loading .scroll-cue {
+      opacity: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════════
+       8. RESPONSIVE BREAKPOINTS
+       ═══════════════════════════════════════════════════════ */
+    /* Tablets: 650px - 1100px wide, min-height 501px */
+    @media (min-width: 650px) and (max-width: 1100px) and (min-height: 501px) {
+      :root {
+        --u: 0.94px;
+      }
+    }
+
+    /* Portrait tablets / screens >= 650px with max-aspect-ratio 4/5 */
+    @media (min-width: 650px) and (max-aspect-ratio: 4/5) and (min-height: 501px) {
+      :root {
+        --u: 0.94px;
+      }
+      .hero, .scroll-cue {
+        transform: scale(1.1);
+        transform-origin: bottom left;
+      }
+      .scroll-cue {
+        transform-origin: bottom right;
+      }
+      .video-bg {
+        object-position: 58% 50%;
+      }
+    }
+
+    /* Short landscape phones: max-height 500px, min-aspect-ratio 1/1 */
+    @media (max-height: 500px) and (min-aspect-ratio: 1/1) {
+      :root {
+        --u: clamp(0.82px, 100dvh / 415, 0.94px);
+      }
+      .video-bg {
+        object-position: 50% 30%;
+      }
+      .hero-title {
+        font-size: clamp(28px, 10dvh, 44px);
+      }
+      .hero-actions {
+        flex-wrap: nowrap;
+      }
+    }
+
+    /* Mobile & Compact Screen: max-width 649.98px or max-height 500px */
+    @media (max-width: 649.98px), (max-height: 500px) {
+      :root {
+        --u: clamp(0.94px, 100vw / 390, 1.2px);
+        --gutter: clamp(18px, 5.6vw, 32px);
+      }
+
+      .video-bg {
+        object-position: 63% 50%;
+      }
+
+      /* Softer left shade, stronger bottom shade, corner radial removed */
+      .shade-horizontal {
+        background: linear-gradient(
+          to right,
+          rgba(3, 8, 11, 0.50) 0%,
+          rgba(3, 8, 11, 0.35) 40%,
+          rgba(3, 8, 11, 0.05) 100%
+        );
+      }
+
+      .shade-vertical {
+        background: linear-gradient(
+          to bottom,
+          rgba(3, 8, 11, 0.08) 0%,
+          rgba(3, 8, 11, 0.40) 60%,
+          rgba(3, 8, 11, 0.85) 100%
+        );
+      }
+
+      .shade-radial {
+        display: none;
+      }
+
+      .line-1 { letter-spacing: -0.015em; }
+      .line-2 { letter-spacing: -0.025em; }
+      .line-3 { letter-spacing: -0.020em; }
+
+      .hero-actions {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .text-link {
+        padding: 12px 4px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .scroll-cue {
+        padding: 12px 4px;
+        min-height: 44px;
+      }
+    }
+
+    /* Mobile Only: max-width 649.98px */
+    @media (max-width: 649.98px) {
+      .header {
+        padding-top: max(20px, env(safe-area-inset-top));
+        padding-left: max(var(--gutter), env(safe-area-inset-left));
+        padding-right: max(var(--gutter), env(safe-area-inset-right));
+      }
+
+      .nav-pill {
+        display: none;
+      }
+
+      .menu-btn {
+        display: inline-flex;
+      }
+
+      /* Mobile Drawer Nav Panel */
+      .mobile-nav-panel {
+        display: none;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: var(--gutter);
+        right: var(--gutter);
+        background: #000000;
+        border-radius: 24px;
+        padding: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+        flex-direction: column;
+        gap: 8px;
+        pointer-events: auto;
+      }
+
+      .mobile-nav-panel.is-open {
+        display: flex;
+      }
+
+      .mobile-nav-link {
+        height: 48px;
+        font-size: 17px;
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .mobile-partner {
+        margin-top: 12px;
+        width: 100%;
+        justify-content: space-between;
+        height: 46px;
+      }
+
+      .hero {
+        left: max(var(--gutter), env(safe-area-inset-left));
+        right: max(var(--gutter), env(safe-area-inset-right));
+        bottom: calc(max(var(--gutter), env(safe-area-inset-bottom)) + 52px);
+      }
+
+      .hero-title {
+        font-size: min(clamp(32px, 10.4vw, 60px), calc((100vw - 2 * var(--gutter)) / 8.7));
+      }
+    }
+
+    /* Short landscape below 650px wide */
+    @media (max-height: 500px) and (max-width: 649.98px) and (min-aspect-ratio: 1/1) {
+      .mobile-nav-panel.is-open {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001s !important;
+        transition-duration: 0.001s !important;
+      }
+      .is-loading .logo-pill,
+      .is-loading .nav-pill,
+      .is-loading .sound-btn,
+      .is-loading .menu-btn,
+      .is-loading .hero-brand,
+      .is-loading .headline-line,
+      .is-loading .lede-line,
+      .is-loading .cta-pill,
+      .is-loading .text-link,
+      .is-loading .scroll-cue {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="is-loading">
+  <div class="viewport">
+    <!-- Ambient Background Video -->
+    <video
+      id="bg-video"
+      class="video-bg"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+    >
+      <source src="/river.mp4" type="video/mp4">
+      <source src="assets/river.mp4" type="video/mp4">
+    </video>
+
+    <!-- 3 Shade Layers -->
+    <div class="shade-horizontal"></div>
+    <div class="shade-vertical"></div>
+    <div class="shade-radial"></div>
+
+    <!-- Header Composition -->
+    <header class="header">
+      <!-- Top Left: 104x46 Glass Pill with Tree & Moth -->
+      <a href="#" class="logo-pill" id="el-logo" aria-label="riverine.ai home">
+        <div class="logo-disc">
+          <svg viewBox="0 0 46 46" fill="none" stroke="#7CC6B5" stroke-width="1.6" stroke-linecap="round">
+            <path class="tree-stroke" d="M24.2 37V24" />
+            <path class="tree-stroke" d="M19.8 39.3c1.2-1.9 2.8-2.7 4.4-2.7s3.2.8 4.4 2.7" />
+            <path class="tree-stroke" d="M23.8 30.2c-2.8-.6-5.5-2.6-7.2-5-2-1.8-5.2-2-7-4.2-1.4-1.8-1.4-4.2 0-6 2-3 5.8-5.2 8.8-6.2 1.4-.5 2.8-1 4.2-1.3" />
+            <path class="tree-stroke" d="M14.8 23V13.2c0-1.4.8-2.6 2.4-3.4" />
+            <path class="tree-stroke" d="M24 24.2c-1.8-1.8-3.2-3.8-3.7-6.4-.5-2.6-.6-5.2-.3-7.2" />
+            <path class="tree-stroke" d="M24.3 23.2c1.5-3 3.5-6.4 4.3-10.2.4-2.6 1.2-4.1 2.8-4.3H35" />
+            <path class="tree-stroke" d="M24.6 25.7c3-.7 5.8-2.1 7.4-4.5 1.2-1.8 1.4-3.8 2.8-5.2 1.4-1.4 3.2-2.1 5.2-2.4" />
+          </svg>
+        </div>
+
+        <!-- Mirrored Moth in #315352 -->
+        <svg class="logo-moth" id="el-moth" viewBox="0 0 39 30" fill="#315352">
+          <path d="M19.5 12.4C17.5 9.5 14 5 10.8 3 9.6 2.4 8 2.2 6 2.3 4.2 2.4 3.1 3 3 4.8L3.1 9.8C3.2 12.4 5 15 8.3 17.3 6.6 19.5 5.6 21.8 5.4 24.2 5.2 26.2 5.8 27.6 7.3 28 8.8 28.3 10.2 27.3 11.4 25.8 14.2 22.6 17.2 19.8 19.5 17.1Z" />
+          <path transform="matrix(-1 0 0 1 39 0)" d="M19.5 12.4C17.5 9.5 14 5 10.8 3 9.6 2.4 8 2.2 6 2.3 4.2 2.4 3.1 3 3 4.8L3.1 9.8C3.2 12.4 5 15 8.3 17.3 6.6 19.5 5.6 21.8 5.4 24.2 5.2 26.2 5.8 27.6 7.3 28 8.8 28.3 10.2 27.3 11.4 25.8 14.2 22.6 17.2 19.8 19.5 17.1Z" />
+        </svg>
+      </a>
+
+      <!-- Top Right of Center: Black 442x47 Pill -->
+      <nav class="nav-pill" id="el-nav">
+        <div class="nav-links">
+          <a href="#work" class="nav-link">Work</a>
+          <a href="#regenerate" class="nav-link current">
+            Regenerate
+            <!-- Small chevron -->
+            <svg width="11" height="6" viewBox="0 0 11 6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M.7.7 5.5 5.3 10.3.7" />
+            </svg>
+          </a>
+          <a href="#nature" class="nav-link">Nature</a>
+          <a href="#earth" class="nav-link">Earth</a>
+          <a href="#news" class="nav-link">News</a>
+        </div>
+
+        <!-- Cream "Partner" Pill with Dark Disc & White Right Chevron -->
+        <a href="#partner" class="partner-pill">
+          Partner
+          <span class="partner-disc">
+            <svg width="4" height="7" viewBox="0 0 4 7" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M.5.5 3.5 3.5.5 6.5" />
+            </svg>
+          </span>
+        </a>
+      </nav>
+
+      <!-- Far Top Right: 48px Blurred Dark Circle Sound Toggle -->
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <!-- Mobile Menu Trigger -->
+        <button
+          class="menu-btn"
+          id="el-menu"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          <svg class="menu-icon-bars" width="18" height="13" viewBox="0 0 18 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <path id="bar-1" d="M1 1h16" />
+            <path id="bar-2" d="M1 6h16" />
+            <path id="bar-3" d="M1 11h16" />
+          </svg>
+        </button>
+
+        <button
+          class="sound-btn"
+          id="el-sound"
+          aria-label="Ambient river sound"
+          aria-pressed="true"
+        >
+          <svg width="34" height="34" viewBox="0 0 40 40" fill="currentColor">
+            <!-- Speaker body -->
+            <path d="M14.6 19.6h3.6l5.9-4.9v18.6l-5.9-4.9h-3.6z" />
+            <!-- Sound waves -->
+            <path class="sound-waves" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M27.6 19.6c1.9 2.8 1.9 6 0 8.8" />
+            <path class="sound-waves" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M31.2 16.2c3.4 4.9 3.4 10.7 0 15.6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Drawer Panel -->
+      <div class="mobile-nav-panel" id="mobile-nav">
+        <a href="#work" class="mobile-nav-link">Work</a>
+        <a href="#regenerate" class="mobile-nav-link" style="color: var(--teal);">Regenerate</a>
+        <a href="#nature" class="mobile-nav-link">Nature</a>
+        <a href="#earth" class="mobile-nav-link">Earth</a>
+        <a href="#news" class="mobile-nav-link">News</a>
+        <a href="#partner" class="partner-pill mobile-partner">
+          Partner
+          <span class="partner-disc">
+            <svg width="4" height="7" viewBox="0 0 4 7" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M.5.5 3.5 3.5.5 6.5" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Bottom Left Hero -->
+    <main class="hero">
+      <div class="hero-brand" id="el-brand">riverine.ai</div>
+
+      <h1 class="hero-title" id="el-title">
+        <span class="headline-clip">
+          <span class="headline-line line-1">Where</span>
+        </span>
+        <span class="headline-clip">
+          <span class="headline-line line-2">Regeneration Fuels</span>
+        </span>
+        <span class="headline-clip">
+          <span class="headline-line line-3">Future Thinking</span>
+        </span>
+      </h1>
+
+      <div class="hero-lede" id="el-lede">
+        <span class="lede-line">Living waterways reveal a hidden logic of renewal</span>
+        <span class="lede-line">Nature's patterns guide more caring AI</span>
+      </div>
+
+      <div class="hero-actions" id="el-actions">
+        <!-- Cream Pill "Shape our Future" linking to #future -->
+        <a href="#future" class="cta-pill" id="el-cta">
+          Shape our Future
+          <span class="cta-disc">
+            <svg width="5" height="8" viewBox="0 0 5 8" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M.6.6 4 4 .6 7.4" />
+            </svg>
+          </span>
+        </a>
+
+        <!-- Text Link "Discover the Rivers" linking to #rivers -->
+        <a href="#rivers" class="text-link" id="el-textlink">Discover the Rivers</a>
+      </div>
+    </main>
+
+    <!-- Bottom Right Scroll Cue -->
+    <a href="#details" class="scroll-cue" id="el-cue">
+      <span>Scroll for Details</span>
+      <svg width="11" height="6" viewBox="0 0 11 6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M.7.7 5.5 5.3 10.3.7" />
+      </svg>
+    </a>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const body = document.body;
+      const video = document.getElementById("bg-video");
+      const soundBtn = document.getElementById("el-sound");
+      const menuBtn = document.getElementById("el-menu");
+      const mobileNav = document.getElementById("mobile-nav");
+      const bar1 = document.getElementById("bar-1");
+      const bar2 = document.getElementById("bar-2");
+      const bar3 = document.getElementById("bar-3");
+
+      // Elements for Entrance Timeline
+      const elLogo = document.getElementById("el-logo");
+      const elTreeStrokes = document.querySelectorAll(".tree-stroke");
+      const elMoth = document.getElementById("el-moth");
+      const elNav = document.getElementById("el-nav");
+      const navLinks = document.querySelectorAll(".nav-link, .partner-pill");
+      const elSound = document.getElementById("el-sound");
+      const elMenu = document.getElementById("el-menu");
+      const elBrand = document.getElementById("el-brand");
+      const headlineLines = document.querySelectorAll(".headline-line");
+      const ledeLines = document.querySelectorAll(".lede-line");
+      const elCta = document.getElementById("el-cta");
+      const elTextlink = document.getElementById("el-textlink");
+      const elCue = document.getElementById("el-cue");
+
+      /* ─── Sound Toggle Interaction ─── */
+      soundBtn.addEventListener("click", () => {
+        const isPressed = soundBtn.getAttribute("aria-pressed") === "true";
+        soundBtn.setAttribute("aria-pressed", String(!isPressed));
+      });
+
+      /* ─── Mobile Menu Drawer Behavior ─── */
+      function toggleMenu(open) {
+        const isOpen = open !== undefined ? open : !mobileNav.classList.contains("is-open");
+        mobileNav.classList.toggle("is-open", isOpen);
+        menuBtn.setAttribute("aria-expanded", String(isOpen));
+
+        // Transform 3 bars to X
+        if (isOpen) {
+          bar1.setAttribute("d", "M2 1l14 11");
+          bar2.setAttribute("d", "");
+          bar3.setAttribute("d", "M2 12l14-11");
+          const firstLink = mobileNav.querySelector("a");
+          if (firstLink) firstLink.focus();
+        } else {
+          bar1.setAttribute("d", "M1 1h16");
+          bar2.setAttribute("d", "M1 6h16");
+          bar3.setAttribute("d", "M1 11h16");
+        }
+      }
+
+      menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        toggleMenu();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && mobileNav.classList.contains("is-open")) {
+          toggleMenu(false);
+          menuBtn.focus();
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (mobileNav.classList.contains("is-open") && !mobileNav.contains(e.target) && !menuBtn.contains(e.target)) {
+          toggleMenu(false);
+        }
+      });
+
+      mobileNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => toggleMenu(false));
+      });
+
+      /* ─── Tree Path Stroke-Dashoffset Setup ─── */
+      elTreeStrokes.forEach((stroke) => {
+        const length = stroke.getTotalLength ? stroke.getTotalLength() : 30;
+        stroke.style.strokeDasharray = length;
+        stroke.style.strokeDashoffset = length;
+      });
+
+      /* ─── Entrance Timeline (Web Animations API) ─── */
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      let entranceTriggered = false;
+
+      function runEntrance() {
+        if (entranceTriggered) return;
+        entranceTriggered = true;
+
+        if (prefersReducedMotion) {
+          body.classList.remove("is-loading");
+          return;
+        }
+
+        const isMobile = window.innerWidth < 650;
+        const scaleFactor = isMobile ? 0.8 : (elCta.offsetHeight / 46 || 1);
+        const dist = (px) => Math.round(px * scaleFactor);
+
+        const anims = [];
+
+        // 1. Logo fades in at 0ms, 500ms quart
+        anims.push(
+          elLogo.animate([{ opacity: 0 }, { opacity: 1 }], {
+            duration: 500,
+            easing: "cubic-bezier(0.25, 1, 0.5, 1)",
+            fill: "backwards",
+          })
+        );
+
+        // Tree strokes draw on with stroke-dashoffset, 80ms + 45ms per path, 820ms, ease cubic-bezier(0.45, 0, 0.2, 1)
+        elTreeStrokes.forEach((stroke, i) => {
+          const len = stroke.getTotalLength ? stroke.getTotalLength() : 30;
+          anims.push(
+            stroke.animate(
+              [{ strokeDashoffset: len }, { strokeDashoffset: 0 }],
+              {
+                delay: 80 + i * 45,
+                duration: 820,
+                easing: "cubic-bezier(0.45, 0, 0.2, 1)",
+                fill: "forwards",
+              }
+            )
+          );
+        });
+
+        // Moth fades and scales from 0.92 at 420ms for 650ms, expo cubic-bezier(0.16, 1, 0.3, 1)
+        anims.push(
+          elMoth.animate(
+            [
+              { opacity: 0, transform: "scale(0.92)" },
+              { opacity: 1, transform: "scale(1)" },
+            ],
+            {
+              delay: 420,
+              duration: 650,
+              easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+              fill: "backwards",
+            }
+          )
+        );
+
+        // 2. Nav or Menu lifts 8px at 120ms, 700ms, expo
+        const navTarget = isMobile ? elMenu : elNav;
+        anims.push(
+          navTarget.animate(
+            [
+              { opacity: 0, transform: `translateY(${dist(8)}px)` },
+              { opacity: 1, transform: "translateY(0)" },
+            ],
+            {
+              delay: 120,
+              duration: 700,
+              easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+              fill: "backwards",
+            }
+          )
+        );
+
+        // Links ripple from 260ms, 45ms apart, lifting 4px
+        if (!isMobile) {
+          navLinks.forEach((link, i) => {
+            anims.push(
+              link.animate(
+                [
+                  { opacity: 0, transform: `translateY(${dist(4)}px)` },
+                  { opacity: 1, transform: "translateY(0)" },
+                ],
+                {
+                  delay: 260 + i * 45,
+                  duration: 600,
+                  easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+                  fill: "backwards",
+                }
+              )
+            );
+          });
+        }
+
+        // Sound lifts 8px at 200ms
+        anims.push(
+          elSound.animate(
+            [
+              { opacity: 0, transform: `translateY(${dist(8)}px)` },
+              { opacity: 1, transform: "translateY(0)" },
+            ],
+            {
+              delay: 200,
+              duration: 700,
+              easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+              fill: "backwards",
+            }
+          )
+        );
+
+        // 3. "riverine.ai" lifts 10px at 300ms, 650ms
+        anims.push(
+          elBrand.animate(
+            [
+              { opacity: 0, transform: `translateY(${dist(10)}px)` },
+              { opacity: 1, transform: "translateY(0)" },
+            ],
+            {
+              delay: 300,
+              duration: 650,
+              easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+              fill: "backwards",
+            }
+          )
+        );
+
+        // 4. Headline lines rise from translateY(115%) at 380ms + 90ms per line, 1050ms
+        headlineLines.forEach((line, i) => {
+          anims.push(
+            line.animate(
+              [
+                { opacity: 0, transform: "translateY(115%)" },
+                { opacity: 1, transform: "translateY(0)" },
+              ],
+              {
+                delay: 380 + i * 90,
+                duration: 1050,
+                easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+                fill: "backwards",
+              }
+            )
+          );
+        });
+
+        // 5. Two lede lines lift 14px at 800ms and 860ms, 800ms
+        ledeLines.forEach((line, i) => {
+          anims.push(
+            line.animate(
+              [
+                { opacity: 0, transform: `translateY(${dist(14)}px)` },
+                { opacity: 1, transform: "translateY(0)" },
+              ],
+              {
+                delay: 800 + i * 60,
+                duration: 800,
+                easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+                fill: "backwards",
+              }
+            )
+          );
+        });
+
+        // 6. CTA lifts 12px at 1000ms, 800ms
+        anims.push(
+          elCta.animate(
+            [
+              { opacity: 0, transform: `translateY(${dist(12)}px)` },
+              { opacity: 1, transform: "translateY(0)" },
+            ],
+            {
+              delay: 1000,
+              duration: 800,
+              easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+              fill: "backwards",
+            }
+          )
+        );
+
+        // Text link lifts 8px at 1100ms, 600ms, quart
+        anims.push(
+          elTextlink.animate(
+            [
+              { opacity: 0, transform: `translateY(${dist(8)}px)` },
+              { opacity: 1, transform: "translateY(0)" },
+            ],
+            {
+              delay: 1100,
+              duration: 600,
+              easing: "cubic-bezier(0.25, 1, 0.5, 1)",
+              fill: "backwards",
+            }
+          )
+        );
+
+        // 7. Scroll cue lifts from -6px at 1250ms, 700ms
+        anims.push(
+          elCue.animate(
+            [
+              { opacity: 0, transform: `translateY(${dist(-6)}px)` },
+              { opacity: 1, transform: "translateY(0)" },
+            ],
+            {
+              delay: 1250,
+              duration: 700,
+              easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+              fill: "backwards",
+            }
+          )
+        );
+
+        // Wait for all animations to finish, remove .is-loading class so no inline styles remain
+        Promise.all(anims.map((a) => a.finished)).then(() => {
+          body.classList.remove("is-loading");
+          // Force a one-frame redraw of the logo and action row
+          void elLogo.offsetWidth;
+          void elCta.offsetWidth;
+        });
+      }
+
+      /* ─── Ready Detection & 3.5s Failsafe ─── */
+      const fontsPromise = document.fonts ? document.fonts.ready : Promise.resolve();
+      const videoPromise = new Promise((resolve) => {
+        if (video.readyState >= 2) {
+          resolve();
+        } else {
+          video.addEventListener("loadeddata", () => resolve(), { once: true });
+          video.addEventListener("error", () => resolve(), { once: true });
+        }
+      });
+
+      Promise.all([fontsPromise, videoPromise]).then(runEntrance);
+
+      // 3.5s failsafe
+      setTimeout(runEntrance, 3500);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "siteUrl": "https://ebony.co.in",
+  "routes": [
+    {
+      "path": "/",
+      "title": "EBONY — Luxury Modular Interiors | German Engineered",
+      "description": "EBONY crafts bespoke luxury modular kitchens, wardrobes, and bedroom sets engineered in Germany with 500+ finishes and rapid 3-day installation.",
+      "canonical": "https://ebony.co.in/",
+      "status": 200
+    },
+    {
+      "path": "#collections",
+      "title": "Collections — Modular Kitchens, Wardrobes & Bed Sets",
+      "description": "Explore 300+ kitchen designs, 100+ wardrobe configurations, and 50+ luxury bedroom collections.",
+      "status": 200
+    },
+    {
+      "path": "#process",
+      "title": "Craft & Engineering Process — 3 Days to a New Home",
+      "description": "Discover EBONY's vertically integrated process: Design, German Engineering, Precision Machining, and 3-Day Installation.",
+      "status": 200
+    },
+    {
+      "path": "#why-ebony",
+      "title": "Why EBONY — German Precision & Vertical Integration",
+      "description": "Learn about our 0% defect policy, lifetime after-sales support, and pan-India dealer network.",
+      "status": 200
+    },
+    {
+      "path": "#contact",
+      "title": "Book a Consultation — EBONY Studio Raipur",
+      "description": "Schedule a personal consultation with our interior architects or enquire about franchise and dealer opportunities.",
+      "status": 200
+    }
+  ],
+  "redirects": [
+    { "source": "/about", "destination": "/#about", "permanent": true },
+    { "source": "/collections", "destination": "/#collections", "permanent": true },
+    { "source": "/finishes", "destination": "/#finishes", "permanent": true },
+    { "source": "/projects", "destination": "/#collections", "permanent": true },
+    { "source": "/contact", "destination": "/#contact", "permanent": true }
+  ]
+}
