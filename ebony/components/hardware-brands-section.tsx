@@ -14,7 +14,7 @@ export function HardwareBrandsSection() {
             <div className="flex items-center gap-2 mb-3">
               <span className="w-8 h-[1px] bg-[#B8923A]" />
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold">
-                09 / Hardware Excellence
+                Hardware Excellence
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-slate-950 font-normal leading-[1.1] tracking-tight">

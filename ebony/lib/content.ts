@@ -34,7 +34,6 @@ export const NAV_LINKS = [
   { label: "Finishes", href: "/finishes" },
   { label: "Hardware", href: "/hardware" },
   { label: "Projects", href: "/projects" },
-  { label: "Three Steps", href: "/process" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const
@@ -71,7 +70,7 @@ export const WHAT_WE_MAKE = [
     id: "modular-kitchen",
     title: "Modular Kitchen",
     subtitle: "Culinary Architecture",
-    tag: "01 / CULINARY SUITES",
+    tag: "CULINARY SUITES",
     description:
       "Where culinary ergonomics meets understated luxury. Tailored islands, motorized lift-ups, moisture-proof BWP carcasses, and 500+ finishes.",
     image: "/img/kitchen-island-real.jpg",
@@ -83,7 +82,7 @@ export const WHAT_WE_MAKE = [
     id: "wardrobe",
     title: "Bespoke Wardrobe",
     subtitle: "Personal Sanctuaries",
-    tag: "02 / WARDROBE SYSTEMS",
+    tag: "WARDROBE SYSTEMS",
     description:
       "Transforming daily rituals into ceremonies of order. Floor-to-ceiling sliding and hinged systems with Italian damping and sensor illumination.",
     image: "/img/wardrobe-bespoke-real.jpg",
@@ -95,7 +94,7 @@ export const WHAT_WE_MAKE = [
     id: "walk-in-closet",
     title: "Walk-in Closet",
     subtitle: "Haute Dressing Suites",
-    tag: "03 / DRESSING SUITES",
+    tag: "DRESSING SUITES",
     description:
       "Architectural enclosures featuring smoked bronze glass, slim anodised aluminium profiles, velvet accessories trays, and full-height shoe displays.",
     image: "/img/walk-in-closet-luxury.jpg",
@@ -107,7 +106,7 @@ export const WHAT_WE_MAKE = [
     id: "bar-unit",
     title: "Bar & Living Unit",
     subtitle: "Entertainment Lounges",
-    tag: "04 / ENTERTAINMENT",
+    tag: "ENTERTAINMENT & LIVING",
     description:
       "Signature bar units, acoustic fluted timber TV backdrops, wine display alcoves, and floating consoles engineered for modern luxury homes.",
     image: "/img/bar-unit-luxury.jpg",
