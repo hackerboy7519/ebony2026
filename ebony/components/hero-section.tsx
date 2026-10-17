@@ -1,13 +1,54 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { ArrowDown, Volume2, VolumeX, Play, Pause } from "lucide-react"
 
 export function HeroSection() {
-  const [isMuted, setIsMuted] = useState(true)
+  const [isMuted, setIsMuted] = useState(false)
   const [isPlaying, setIsPlaying] = useState(true)
   const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    // Attempt to play unmuted by default
+    video.muted = false
+    const playPromise = video.play()
+
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setIsMuted(false)
+          setIsPlaying(true)
+        })
+        .catch(() => {
+          // If browser policy blocks unmuted autoplay without prior interaction,
+          // play muted first so video starts, then immediately unmute on first gesture
+          video.muted = true
+          setIsMuted(true)
+          video.play().catch(() => {})
+
+          const unmuteOnInteraction = () => {
+            if (videoRef.current) {
+              videoRef.current.muted = false
+              videoRef.current.play().catch(() => {})
+              setIsMuted(false)
+            }
+            window.removeEventListener("click", unmuteOnInteraction)
+            window.removeEventListener("touchstart", unmuteOnInteraction)
+            window.removeEventListener("scroll", unmuteOnInteraction)
+            window.removeEventListener("keydown", unmuteOnInteraction)
+          }
+
+          window.addEventListener("click", unmuteOnInteraction, { once: true, passive: true })
+          window.addEventListener("touchstart", unmuteOnInteraction, { once: true, passive: true })
+          window.addEventListener("scroll", unmuteOnInteraction, { once: true, passive: true })
+          window.addEventListener("keydown", unmuteOnInteraction, { once: true, passive: true })
+        })
+    }
+  }, [])
 
   const togglePlay = () => {
     if (!videoRef.current) return
@@ -22,13 +63,14 @@ export function HeroSection() {
 
   const toggleMute = () => {
     if (!videoRef.current) return
-    videoRef.current.muted = !isMuted
-    setIsMuted(!isMuted)
+    const nextMuted = !isMuted
+    videoRef.current.muted = nextMuted
+    setIsMuted(nextMuted)
   }
 
   return (
     <section id="hero" className="relative min-h-[100svh] w-full flex flex-col justify-between overflow-hidden bg-black text-white">
-      {/* Full-Bleed Background Video */}
+      {/* Full-Bleed Background Video with Sound */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           ref={videoRef}
@@ -100,8 +142,8 @@ export function HeroSection() {
             ) : (
               <Volume2 className="w-4 h-4 text-emerald-400" />
             )}
-            <span className="hidden sm:inline-block text-[10px] tracking-wider">
-              {isMuted ? "MUTED" : "UNMUTED"}
+            <span className="hidden sm:inline-block text-[10px] tracking-wider font-semibold">
+              {isMuted ? "MUTED" : "SOUND: ON"}
             </span>
           </button>
 
