@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="bg-white text-slate-900 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-16 sm:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-14 border-b border-slate-100">
-          {/* Brand Column (Left) */}
+          {/* Brand Column (Left - 4 Cols) */}
           <div className="lg:col-span-4">
             <Link href="/" className="inline-block mb-5">
               <Image
@@ -23,11 +23,10 @@ export function Footer() {
               />
             </Link>
             <p className="font-sans text-xs sm:text-sm text-slate-600 font-light leading-relaxed max-w-sm mb-6">
-              Bespoke modular kitchens, wardrobes and home interiors. German
-              precision engineering installed in 3 days.
+              Bespoke luxury modular kitchens, wardrobes, walk-in closets, and living joinery. German CNC precision installed in 3 days.
             </p>
 
-            {/* Social Icons matching reference */}
+            {/* Social Icons */}
             <div className="flex items-center gap-3 text-slate-700">
               <a
                 href="https://instagram.com"
@@ -65,7 +64,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* EXPLORE Links Column matching reference */}
+          {/* EXPLORE Links Column (2 Cols) */}
           <div className="lg:col-span-2 sm:col-span-1">
             <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#B8923A] font-bold mb-5">
               EXPLORE
@@ -84,17 +83,19 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* COLLECTIONS Links Column matching reference */}
+          {/* COLLECTIONS Links Column (3 Cols) */}
           <div className="lg:col-span-3 sm:col-span-1">
             <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#B8923A] font-bold mb-5">
               COLLECTIONS
             </h4>
             <ul className="flex flex-col gap-3 font-sans text-xs sm:text-sm text-slate-600">
               {[
-                { label: "Modular Kitchens", href: "/collections#kitchen" },
-                { label: "Wardrobes", href: "/collections#wardrobe" },
-                { label: "Living & TV Units", href: "/collections#living" },
-                { label: "Complete Home Interiors", href: "/collections#bedroom" },
+                { label: "Modular Kitchens", href: "/kitchens" },
+                { label: "Bespoke Wardrobes", href: "/wardrobes" },
+                { label: "Walk-in Closets", href: "/walk-in-closets" },
+                { label: "Bar & Living Units", href: "/projects#bar-unit" },
+                { label: "Materials & Finishes", href: "/finishes" },
+                { label: "Hardware Partners", href: "/hardware" },
               ].map((item) => (
                 <li key={item.label}>
                   <Link
@@ -108,14 +109,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* CONTACT Info Column matching reference */}
+          {/* CONTACT Info Column (3 Cols) */}
           <div className="lg:col-span-3">
             <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#B8923A] font-bold mb-5">
-              CONTACT
+              FLAGSHIP STUDIO
             </h4>
             <div className="flex flex-col gap-3 font-sans text-xs sm:text-sm text-slate-600">
               <a
-                href={`tel:${BRAND.phone.replace(/\s+/g, "")}`}
+                href={`tel:${BRAND.phoneRaw}`}
                 className="flex items-center gap-2.5 hover:text-slate-950 transition-colors"
               >
                 <Phone className="w-4 h-4 text-[#B8923A] shrink-0" />
@@ -132,33 +133,35 @@ export function Footer() {
 
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#B8923A] shrink-0 mt-0.5" />
-                <span>Raipur Flagship Studio, Chhattisgarh</span>
+                <span>{BRAND.address}</span>
               </div>
 
-              <Link
-                href="/contact"
+              <a
+                href={BRAND.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 font-mono text-xs text-[#B8923A] font-bold uppercase tracking-wider hover:underline mt-2"
               >
-                <span>Get Directions</span>
+                <span>Get Directions (Google Maps)</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom Legal Bar matching reference */}
+        {/* Bottom Legal Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-slate-500">
-          <p>© {new Date().getFullYear()} Ebony. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} EBONY Modular Kulture. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-5">
-            <Link href="/about" className="hover:text-slate-900 transition-colors">
+            <Link href="/privacy" className="hover:text-slate-900 transition-colors">
               Privacy Policy
             </Link>
             <span>·</span>
-            <Link href="/about" className="hover:text-slate-900 transition-colors">
+            <Link href="/terms" className="hover:text-slate-900 transition-colors">
               Terms &amp; Conditions
             </Link>
             <span>·</span>
-            <span className="text-slate-700">Designed with ♥ in India</span>
+            <span className="text-slate-700">German Engineered · Made in India</span>
           </div>
         </div>
       </div>

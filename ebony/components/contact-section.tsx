@@ -190,7 +190,7 @@ export function ContactSection() {
                             setFormState((s) => ({ ...s, name: e.target.value }))
                           }
                           className="w-full px-4 py-3 bg-slate-50/60 border border-slate-200 rounded-xl text-slate-900 font-sans text-sm focus:bg-white focus:border-[#B8923A] focus:ring-1 focus:ring-[#B8923A]/30 transition-all outline-none"
-                          placeholder="Lord / Lady / Architect"
+                          placeholder="e.g. Rahul Sharma"
                         />
                       </div>
                       <div className="flex flex-col gap-1.5">
@@ -370,7 +370,7 @@ export function ContactSection() {
                     Direct Client Line
                   </p>
                   <a
-                    href={`tel:${BRAND.phone}`}
+                    href={`tel:${BRAND.phone.replace(/\s+/g, "")}`}
                     className="font-serif italic text-xl text-slate-900 hover:text-[#855E15] transition-colors"
                   >
                     {BRAND.phone}

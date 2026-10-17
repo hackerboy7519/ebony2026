@@ -1,0 +1,199 @@
+import Image from "next/image"
+import Link from "next/link"
+import { Navbar } from "@/components/navbar"
+import { Footer } from "@/components/footer"
+import { KitchenConfigurationsSection } from "@/components/kitchen-configurations-section"
+import { KitchenStylesSection } from "@/components/kitchen-styles-section"
+import { ArrowUpRight, CheckCircle2, ShieldCheck, Sparkles, ChefHat } from "lucide-react"
+
+export const metadata = {
+  title: "Modular Kitchens — EBONY Modular Interiors",
+  description:
+    "Explore German-engineered luxury modular kitchens. L-shape, U-shape, parallel, straight, and island kitchen layouts with 500+ finishes and Blum motion technology.",
+}
+
+export default function KitchensPage() {
+  return (
+    <div className="bg-white min-h-screen text-slate-900 selection:bg-amber-500/20 selection:text-slate-900 overflow-x-hidden">
+      <Navbar />
+
+      <main className="pt-24 sm:pt-28">
+        {/* Hero Section */}
+        <section className="relative bg-[#0B0F19] text-white py-20 sm:py-28 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/img/kitchen-island-real.jpg"
+              alt="EBONY luxury island kitchen with fluted detailing"
+              fill
+              className="object-cover opacity-35 brightness-75 filter"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/60 to-transparent" />
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+            <div className="max-w-3xl">
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+                CULINARY ARCHITECTURE
+              </span>
+              <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal leading-[1.1] tracking-tight mb-6">
+                Modular Kitchens, <br />
+                <span className="italic">Engineered for Life.</span>
+              </h1>
+              <p className="font-sans text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
+                Where culinary ergonomics meets understated luxury. Every EBONY kitchen is built with 100% BWP Marine Plywood or surgical SS 304 carcasses, German CNC tolerances, and whisper-quiet Blum motion technology.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  href="#configurations"
+                  className="px-6 py-3.5 rounded-full bg-[#B8923A] hover:bg-[#C99E4B] text-slate-950 font-mono text-xs uppercase tracking-wider font-bold transition-all duration-300 shadow-lg"
+                >
+                  Explore Layouts
+                </Link>
+                <Link
+                  href="/contact"
+                  className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-300 backdrop-blur-md"
+                >
+                  Book 3D Design Session
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 3 Pillars of an EBONY Kitchen */}
+        <section className="py-16 bg-[#FAFAFA] border-b border-slate-200">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-[#B8923A] shrink-0">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
+                    100% Boiling Water Proof
+                  </h3>
+                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                    IS 710 calibrated marine plywood or SS 304 surgical stainless steel base carcasses guarantee zero swelling or fungal decay.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-[#B8923A] shrink-0">
+                  <ChefHat className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
+                    Chef&apos;s Work Triangle
+                  </h3>
+                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                    Engineered distances between refrigeration, washing, and cooking zones minimize fatigue and optimize culinary preparation.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-[#B8923A] shrink-0">
+                  <Sparkles className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
+                    Blum Aventos Motion
+                  </h3>
+                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                    Motorized and mechanical lift-up systems for overhead cabinets that open effortlessly and stay in place without head collisions.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Layout Configurations */}
+        <div id="configurations">
+          <KitchenConfigurationsSection />
+        </div>
+
+        {/* Island Kitchen Architecture Spotlight */}
+        <section className="py-24 bg-white border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-6 relative h-[400px] sm:h-[500px] rounded-3xl overflow-hidden shadow-xl">
+                <Image
+                  src="/img/kitchen-layout-real.jpg"
+                  alt="EBONY bespoke kitchen joinery and tall unit storage"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+
+              <div className="lg:col-span-6">
+                <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+                  BESPOKE STORAGE ARCHITECTURE
+                </span>
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-slate-950 font-normal mb-6">
+                  Pantry Towers, LeMans Corners &amp; Appliance Garages.
+                </h2>
+                <p className="font-sans text-sm sm:text-base text-slate-600 font-light leading-relaxed mb-6">
+                  A high-end kitchen is as much about internal order as it is about external beauty. We integrate concealed walk-in pantries, tandem larder pull-outs with 120kg weight capacities, and motorized pocket doors that tuck away coffee stations cleanly.
+                </p>
+
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Zero dead corners with Häfele LeMans II swivel trays",
+                    "Integrated bi-fold appliance garage with concealed power hubs",
+                    "Deep 500mm cutlery and cookware organizers with walnut partitions",
+                    "Concealed waste management drawers with multi-bin segregation",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-xs sm:text-sm text-slate-700">
+                      <CheckCircle2 className="w-4 h-4 text-[#B8923A] shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-slate-950 hover:bg-[#B8923A] text-white font-mono text-xs uppercase tracking-wider font-bold transition-all duration-300"
+                >
+                  <span>Request Kitchen Catalog</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 4 Design Styles */}
+        <KitchenStylesSection />
+
+        {/* Consultation Call to Action */}
+        <section className="py-20 bg-[#0B0F19] text-white text-center">
+          <div className="max-w-4xl mx-auto px-5 sm:px-8">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+              BEGIN YOUR CULINARY PROJECT
+            </span>
+            <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal mb-6">
+              Bring Your Floor Plan to Our Studio.
+            </h2>
+            <p className="font-sans text-sm sm:text-base text-white/70 font-light leading-relaxed mb-8 max-w-xl mx-auto">
+              Our architects will review your dimensions, recommend the ideal layout, and provide photorealistic 3D visuals with exact material samples.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#B8923A] hover:bg-[#C99E4B] text-slate-950 font-mono text-xs uppercase tracking-wider font-bold transition-all duration-300 shadow-xl"
+            >
+              <span>Book Kitchen Consultation</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  )
+}

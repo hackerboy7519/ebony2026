@@ -7,7 +7,7 @@ import { StudioCtaSection } from "@/components/studio-cta-section"
 import { ArrowUpRight } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Collections Portfolio — Modular Kitchens, Wardrobes & Suites | EBONY",
+  title: "Collections Lookbook — Modular Kitchens, Wardrobes & Suites | EBONY",
   description:
     "Explore 300+ modular kitchen designs, 100+ bespoke wardrobe configurations, and 50+ master bedroom suites engineered in Germany.",
 }
@@ -18,42 +18,48 @@ const COLLECTIONS_LOOKBOOK = [
     category: "Modular Kitchen · 300+ Designs",
     title: "The Calacatta Waterfall Atelier",
     subtitle: "Honed marble monolithic island with motorized concealed socket towers and smoked oak cabinetry.",
-    image: "/img/kitchen-island-luxury.jpg",
+    image: "/img/kitchen-island-real.jpg",
+    href: "/kitchens",
   },
   {
     id: "wardrobe-walkin",
     category: "Bespoke Wardrobe · 100+ Layouts",
     title: "The Sanctuary Smoked Dressing Room",
     subtitle: "Floor-to-ceiling bronze glass enclosures with warm vertical 3000K recessed architectural illumination.",
-    image: "/img/wardrobe-detail-shot.jpg",
+    image: "/img/wardrobe-bespoke-real.jpg",
+    href: "/wardrobes",
   },
   {
-    id: "bedroom-master",
-    category: "Master Bedroom · 50+ Collections",
-    title: "The Kyoto Platform Suite",
-    subtitle: "Low-profile upholstered linen bed with integrated acoustic fluted oak slat feature wall.",
-    image: "/img/master-suite-luxury.jpg",
+    id: "closet-suite",
+    category: "Walk-in Closet · Haute Dressing",
+    title: "The Bronze Vitrine Dressing Suite",
+    subtitle: "Slim anodised aluminium frames, sensor lighting, velvet accessory drawers, and 360° rotating mirror.",
+    image: "/img/walk-in-closet-luxury.jpg",
+    href: "/walk-in-closets",
+  },
+  {
+    id: "bar-lounge",
+    category: "Bar & Living · Custom Joinery",
+    title: "The Illuminated Fluted Lounge Bar",
+    subtitle: "Custom bar unit with ambient backlight fluting, brass glassware rails, and quartz prep counter.",
+    image: "/img/bar-unit-luxury.jpg",
+    href: "/projects#bar-unit",
   },
   {
     id: "living-millwork",
-    category: "Living Millwork · Custom Bespoke",
+    category: "Living Millwork · Architectural Consoles",
     title: "The Travertine Lounge & Wall Paneling",
     subtitle: "CNC fluted walnut acoustic paneling with concealed wire chases, subwoofers, and backlit shelving.",
     image: "/img/living-room-showcase.jpg",
-  },
-  {
-    id: "penthouse-fitout",
-    category: "Full Residence · Integrated Suite",
-    title: "The Atelier Daylight Penthouse",
-    subtitle: "Harmonized architectural palette unifying kitchen, master walk-in wardrobe, and bedroom suites.",
-    image: "/img/showcase-hero.png",
+    href: "/projects",
   },
   {
     id: "chef-parallel",
-    category: "Modular Kitchen · Ergonomic Triangle",
-    title: "The Parallel Chef Studio",
-    subtitle: "Twin counter runs with Blum Aventos lift systems and super matt anti-fingerprint surfaces.",
-    image: "/img/hero-kitchen.jpg",
+    category: "Modular Kitchen · Contemporary Layout",
+    title: "The Contemporary J-Pull Culinary Suite",
+    subtitle: "Handleless cabinetry with seamless acrylic finish, Blum Aventos lift systems, and LeMans corner trays.",
+    image: "/img/kitchen-contemporary-real.jpg",
+    href: "/kitchens",
   },
 ]
 
@@ -68,7 +74,7 @@ export default function CollectionsPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#B8923A] font-semibold block mb-3">
-                CURATED SPACES & PROJECTS
+                CURATED SPACES &amp; PROJECTS
               </span>
               <h1 className="font-serif italic text-4xl sm:text-5xl md:text-6xl text-slate-950 font-normal leading-[1.1]">
                 Portfolio <span className="text-[#855E15] not-italic font-medium">Lookbook</span>
@@ -77,6 +83,40 @@ export default function CollectionsPage() {
             <p className="text-slate-600 max-w-sm text-xs sm:text-sm leading-relaxed font-light">
               Over 450 active modular configurations. Every space engineered with 0.1mm German precision and installed in 3 days.
             </p>
+          </div>
+
+          {/* Quick Subcategory Pills */}
+          <div className="flex flex-wrap gap-2.5 mt-8">
+            <Link
+              href="/kitchens"
+              className="px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-950 hover:text-white font-mono text-xs uppercase tracking-wider transition-colors"
+            >
+              Modular Kitchens →
+            </Link>
+            <Link
+              href="/wardrobes"
+              className="px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-950 hover:text-white font-mono text-xs uppercase tracking-wider transition-colors"
+            >
+              Bespoke Wardrobes →
+            </Link>
+            <Link
+              href="/walk-in-closets"
+              className="px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-950 hover:text-white font-mono text-xs uppercase tracking-wider transition-colors"
+            >
+              Walk-in Closets →
+            </Link>
+            <Link
+              href="/finishes"
+              className="px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-950 hover:text-white font-mono text-xs uppercase tracking-wider transition-colors"
+            >
+              Materials &amp; Finishes →
+            </Link>
+            <Link
+              href="/hardware"
+              className="px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-950 hover:text-white font-mono text-xs uppercase tracking-wider transition-colors"
+            >
+              Hardware Partners →
+            </Link>
           </div>
         </section>
 
@@ -90,7 +130,7 @@ export default function CollectionsPage() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-700 ease-fluid group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
@@ -116,8 +156,9 @@ export default function CollectionsPage() {
                     </p>
                   </div>
                   <Link
-                    href="/contact"
+                    href={item.href}
                     className="w-10 h-10 rounded-full border border-slate-300 flex items-center justify-center shrink-0 group-hover:border-[#B8923A] group-hover:bg-[#B8923A] group-hover:text-slate-950 transition-all duration-300 shadow-sm"
+                    aria-label={`Explore ${item.title}`}
                   >
                     <ArrowUpRight className="w-4 h-4" />
                   </Link>
@@ -127,7 +168,7 @@ export default function CollectionsPage() {
           </div>
         </section>
 
-        {/* Unified Studio Booking Section matching homepage */}
+        {/* Studio Booking Section */}
         <StudioCtaSection />
       </main>
 
