@@ -10,7 +10,6 @@ import { CoreMaterialsSection } from "@/components/core-materials-section"
 import { InternalFittingsSection } from "@/components/internal-fittings-section"
 import { HardwareBrandsSection } from "@/components/hardware-brands-section"
 import { ProjectsShowcaseSection } from "@/components/projects-showcase-section"
-import { ScrollStoryCanvas } from "@/components/ui/aceternity/scroll-story-canvas"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { WhyEbonySection } from "@/components/why-ebony-section"
 import { StudioCtaSection } from "@/components/studio-cta-section"
@@ -83,11 +82,6 @@ export default function Page() {
         <FadeReveal>
           <ProjectsShowcaseSection />
         </FadeReveal>
-
-        {/* Previous Scroll Storytelling Canvas */}
-        <section id="scroll-story" className="relative bg-white text-slate-900">
-          <ScrollStoryCanvas />
-        </section>
 
         {/* Section 12: User Testimonials (Compact Moving Cards) */}
         <FadeReveal>
