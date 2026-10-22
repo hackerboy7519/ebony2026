@@ -7,12 +7,13 @@ import { usePathname } from "next/navigation"
 import { BRAND } from "@/lib/content"
 import { cn } from "@/lib/utils"
 import { ArrowUpRight, Phone, MessageSquare, ChevronDown, X, ChefHat, DoorClosed, Sparkles, Wine } from "lucide-react"
+import { openEnquiryModal } from "@/components/enquiry-modal"
 
 const COLLECTIONS_SUBMENU = [
   {
     label: "Modular Kitchens",
     href: "/kitchens",
-    desc: "L, U, Island, Parallel & Straight layouts",
+    desc: "12 Styles · 5 Architectural Layouts",
     icon: ChefHat,
   },
   {
@@ -24,13 +25,13 @@ const COLLECTIONS_SUBMENU = [
   {
     label: "Walk-in Closets",
     href: "/walk-in-closets",
-    desc: "Floor-to-ceiling glass & aluminium suites",
+    desc: "Floor-to-ceiling glass & lighting suites",
     icon: Sparkles,
   },
   {
-    label: "Bar & Living Units",
+    label: "Bar & TV Units",
     href: "/projects#bar-unit",
-    desc: "Luxury entertainment & backlit displays",
+    desc: "Custom entertainment joinery",
     icon: Wine,
   },
 ]
@@ -79,7 +80,7 @@ export function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           scrolled || (pathname && pathname !== "/")
-            ? "bg-[#0B0F19] border-b border-white/10 py-3 sm:py-3.5 shadow-2xl"
+            ? "bg-[#0B0F19]/95 backdrop-blur-md border-b border-white/10 py-3 sm:py-3.5 shadow-2xl"
             : "bg-gradient-to-b from-black/85 via-black/50 to-transparent py-4 sm:py-5"
         )}
       >
@@ -101,123 +102,74 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Navigation Links (Three Steps and Phone removed as requested) */}
-          <nav className="hidden lg:flex items-center gap-7 xl:gap-8">
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-7">
             <Link
               href="/"
               className={cn(
-                "font-mono text-[11px] tracking-[0.18em] uppercase transition-colors duration-200 py-1",
+                "font-mono text-[11px] tracking-[0.16em] uppercase transition-colors duration-200 py-1",
                 pathname === "/" ? "text-amber-400 font-bold" : "text-white/80 hover:text-white font-medium"
               )}
             >
               Home
             </Link>
 
-            {/* Collections Dropdown Menu with SOLID 100% OPAQUE background and gap bridge */}
-            <div
-              ref={dropdownRef}
-              className="relative"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
-            >
-              <button
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                className={cn(
-                  "font-mono text-[11px] tracking-[0.18em] uppercase transition-colors duration-200 py-1 flex items-center gap-1.5 cursor-pointer",
-                  pathname.startsWith("/kitchens") ||
-                    pathname.startsWith("/wardrobes") ||
-                    pathname.startsWith("/walk-in-closets") ||
-                    pathname === "/collections"
-                    ? "text-amber-400 font-bold"
-                    : "text-white/80 hover:text-white font-medium"
-                )}
-                aria-expanded={dropdownOpen}
-                aria-haspopup="true"
-              >
-                <span>Collections</span>
-                <ChevronDown className={cn("w-3 h-3 transition-transform duration-200", dropdownOpen && "rotate-180")} />
-              </button>
-
-              {/* Dropdown Panel - Solid #0F172A background with zero transparency leak and invisible bridge to prevent mouseleave */}
-              {dropdownOpen && (
-                <div
-                  className="absolute top-full left-0 mt-2 w-80 rounded-2xl border border-slate-700/80 p-3 z-50 shadow-[0_20px_50px_rgba(0,0,0,0.85)] before:absolute before:-top-3 before:left-0 before:right-0 before:h-3 before:content-['']"
-                  style={{ backgroundColor: "#0F172A" }}
-                >
-                  <div className="space-y-1">
-                    {COLLECTIONS_SUBMENU.map((item) => {
-                      const Icon = item.icon
-                      return (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          onClick={() => setDropdownOpen(false)}
-                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/10 transition-colors group"
-                        >
-                          <div className="w-8 h-8 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 mt-0.5 group-hover:bg-amber-500/25">
-                            <Icon className="w-4 h-4" />
-                          </div>
-                          <div>
-                            <div className="font-serif text-sm text-white font-normal group-hover:text-amber-400 transition-colors">
-                              {item.label}
-                            </div>
-                            <div className="font-sans text-[11px] text-slate-300 leading-tight mt-0.5">
-                              {item.desc}
-                            </div>
-                          </div>
-                        </Link>
-                      )
-                    })}
-                  </div>
-
-                  <div className="mt-2 pt-2 border-t border-slate-700/70 px-3 py-1">
-                    <Link
-                      href="/collections"
-                      onClick={() => setDropdownOpen(false)}
-                      className="font-mono text-[10px] text-amber-400 hover:text-amber-300 uppercase tracking-widest font-semibold flex items-center justify-between py-1"
-                    >
-                      <span>Overview Lookbook</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
-                </div>
+            <Link
+              href="/kitchens"
+              className={cn(
+                "font-mono text-[11px] tracking-[0.16em] uppercase transition-colors duration-200 py-1",
+                pathname === "/kitchens" ? "text-amber-400 font-bold" : "text-white/80 hover:text-white font-medium"
               )}
-            </div>
+            >
+              Kitchens
+            </Link>
+
+            <Link
+              href="/wardrobes"
+              className={cn(
+                "font-mono text-[11px] tracking-[0.16em] uppercase transition-colors duration-200 py-1",
+                pathname === "/wardrobes" || pathname === "/walk-in-closets"
+                  ? "text-amber-400 font-bold"
+                  : "text-white/80 hover:text-white font-medium"
+              )}
+            >
+              Wardrobes
+            </Link>
 
             <Link
               href="/finishes"
               className={cn(
-                "font-mono text-[11px] tracking-[0.18em] uppercase transition-colors duration-200 py-1",
+                "font-mono text-[11px] tracking-[0.16em] uppercase transition-colors duration-200 py-1",
                 pathname === "/finishes" ? "text-amber-400 font-bold" : "text-white/80 hover:text-white font-medium"
               )}
             >
-              Finishes
+              Colours &amp; Finishes
             </Link>
 
             <Link
               href="/hardware"
               className={cn(
-                "font-mono text-[11px] tracking-[0.18em] uppercase transition-colors duration-200 py-1",
+                "font-mono text-[11px] tracking-[0.16em] uppercase transition-colors duration-200 py-1",
                 pathname === "/hardware" ? "text-amber-400 font-bold" : "text-white/80 hover:text-white font-medium"
               )}
             >
-              Hardware
+              Fittings
             </Link>
 
             <Link
               href="/projects"
               className={cn(
-                "font-mono text-[11px] tracking-[0.18em] uppercase transition-colors duration-200 py-1",
+                "font-mono text-[11px] tracking-[0.16em] uppercase transition-colors duration-200 py-1",
                 pathname === "/projects" ? "text-amber-400 font-bold" : "text-white/80 hover:text-white font-medium"
               )}
             >
-              Projects
+              Our Work
             </Link>
 
             <Link
               href="/about"
               className={cn(
-                "font-mono text-[11px] tracking-[0.18em] uppercase transition-colors duration-200 py-1",
+                "font-mono text-[11px] tracking-[0.16em] uppercase transition-colors duration-200 py-1",
                 pathname === "/about" ? "text-amber-400 font-bold" : "text-white/80 hover:text-white font-medium"
               )}
             >
@@ -227,7 +179,7 @@ export function Navbar() {
             <Link
               href="/contact"
               className={cn(
-                "font-mono text-[11px] tracking-[0.18em] uppercase transition-colors duration-200 py-1",
+                "font-mono text-[11px] tracking-[0.16em] uppercase transition-colors duration-200 py-1",
                 pathname === "/contact" ? "text-amber-400 font-bold" : "text-white/80 hover:text-white font-medium"
               )}
             >
@@ -235,15 +187,15 @@ export function Navbar() {
             </Link>
           </nav>
 
-          {/* Right Header Actions: Only the Gold Button (Phone removed to keep header clean) */}
+          {/* Right Header Actions: Book a Visit */}
           <div className="hidden lg:flex items-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#B8923A] hover:bg-[#C99E4B] text-slate-950 font-mono text-[11px] uppercase tracking-wider font-bold transition-all duration-300 shadow-md hover:shadow-amber-500/20 active:scale-95"
+            <button
+              onClick={() => openEnquiryModal({ category: "Studio Consultation" })}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#B8923A] hover:bg-[#C99E4B] text-slate-950 font-mono text-[11px] uppercase tracking-wider font-bold transition-all duration-300 shadow-md hover:shadow-amber-500/20 active:scale-95 cursor-pointer"
             >
-              <span>Book Studio Visit</span>
+              <span>Book a Visit</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Right Controls */}
@@ -276,7 +228,7 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Screen-Filling Mobile Menu Drawer - 100% Solid #0B0F19 Opaque Background */}
+      {/* Screen-Filling Mobile Menu Drawer */}
       {menuOpen && (
         <div
           className="fixed inset-0 z-[100] flex flex-col justify-between p-6 lg:hidden overflow-y-auto"
@@ -331,15 +283,17 @@ export function Navbar() {
 
             <div>
               <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-amber-400 font-semibold block mb-3">
-                Main Pages
+                Explore EBONY
               </span>
               <div className="flex flex-col gap-1.5">
                 {[
                   { label: "Home", href: "/" },
-                  { label: "Materials & Finishes", href: "/finishes" },
-                  { label: "Hardware Partners", href: "/hardware" },
-                  { label: "Completed Projects", href: "/projects" },
-                  { label: "Our Story & Heritage", href: "/about" },
+                  { label: "Kitchens (12 Styles)", href: "/kitchens" },
+                  { label: "Wardrobes & Closets", href: "/wardrobes" },
+                  { label: "Colours & Finishes", href: "/finishes" },
+                  { label: "Fittings & Hardware", href: "/hardware" },
+                  { label: "Our Work (Raipur & Nearby)", href: "/projects" },
+                  { label: "About Our Factory", href: "/about" },
                   { label: "Contact & Studio", href: "/contact" },
                 ].map((link) => {
                   const isActive = pathname === link.href
@@ -349,7 +303,7 @@ export function Navbar() {
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
                       className={cn(
-                        "font-serif text-lg sm:text-xl py-2.5 px-3.5 rounded-xl transition-colors flex items-center justify-between",
+                        "font-serif text-base sm:text-lg py-2.5 px-3.5 rounded-xl transition-colors flex items-center justify-between",
                         isActive
                           ? "text-amber-400 font-medium bg-amber-500/15 border border-amber-500/30"
                           : "text-slate-100 hover:text-white hover:bg-white/5 font-normal"
@@ -371,27 +325,19 @@ export function Navbar() {
               className="flex items-center gap-3 text-white font-mono text-xs py-3 px-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-400/40"
             >
               <Phone className="w-4 h-4 text-amber-400" />
-              <span>Direct Studio: {BRAND.phone}</span>
+              <span>Studio: {BRAND.phone}</span>
             </a>
 
-            <a
-              href={`https://wa.me/${BRAND.phoneRaw.replace(/[^0-9]/g, "")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 text-emerald-300 font-mono text-xs py-3 px-4 rounded-xl bg-emerald-950/60 border border-emerald-500/30"
+            <button
+              onClick={() => {
+                setMenuOpen(false)
+                openEnquiryModal({ category: "Studio Consultation" })
+              }}
+              className="mt-1 flex items-center justify-between px-6 py-4 rounded-full bg-[#B8923A] text-slate-950 font-mono text-xs uppercase tracking-wider font-bold shadow-lg cursor-pointer"
             >
-              <MessageSquare className="w-4 h-4 text-emerald-400" />
-              <span>WhatsApp Consultation</span>
-            </a>
-
-            <Link
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="mt-1 flex items-center justify-between px-6 py-4 rounded-full bg-[#B8923A] text-slate-950 font-mono text-xs uppercase tracking-wider font-bold shadow-lg"
-            >
-              <span>Book Studio Visit</span>
+              <span>Book a Visit</span>
               <ArrowUpRight className="w-4 h-4" />
-            </Link>
+            </button>
           </div>
         </div>
       )}

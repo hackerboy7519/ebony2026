@@ -4,24 +4,17 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight, MapPin } from "lucide-react"
-import { PROJECTS_GALLERY } from "@/lib/content"
+import { HOME_CONTENT } from "@/lib/home-content"
 import { cn } from "@/lib/utils"
 
-const CATEGORIES = [
-  { label: "All Projects", slug: "all" },
-  { label: "Modular Kitchens", slug: "kitchen" },
-  { label: "Wardrobes", slug: "wardrobe" },
-  { label: "Walk-in Closets", slug: "closet" },
-  { label: "Bar & Living", slug: "living" },
-]
-
 export function ProjectsShowcaseSection() {
+  const { kicker, title, subtitle, filters, items } = HOME_CONTENT.projects
   const [activeFilter, setActiveFilter] = useState("all")
 
   const filteredProjects =
     activeFilter === "all"
-      ? PROJECTS_GALLERY
-      : PROJECTS_GALLERY.filter((p) => p.categorySlug === activeFilter)
+      ? items
+      : items.filter((p) => p.category === activeFilter)
 
   return (
     <section id="projects-showcase" className="relative bg-[#FAFAFA] py-24 sm:py-32 border-b border-slate-200/80">
@@ -32,109 +25,89 @@ export function ProjectsShowcaseSection() {
             <div className="flex items-center gap-2 mb-3">
               <span className="w-8 h-[1px] bg-[#B8923A]" />
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold">
-                Completed Residences &amp; Spaces
+                {kicker}
               </span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-slate-950 font-normal leading-[1.1] tracking-tight">
-              Product &amp; Project Showcase.
+              {title}
             </h2>
           </div>
           <p className="font-sans text-sm sm:text-base text-slate-600 max-w-md font-light leading-relaxed">
-            Real residences executed across Raipur, Bilaspur, and Central India. High-res craftsmanship built to millimeter tolerances.
+            {subtitle}
           </p>
         </div>
 
         {/* Filter Pills */}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 no-scrollbar">
-          {CATEGORIES.map((cat) => {
-            const isSelected = cat.slug === activeFilter
+          {filters.map((filter) => {
+            const isSelected = filter.id === activeFilter
             return (
               <button
-                key={cat.slug}
-                onClick={() => setActiveFilter(cat.slug)}
+                key={filter.id}
+                onClick={() => setActiveFilter(filter.id)}
                 className={cn(
                   "px-5 py-2.5 rounded-full font-mono text-xs uppercase tracking-wider font-semibold whitespace-nowrap transition-all duration-300 cursor-pointer",
                   isSelected
-                    ? "bg-slate-950 text-white shadow-md"
+                    ? "bg-slate-950 text-white shadow-md scale-105"
                     : "bg-white text-slate-700 hover:text-slate-950 hover:bg-slate-100 border border-slate-200"
                 )}
               >
-                {cat.label}
+                {filter.label}
               </button>
             )
           })}
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* 6 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8 mb-14">
           {filteredProjects.map((project) => (
-            <div
+            <Link
               key={project.id}
+              href="/projects"
               className="group bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between"
             >
-              <div className="relative h-72 sm:h-80 w-full overflow-hidden">
+              <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-100">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div className="absolute top-4 left-4 bg-slate-950/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-[#B8923A] font-bold">
-                    {project.category}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                  <span className="font-mono text-xs text-white uppercase tracking-wider font-semibold">
+                    View Project
                   </span>
+                  <div className="w-8 h-8 rounded-full bg-white text-slate-950 flex items-center justify-center">
+                    <ArrowUpRight className="w-4 h-4" />
+                  </div>
                 </div>
               </div>
 
-              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+              <div className="p-6 flex items-center justify-between">
                 <div>
-                  <div className="flex items-center gap-1.5 text-slate-500 text-xs font-mono mb-2">
+                  <h3 className="font-serif text-xl text-slate-950 font-normal group-hover:text-[#B8923A] transition-colors">
+                    {project.title}
+                  </h3>
+                  <div className="flex items-center gap-1.5 text-xs text-slate-500 mt-1">
                     <MapPin className="w-3.5 h-3.5 text-[#B8923A]" />
                     <span>{project.location}</span>
                   </div>
-
-                  <h3 className="font-serif text-xl sm:text-2xl text-slate-950 font-normal mb-3">
-                    {project.title}
-                  </h3>
-
-                  <p className="font-sans text-xs sm:text-sm text-slate-600 font-light leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100 mb-4">
-                    {project.specs.map((spec, i) => (
-                      <span
-                        key={i}
-                        className="px-2 py-0.5 rounded bg-slate-100 text-[10px] font-mono text-slate-700 font-medium"
-                      >
-                        {spec}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <Link
-                    href="/projects"
-                    className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider font-bold text-slate-950 hover:text-[#B8923A] transition-colors"
-                  >
-                    <span>View Case Study</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </Link>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
-        {/* View Full Portfolio CTA */}
-        <div className="mt-14 text-center">
+        {/* Bottom CTA */}
+        <div className="text-center">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-slate-950 hover:bg-[#B8923A] text-white font-mono text-xs uppercase tracking-wider font-bold transition-all duration-300 shadow-md"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-950 hover:bg-[#B8923A] text-white font-mono text-xs uppercase tracking-wider font-bold transition-all duration-300 shadow-lg"
           >
-            <span>Explore All Completed Projects</span>
+            <span>See All Projects</span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>

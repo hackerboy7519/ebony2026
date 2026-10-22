@@ -3,12 +3,10 @@ import { HeroSection } from "@/components/hero-section"
 import { WhatWeMakeSection } from "@/components/what-we-make-section"
 import { KitchenConfigurationsSection } from "@/components/kitchen-configurations-section"
 import { KitchenStylesSection } from "@/components/kitchen-styles-section"
+import { ProcessTimelineSection } from "@/components/process-timeline-section"
 import { SurfaceFinishesSection } from "@/components/surface-finishes-section"
 import { WardrobesSection } from "@/components/wardrobes-section"
-import { WalkInClosetsSection } from "@/components/walk-in-closets-section"
-import { CoreMaterialsSection } from "@/components/core-materials-section"
 import { InternalFittingsSection } from "@/components/internal-fittings-section"
-import { HardwareBrandsSection } from "@/components/hardware-brands-section"
 import { ProjectsShowcaseSection } from "@/components/projects-showcase-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { WhyEbonySection } from "@/components/why-ebony-section"
@@ -16,11 +14,13 @@ import { StudioCtaSection } from "@/components/studio-cta-section"
 import { Footer } from "@/components/footer"
 import { ScrollProgress } from "@/components/scroll-progress"
 import { FadeReveal } from "@/components/ui/fade-reveal"
+import { EnquiryModal } from "@/components/enquiry-modal"
+import { MobileStickyBar } from "@/components/mobile-sticky-bar"
 
 export const metadata = {
-  title: "EBONY Modular Interiors — German Engineered Kitchens, Wardrobes & Bespoke Joinery",
+  title: "EBONY Modular Kitchens & Wardrobes in Raipur",
   description:
-    "Luxury modular interiors crafted with German CNC precision and installed in 3 days. Explore bespoke kitchens, sliding wardrobes, walk-in closets, and 500+ finishes.",
+    "Beautiful modular kitchens, wardrobes and walk-in closets in Raipur. Made in our own factory and fitted in 3 days. Visit our studio today.",
 }
 
 export default function Page() {
@@ -30,76 +30,72 @@ export default function Page() {
       <Navbar />
 
       <main>
-        {/* Section 1: Full-Screen Cinematic Video Hero */}
+        {/* Section 1: Hero with Video & 4-Stat Animated Trust Strip */}
         <HeroSection />
 
-        {/* Section 2: What We Make (4 Collections Editorial Bento Grid) */}
+        {/* Section 2: Explore Modular Designs (4 Collections Bento Grid) */}
         <FadeReveal>
           <WhatWeMakeSection />
         </FadeReveal>
 
-        {/* Section 3: Modular Kitchen Configurations (5 Layouts) */}
+        {/* Section 3: OUR COLLECTIONS — "Your dream kitchen awaits!" (5 Layouts) */}
         <FadeReveal>
           <KitchenConfigurationsSection />
         </FadeReveal>
 
-        {/* Section 4: Kitchen Design Styles (4 Aesthetics) */}
+        {/* Section 4: Pick Your Style (12 Original Kitchen Designs with Filter Chips) */}
         <FadeReveal>
           <KitchenStylesSection />
         </FadeReveal>
 
-        {/* Section 5: Surface Finishes and Materials (8 Finishes Matrix) */}
+        {/* Section 5: From Idea to Home in 4 Steps (Connected Process Track) */}
+        <FadeReveal>
+          <ProcessTimelineSection />
+        </FadeReveal>
+
+        {/* Section 6: Colours & Finishes You'll Love (8 Friendly Swatches) */}
         <FadeReveal>
           <SurfaceFinishesSection />
         </FadeReveal>
 
-        {/* Section 6: Wardrobes (Sliding vs Openable Hinged Systems) */}
+        {/* Section 7: Space For Everything You Own (Merged Wardrobes & Walk-in Closets) */}
         <FadeReveal>
           <WardrobesSection />
         </FadeReveal>
 
-        {/* Section 7: Walk-in Closets (Luxury Dressing Suites) */}
-        <FadeReveal>
-          <WalkInClosetsSection />
-        </FadeReveal>
-
-        {/* Section 8: Core Materials (Marine Plywood, HDHMR, SS304) */}
-        <FadeReveal>
-          <CoreMaterialsSection />
-        </FadeReveal>
-
-        {/* Section 9: Internal Fittings & Motion (Mirror, Aventos, Runners) */}
+        {/* Section 8: Little Things, Big Comfort (4 Soft-Close Cards + Blum, Häfele, Hettich, Salice, Ebco) */}
         <FadeReveal>
           <InternalFittingsSection />
         </FadeReveal>
 
-        {/* Section 10: Hardware Brands (Blum, Häfele, Hettich, Salice, Ebco) */}
-        <FadeReveal>
-          <HardwareBrandsSection />
-        </FadeReveal>
-
-        {/* Section 11: Product Showcase / Completed Residences Gallery */}
+        {/* Section 9: Homes We've Made Beautiful (6 Real Work Cards from Raipur & Nearby) */}
         <FadeReveal>
           <ProjectsShowcaseSection />
         </FadeReveal>
 
-        {/* Section 12: User Testimonials (Compact Moving Cards) */}
+        {/* Section 10: Stories From Happy Homes (Compact Moving Testimonials Marquee) */}
         <FadeReveal>
           <TestimonialsSection />
         </FadeReveal>
 
-        {/* Section 13: Why Choose Us — Why EBONY (4 Proof Points) */}
+        {/* Section 11: The EBONY Promise (Factory, Customisation, 3 Days, 10 Years Warranty) */}
         <FadeReveal>
           <WhyEbonySection />
         </FadeReveal>
 
-        {/* Section 14: Final Studio Consultation CTA */}
+        {/* Section 12: Let's Plan Your Kitchen Together (Studio CTA) */}
         <FadeReveal>
           <StudioCtaSection />
         </FadeReveal>
       </main>
 
-      {/* Section 15: Master Footer */}
+      {/* Global Interactive Enquiry Modal */}
+      <EnquiryModal />
+
+      {/* Mobile Sticky Action Bar & Desktop Floating Pill */}
+      <MobileStickyBar />
+
+      {/* Master Footer */}
       <Footer />
     </div>
   )

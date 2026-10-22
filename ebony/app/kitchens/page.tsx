@@ -4,6 +4,8 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { KitchenConfigurationsSection } from "@/components/kitchen-configurations-section"
 import { KitchenStylesSection } from "@/components/kitchen-styles-section"
+import { EnquiryModal } from "@/components/enquiry-modal"
+import { MobileStickyBar } from "@/components/mobile-sticky-bar"
 import { ArrowUpRight, CheckCircle2, ShieldCheck, Sparkles, ChefHat } from "lucide-react"
 
 export const metadata = {
@@ -192,6 +194,9 @@ export default function KitchensPage() {
           </div>
         </section>
       </main>
+
+      <EnquiryModal />
+      <MobileStickyBar />
 
       <Footer />
     </div>
