@@ -11,8 +11,8 @@ export const BRAND = {
   experience: "15+",
   location: "Raipur Flagship Studio, Chhattisgarh",
   address: "EBONY Modular Interiors, VIP Road / Shankar Nagar Corridor, Raipur, Chhattisgarh 492001",
-  phone: "+91 76669 02365",
-  phoneRaw: "+917666902365",
+  phone: "+91 79742 09352",
+  phoneRaw: "+917974209352",
   email: "info@ebony.co.in",
   hours: "Monday – Saturday: 10:30 AM – 8:00 PM",
   googleMapsUrl: "https://maps.google.com/?q=Raipur+Chhattisgarh+Ebony+Modular+Interiors",
@@ -26,7 +26,7 @@ export const NAV_LINKS = [
     href: "/collections",
     children: [
       { label: "Modular Kitchens", href: "/kitchens", desc: "L, U, Island, Parallel & Straight layouts" },
-      { label: "Bespoke Wardrobes", href: "/wardrobes", desc: "Sliding & hinged systems with internal organizers" },
+      { label: "Bespoke Wardrobes", href: "/wardrobes", desc: "Sliding & hinged systems, custom built for your home" },
       { label: "Walk-in Closets", href: "/walk-in-closets", desc: "Floor-to-ceiling glass & aluminium suites" },
       { label: "Bar Units & Lounges", href: "/projects#bar-unit", desc: "Luxury entertainment & backlit display units" },
     ],
@@ -88,7 +88,7 @@ export const WHAT_WE_MAKE = [
     image: "/img/wardrobe-bespoke-real.jpg",
     alt: "EBONY floor-to-ceiling bespoke wardrobe with warm integrated LED lighting",
     href: "/wardrobes",
-    stats: "Sliding & Openable Hinged Systems",
+    stats: "Custom Built to Your Home Layout",
   },
   {
     id: "walk-in-closet",
@@ -100,7 +100,7 @@ export const WHAT_WE_MAKE = [
     image: "/img/walk-in-closet-luxury.jpg",
     alt: "Luxury walk-in closet suite with bronze glass doors and backlit shelves",
     href: "/walk-in-closets",
-    stats: "Aluminium Frame · Floor-to-Ceiling",
+    stats: "Custom Built · Floor-to-Ceiling",
   },
   {
     id: "bar-unit",
@@ -132,7 +132,7 @@ export const KITCHEN_CONFIGURATIONS = [
     storageCapacity: "Maximum — deep tandem pull-outs on all 4 faces of the island.",
     image: "/img/kitchen-island-real.jpg",
     alt: "Luxury island kitchen with waterfall stone counter and designer barstools",
-    specs: ["Minimum room width: 14 ft", "Clearance around island: 42 to 48 inches", "Integrated breakfast overhang"],
+    specs: ["Open-plan friendly", "Full surround access", "Integrated breakfast overhang"],
   },
   {
     id: "l-shape",
@@ -142,10 +142,10 @@ export const KITCHEN_CONFIGURATIONS = [
       "Two perpendicular walls creating an open, flexible cooking space. Flawlessly preserves corner utility with carousel hardware.",
     bestFor: "Small to medium floorplans, apartments, and open-corner architectural rooms.",
     workTriangle: "Natural unbroken triangle between refrigerator, sink, and cooking zone.",
-    storageCapacity: "High — incorporates LeMans or Magic Corner blind corner units.",
+    storageCapacity: "High — incorporates Magic Corner pull-out swivel trays.",
     image: "/img/kitchen-contemporary-real.jpg",
     alt: "Contemporary L-shaped modular kitchen with concealed handle profiles",
-    specs: ["Zero dead corners with LeMans trays", "Direct daylight integration", "Seamless dining connection"],
+    specs: ["Zero dead corners with magic swivel trays", "Direct daylight integration", "Seamless dining connection"],
   },
   {
     id: "u-shape",
@@ -158,7 +158,7 @@ export const KITCHEN_CONFIGURATIONS = [
     storageCapacity: "Unrivaled — 3 full runs of lower and upper cabinetry with tall larder.",
     image: "/img/kitchen-layout-real.jpg",
     alt: "U-shaped modular kitchen layout with floor-to-ceiling storage towers",
-    specs: ["Dual corner optimization", "30+ linear feet of counter space", "Dedicated appliance garage"],
+    specs: ["Dual corner optimization", "Generous counter space", "Dedicated appliance garage"],
   },
   {
     id: "parallel",
@@ -171,7 +171,7 @@ export const KITCHEN_CONFIGURATIONS = [
     storageCapacity: "Exceptional linear capacity without complex corner mechanisms.",
     image: "/img/kitchen-detail-real.jpg",
     alt: "Parallel kitchen layout with soft-close deep cutlery and pot drawers",
-    specs: ["Corridor clearance: 48 inches min", "Clean wet & dry zoning", "High-volume prep zones"],
+    specs: ["Comfortable corridor layout", "Clean wet & dry zoning", "High-volume prep zones"],
   },
   {
     id: "straight",
@@ -330,12 +330,12 @@ export const WARDROBE_SYSTEMS = [
     id: "sliding",
     name: "Sliding Door Systems",
     tag: "Space-Saving Grandeur",
-    headline: "Effortless Glide Up to 3-Meter Heights",
+    headline: "Effortless Glide, Custom Heights",
     description:
       "Engineered with Italian top-hung or bottom-guided motion gear. Damped soft-close dampers gently catch and cushion each door on both open and close cycles.",
     benefits: [
       "Zero door swing encroachment — ideal for master suites with tighter bed clearance",
-      "Expansive door leaves up to 1.5m wide and 3.0m high for grand panoramic visuals",
+      "Custom-sized door leaves for grand panoramic visuals",
       "Integrated dust-barrier brush seals along all vertical overlap channels",
       "Available with smoked bronze glass, fluted acoustic timber, or lacquer finishes",
     ],
@@ -439,7 +439,7 @@ export const INTERNAL_FITTINGS = [
   },
   {
     name: "Blind Corner Carousels",
-    description: "LeMans ergonomic trays that swing fully outside the carcass for effortless 100% corner access.",
+    description: "Ergonomic corner swivel trays that glide fully outside the cabinet for effortless access.",
     brand: "Häfele & Ebco",
   },
   {
@@ -498,15 +498,15 @@ export const WHY_EBONY = [
     title: "Bespoke Customization Flexibility",
     subtitle: "500+ Finishes & Unlimited Dimensions",
     description:
-      "Unlike rigid modular brands with fixed box sizes, EBONY adapts every millimeter to your architectural floor plan. Choose from 500+ finishes, bespoke heights up to 3 meters, and custom internal organization.",
+      "Unlike rigid modular brands with fixed box sizes, EBONY adapts every millimeter to your architectural floor plan. Choose from 500+ finishes, custom ceiling-height joinery, and tailored internal organization.",
     image: "/img/core-materials-luxury.jpg",
   },
   {
     number: "03",
-    title: "Timeline Responsibility — 3-Day Installation",
+    title: "Clean Assembly & Precision Handover",
     subtitle: "Pre-Assembled & Zero-Dust Handover",
     description:
-      "Cabinets arrive pre-assembled and 100% pre-fitted from the factory. Our certified installation crew completes on-site assembly within 3 days average with precision laser leveling and zero carpentry dust.",
+      "Cabinets arrive pre-assembled and 100% pre-fitted from the factory. Our certified installation crew completes on-site assembly cleanly with precision laser leveling and zero carpentry dust.",
     image: "/img/process-engineering.jpg",
   },
   {
@@ -526,7 +526,7 @@ export const HOMEOWNER_TESTIMONIALS = [
     location: "VIP Road, Raipur",
     project: "Island Kitchen & Master Wardrobe",
     quote:
-      "Excellent design sense and flawless execution. Our island kitchen looks stunning and the 3-day installation was clean and completely hassle-free.",
+      "Excellent design sense and flawless execution. Our island kitchen looks stunning and the on-site installation was clean and completely hassle-free.",
     rating: 5,
     avatar: "AS",
   },
@@ -599,8 +599,8 @@ export const PROJECTS_GALLERY = [
     title: "Contemporary L-Shape Culinary Suite",
     location: "Bilaspur Villa",
     image: "/img/kitchen-contemporary-real.jpg",
-    description: "Handleless J-pull cabinetry with seamless acrylic finish and integrated corner LeMans trays.",
-    specs: ["L-Shape", "Super-Matte Acrylic", "LeMans Corner"],
+    description: "Handleless J-pull cabinetry with seamless acrylic finish and integrated magic corner swivel trays.",
+    specs: ["L-Shape", "Super-Matte Acrylic", "Magic Corner Trays"],
   },
   {
     id: "raipur-luxury-living-console",
@@ -642,12 +642,12 @@ export const PROCESS_STEPS = [
   },
   {
     number: "03",
-    title: "3-Day Installation & 48-Point Handover",
+    title: "Clean Installation & 48-Point Handover",
     subtitle: "Laser Leveling & White Glove Service",
     description:
-      "Factory-certified installers assemble the modular components in 3 days average. We calibrate all motion dampers, connect plumbing/electrical lines, and perform a rigorous 48-point audit before sign-off.",
+      "Factory-certified installers assemble the pre-engineered components with utmost care. We calibrate all motion dampers, connect plumbing/electrical lines, and perform a rigorous 48-point audit before sign-off.",
     tag: "10-Year Warranty",
-    stat: "3 Days Average",
+    stat: "Zero-Dust Assembly",
   },
 ] as const
 
@@ -671,7 +671,7 @@ export const EXPERIENCE_STEPS = [
   },
   {
     number: "03",
-    title: "3-DAY INSTALLATION",
+    title: "CLEAN INSTALLATION",
     description: "Precision laser leveling, zero dust, and sign-off on 48-point audit.",
   },
 ] as const

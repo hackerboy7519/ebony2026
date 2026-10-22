@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Playfair_Display, Hanken_Grotesk, JetBrains_Mono } from "next/font/google"
+import { Playfair_Display, Poppins } from "next/font/google"
 import "./globals.css"
 
 const playfair = Playfair_Display({
@@ -10,24 +10,17 @@ const playfair = Playfair_Display({
   style: ["normal", "italic"],
 })
 
-const hanken = Hanken_Grotesk({
+const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["300", "400", "500", "600"],
-})
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-  weight: ["400", "500"],
+  weight: ["300", "400", "500", "600", "700"],
 })
 
 export const metadata: Metadata = {
   title: "EBONY — Luxury Modular Interiors | German-Engineered Kitchen, Wardrobe & Bedroom",
   description:
-    "EBONY crafts extraordinary modular interiors — kitchens, wardrobes, and bed sets — with German precision, 500+ finishes, 0% defect policy, and 3-day installation. Est. 2009, Raipur.",
+    "EBONY crafts extraordinary modular interiors — kitchens, wardrobes, and bed sets — with German precision, 500+ finishes, 0% defect policy, and custom area design. Est. 2009, Raipur.",
   keywords: [
     "luxury modular interiors",
     "modular kitchen",
@@ -41,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "EBONY — Luxury Modular Interiors",
     description:
-      "German-engineered modular kitchens, wardrobes, and bed sets. 500+ finishes, 0% defect policy, installed in 3 days.",
+      "German-engineered modular kitchens, wardrobes, and bed sets. 500+ finishes, 0% defect policy, custom tailored to your home.",
     type: "website",
     locale: "en_IN",
     url: "https://ebony.co.in",
@@ -51,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "EBONY — Luxury Modular Interiors",
     description:
-      "German-engineered modular kitchens, wardrobes, and bed sets. 500+ finishes, 0% defect policy, installed in 3 days.",
+      "German-engineered modular kitchens, wardrobes, and bed sets. 500+ finishes, 0% defect policy, custom tailored to your home.",
   },
   robots: {
     index: true,
@@ -65,11 +58,11 @@ const jsonLd = {
   name: "EBONY Luxury Modular Interiors",
   alternateName: "EBONY Modular Kulture",
   description:
-    "German-engineered luxury modular kitchens, wardrobes, and bed sets finished in 500+ finishes with 3-day installation and zero-defect policy.",
+    "German-engineered luxury modular kitchens, wardrobes, and bed sets finished in 500+ finishes with custom craftsmanship and zero-defect policy.",
   url: "https://ebony.co.in",
   logo: "https://ebony.co.in/logo.png",
   image: "https://ebony.co.in/img/hero-kitchen.jpg",
-  telephone: "+91-7666902365",
+  telephone: "+91-7974209352",
   email: "info@ebony.co.in",
   priceRange: "₹₹₹₹",
   address: {
@@ -101,7 +94,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${hanken.variable} ${jetbrains.variable} antialiased`}
+      className={`${playfair.variable} ${poppins.variable} antialiased`}
     >
       <head>
         <link rel="icon" href="/favicon.ico" />

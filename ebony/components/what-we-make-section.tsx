@@ -89,7 +89,7 @@ export function WhatWeMakeSection() {
               </p>
 
               <div className="pt-4 border-t border-white/20 flex items-center justify-between">
-                <span className="text-xs text-white/60 font-light">Up to 3m height</span>
+                <span className="text-xs text-white/60 font-light">Custom made for you</span>
                 <Link
                   href={cards[1].href}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#B8923A] hover:bg-[#C99E4B] text-slate-950 font-mono text-xs uppercase tracking-wider font-bold transition-all duration-300"

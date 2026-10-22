@@ -164,7 +164,7 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href={`https://wa.me/917666902365?text=Hello%20EBONY%20Team%2C%20I%20would%20like%20to%20inquire%20about%20a%20project...`}
+                  href={`https://wa.me/917974209352?text=Hello%20EBONY%20Team%2C%20I%20would%20like%20to%20inquire%20about%20a%20project...`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-4 rounded-2xl bg-emerald-50/40 border border-emerald-200/60 hover:border-emerald-500 hover:bg-white transition-all duration-300 flex items-center gap-4 group"

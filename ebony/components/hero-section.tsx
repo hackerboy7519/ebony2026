@@ -54,15 +54,39 @@ function StatCounter({ end, suffix, label }: { end: number; suffix: string; labe
 
 export function HeroSection() {
   const { eyebrow, title, subtitle, primaryCta, secondaryCta } = HOME_CONTENT.hero
-  const [isMuted, setIsMuted] = useState(true)
+  const [isMuted, setIsMuted] = useState(false)
   const [isPlaying, setIsPlaying] = useState(true)
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
-    video.muted = true
-    video.play().catch(() => {})
+
+    video.muted = false
+    const playPromise = video.play()
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setIsMuted(false)
+        })
+        .catch(() => {
+          // Browser prevented unmuted autoplay; start muted then unmute on first user gesture
+          video.muted = true
+          setIsMuted(true)
+          video.play().catch(() => {})
+
+          const unmuteOnInteraction = () => {
+            if (videoRef.current) {
+              videoRef.current.muted = false
+              setIsMuted(false)
+            }
+          }
+
+          window.addEventListener("click", unmuteOnInteraction, { once: true })
+          window.addEventListener("touchstart", unmuteOnInteraction, { once: true })
+          window.addEventListener("keydown", unmuteOnInteraction, { once: true })
+        })
+    }
   }, [])
 
   const togglePlay = () => {
@@ -196,7 +220,7 @@ export function HeroSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
             <StatCounter end={15} suffix="+" label="Years of happy kitchens" />
             <StatCounter end={500} suffix="+" label="Colours & finishes" />
-            <StatCounter end={3} suffix=" Days" label="Clean home installation" />
+            <StatCounter end={100} suffix="%" label="Custom tailored designs" />
             <StatCounter end={10} suffix=" Years" label="Warranty on woodwork" />
           </div>
         </div>

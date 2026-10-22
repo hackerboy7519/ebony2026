@@ -21,7 +21,7 @@ export function MobileStickyBar() {
   if (pathname === "/contact" || !visible) return null
 
   const phoneRaw = BRAND.phone.replace(/\s+/g, "")
-  const whatsappUrl = `https://wa.me/917666902365?text=Hello%20Ebony,%20I%20am%20interested%20in%20modular%20interiors`
+  const whatsappUrl = `https://wa.me/917974209352?text=Hello%20Ebony,%20I%20am%20interested%20in%20modular%20interiors`
 
   return (
     <>

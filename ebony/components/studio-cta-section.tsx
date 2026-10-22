@@ -44,13 +44,13 @@ export function StudioCtaSection() {
         setError(data.error || "Unable to send request. Please try again.")
       }
     } catch {
-      setError("Network error. Please call +91 76669 02365.")
+      setError("Network error. Please call +91 79742 09352.")
     } finally {
       setLoading(false)
     }
   }
 
-  const whatsappUrl = `https://wa.me/917666902365?text=Hello%20Ebony,%20I%20would%20like%20to%20plan%20my%20kitchen.`
+  const whatsappUrl = `https://wa.me/917974209352?text=Hello%20Ebony,%20I%20would%20like%20to%20plan%20my%20kitchen.`
 
   return (
     <section id="consultation" className="relative py-24 sm:py-32 bg-[#0A0D14] text-white overflow-hidden border-t border-white/10">

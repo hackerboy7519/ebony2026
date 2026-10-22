@@ -37,7 +37,7 @@ export default function WardrobesPage() {
               </span>
               <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal leading-[1.1] tracking-tight mb-6">
                 Bespoke Wardrobes, <br />
-                <span className="italic">Tailored to Your Ritual.</span>
+                <span className="italic">Built Around the Way You Live.</span>
               </h1>
               <p className="font-sans text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
                 Transform morning routines into an experience of quiet luxury and absolute order. Floor-to-ceiling sliding and hinged wardrobe systems engineered with Italian damping and sensor illumination.
@@ -71,10 +71,10 @@ export default function WardrobesPage() {
                 </div>
                 <div>
                   <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
-                    Up to 3-Meter Heights
+                    Floor-to-Ceiling Custom Fit
                   </h3>
                   <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
-                    Zero dead space above the wardrobe. Continuous floor-to-ceiling profiles eliminate dust ledges and create grand architectural volume.
+                    Custom built to your room height with zero wasted space above. Seamless profiles eliminate dust ledges and create a grand, built-in look.
                   </p>
                 </div>
               </div>
@@ -131,21 +131,21 @@ export default function WardrobesPage() {
 
               <div className="lg:col-span-6">
                 <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
-                  INTELLIGENT INTERNAL HARDWARE
+                  EASY EVERYDAY COMFORTS
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-slate-950 font-normal mb-6">
-                  Concealed Pull-Out Mirrors &amp; Drop-Down Wardrobe Lifts.
+                  Hidden Slide-Out Mirrors &amp; Easy Pull-Down Hangers.
                 </h2>
                 <p className="font-sans text-sm sm:text-base text-slate-600 font-light leading-relaxed mb-6">
-                  Experience seamless functionality where every accessory has an engineered place. Our rotating 360-degree vanity mirror glides smoothly out of an ultra-slim 150mm vertical slot, while hydraulic wardrobe lifts bring upper hanging garments down to comfortable reaching height.
+                  Getting dressed in the morning should feel relaxed and effortless. Pull out a full-length dressing mirror whenever you need it, and glide high-up clothes hangers right down to your hand without needing a step stool.
                 </p>
 
                 <ul className="space-y-3 mb-8">
                   {[
-                    "Full-height rotating 360° mirror with integrated cosmetics shelf",
-                    "Hydraulic drop-down pull-down hanging rails with 15kg load rating",
-                    "Soft-close glass-front pull-out shoe organizers with LED backlighting",
-                    "Concealed digital biometric safe drawers with velvet lining",
+                    "Hidden Slide-Out Dressing Mirror — smoothly pulls out and turns to any angle, then slides away invisibly",
+                    "Pull-Down Clothes Hanger Lift — brings upper hanging shirts, sarees & suits down to easy reaching height",
+                    "Soft-Close Glass Shoe Shelves — keeps your footwear neatly organized and instantly visible",
+                    "Velvet Jewelry & Watch Drawers — soft compartments that keep your valuables organized and scratch-free",
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-xs sm:text-sm text-slate-700">
                       <CheckCircle2 className="w-4 h-4 text-[#B8923A] shrink-0" />

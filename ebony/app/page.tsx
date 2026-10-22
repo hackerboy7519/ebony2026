@@ -4,7 +4,6 @@ import { WhatWeMakeSection } from "@/components/what-we-make-section"
 import { KitchenConfigurationsSection } from "@/components/kitchen-configurations-section"
 import { CustomKitchensSection } from "@/components/custom-kitchens-section"
 import { KitchenStylesSection } from "@/components/kitchen-styles-section"
-import { ProcessTimelineSection } from "@/components/process-timeline-section"
 import { SurfaceFinishesSection } from "@/components/surface-finishes-section"
 import { WardrobesSection } from "@/components/wardrobes-section"
 import { InternalFittingsSection } from "@/components/internal-fittings-section"
@@ -21,7 +20,7 @@ import { MobileStickyBar } from "@/components/mobile-sticky-bar"
 export const metadata = {
   title: "Ebony — Modular Kitchens & Home Interiors in Raipur",
   description:
-    "Beautiful modular kitchens, wardrobes and home interiors in Raipur. Made in our own factory and fitted in just 3 days. Your dream kitchen awaits!",
+    "Beautiful modular kitchens, wardrobes and home interiors in Raipur. Made in our own factory and tailored precisely to your space. Your dream kitchen awaits!",
 }
 
 export default function Page() {
@@ -54,10 +53,6 @@ export default function Page() {
           <KitchenStylesSection />
         </FadeReveal>
 
-        {/* Section 6: Your Dream Kitchen in 3 Steps (Simple Connected Journey) */}
-        <FadeReveal>
-          <ProcessTimelineSection />
-        </FadeReveal>
 
         {/* Section 7: Colours & Finishes You'll Love (8 Friendly Swatches) */}
         <FadeReveal>

@@ -57,7 +57,7 @@ const COLLECTIONS_LOOKBOOK = [
     id: "chef-parallel",
     category: "Modular Kitchen · Contemporary Layout",
     title: "The Contemporary J-Pull Culinary Suite",
-    subtitle: "Handleless cabinetry with seamless acrylic finish, Blum Aventos lift systems, and LeMans corner trays.",
+    subtitle: "Handleless cabinetry with seamless acrylic finish, Blum Aventos lift systems, and magic corner swivel trays.",
     image: "/img/kitchen-contemporary-real.jpg",
     href: "/kitchens",
   },
@@ -81,7 +81,7 @@ export default function CollectionsPage() {
               </h1>
             </div>
             <p className="text-slate-600 max-w-sm text-xs sm:text-sm leading-relaxed font-light">
-              Over 450 active modular configurations. Every space engineered with 0.1mm German precision and installed in 3 days.
+              Over 450 active modular configurations. Every space engineered with 0.1mm German precision and tailored to your home.
             </p>
           </div>
 

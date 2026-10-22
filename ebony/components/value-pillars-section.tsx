@@ -10,8 +10,8 @@ const PILLARS = [
   },
   {
     icon: Clock,
-    title: "3-DAY INSTALLATION",
-    desc: "From design to reality, faster than ever.",
+    title: "CLEAN INSTALLATION",
+    desc: "Pre-assembled in factory with zero on-site dust.",
   },
   {
     icon: Heart,

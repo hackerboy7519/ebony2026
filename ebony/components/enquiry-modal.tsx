@@ -108,7 +108,7 @@ export function EnquiryModal() {
         setError(data.error || "Unable to send your request. Please try again.")
       }
     } catch {
-      setError("Network error. Please try again or call us at +91 76669 02365.")
+      setError("Network error. Please try again or call us at +91 79742 09352.")
     } finally {
       setLoading(false)
     }
@@ -257,11 +257,11 @@ export function EnquiryModal() {
 
               <div>
                 <label className="block text-xs font-mono uppercase tracking-wider text-white/70 mb-1.5">
-                  Message or Room Size (Optional)
+                  Tell Us About Your Space (Optional)
                 </label>
                 <textarea
                   rows={2}
-                  placeholder="e.g. 12x10 ft L-shape kitchen for a new apartment"
+                  placeholder="e.g. New apartment kitchen, planning a wardrobe renovation..."
                   value={form.notes}
                   onChange={(e) => setForm({ ...form, notes: e.target.value })}
                   className="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/15 text-white placeholder:text-white/35 focus:outline-none focus:border-amber-400 text-sm resize-none transition-colors"
@@ -287,8 +287,8 @@ export function EnquiryModal() {
 
               <p className="text-[11px] text-white/45 text-center pt-1 font-light">
                 Direct studio phone:{" "}
-                <a href="tel:+917666902365" className="text-amber-400 hover:underline font-mono">
-                  +91 76669 02365
+                <a href="tel:+917974209352" className="text-amber-400 hover:underline font-mono">
+                  +91 79742 09352
                 </a>
               </p>
             </form>

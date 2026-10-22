@@ -25,7 +25,7 @@ const CITIES_DATA: CityNode[] = [
     y: 50,
     dealers: "Headquarters & Experience Center",
     address: "EBONY Studio, Raipur, Chhattisgarh 492001",
-    phone: "+91 76669 02365",
+    phone: "+91 79742 09352",
     isHeadquarters: true,
   },
   {
@@ -36,7 +36,7 @@ const CITIES_DATA: CityNode[] = [
     y: 28,
     dealers: "45+ Dealers & Distributors",
     address: "Partner Showrooms across Delhi, Noida & Gurgaon",
-    phone: "+91 76669 02365",
+    phone: "+91 79742 09352",
   },
   {
     id: "mumbai",
@@ -46,7 +46,7 @@ const CITIES_DATA: CityNode[] = [
     y: 62,
     dealers: "60+ Partner Showrooms",
     address: "Architectural Network across Mumbai & Thane",
-    phone: "+91 76669 02365",
+    phone: "+91 79742 09352",
   },
   {
     id: "pune",
@@ -56,7 +56,7 @@ const CITIES_DATA: CityNode[] = [
     y: 66,
     dealers: "35+ Active Dealer Points",
     address: "Modular Studio Network, Pune",
-    phone: "+91 76669 02365",
+    phone: "+91 79742 09352",
   },
   {
     id: "ahmedabad",
@@ -66,7 +66,7 @@ const CITIES_DATA: CityNode[] = [
     y: 48,
     dealers: "40+ Dealers & Stockists",
     address: "Authorized EBONY Distributor Points, Gujarat",
-    phone: "+91 76669 02365",
+    phone: "+91 79742 09352",
   },
   {
     id: "bangalore",
@@ -76,7 +76,7 @@ const CITIES_DATA: CityNode[] = [
     y: 80,
     dealers: "55+ Certified Dealers",
     address: "Architect Partner Studios across Bangalore Urban",
-    phone: "+91 76669 02365",
+    phone: "+91 79742 09352",
   },
 ]
 
@@ -272,7 +272,7 @@ export function NetworkSection() {
 
               <div className="pt-4 border-t border-hair space-y-3">
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="btn-primary w-full justify-center text-xs py-3.5"
                 >
                   <span>Book Consultation in {selectedCity.name}</span>
@@ -299,7 +299,7 @@ export function NetworkSection() {
                   Partner with India&apos;s leading German-engineered modular luxury brand. Comprehensive showroom design, ERP, and zero-defect manufacturing support.
                 </p>
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="font-mono text-[10px] uppercase tracking-wider text-gold-deep font-semibold inline-flex items-center gap-1 hover:underline"
                 >
                   Apply for Franchise Opportunity →

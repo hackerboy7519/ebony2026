@@ -134,21 +134,21 @@ export default function KitchensPage() {
 
               <div className="lg:col-span-6">
                 <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
-                  BESPOKE STORAGE ARCHITECTURE
+                  SMART INTERNAL STORAGE
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-slate-950 font-normal mb-6">
-                  Pantry Towers, LeMans Corners &amp; Appliance Garages.
+                  Tall Grocery Pantries, Magic Corner Trays &amp; Hidden Appliance Stations.
                 </h2>
                 <p className="font-sans text-sm sm:text-base text-slate-600 font-light leading-relaxed mb-6">
-                  A high-end kitchen is as much about internal order as it is about external beauty. We integrate concealed walk-in pantries, tandem larder pull-outs with 120kg weight capacities, and motorized pocket doors that tuck away coffee stations cleanly.
+                  A truly luxurious kitchen looks neat and clutter-free every single day. Store your daily groceries in full-height pull-outs, reach corner utensils effortlessly with smooth swivel trays, and tuck your mixer and toaster away into a hidden countertop station.
                 </p>
 
                 <ul className="space-y-3 mb-8">
                   {[
-                    "Zero dead corners with Häfele LeMans II swivel trays",
-                    "Integrated bi-fold appliance garage with concealed power hubs",
-                    "Deep 500mm cutlery and cookware organizers with walnut partitions",
-                    "Concealed waste management drawers with multi-bin segregation",
+                    "Magic Corner Swivel Trays — smooth pull-outs that bring deep corner pots right to your fingertips",
+                    "Hidden Appliance Station — keeps your mixer, toaster & coffee maker plugged in and neatly concealed",
+                    "Full-Height Grocery Pantry — multi-tier pull-out baskets with generous room for all family groceries",
+                    "Deep Soft-Close Drawers — heavy-duty smooth compartments for thalis, kadhais & daily cutlery",
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-xs sm:text-sm text-slate-700">
                       <CheckCircle2 className="w-4 h-4 text-[#B8923A] shrink-0" />
