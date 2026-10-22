@@ -2,6 +2,7 @@ import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
 import { WhatWeMakeSection } from "@/components/what-we-make-section"
 import { KitchenConfigurationsSection } from "@/components/kitchen-configurations-section"
+import { CustomKitchensSection } from "@/components/custom-kitchens-section"
 import { KitchenStylesSection } from "@/components/kitchen-styles-section"
 import { ProcessTimelineSection } from "@/components/process-timeline-section"
 import { SurfaceFinishesSection } from "@/components/surface-finishes-section"
@@ -18,19 +19,19 @@ import { EnquiryModal } from "@/components/enquiry-modal"
 import { MobileStickyBar } from "@/components/mobile-sticky-bar"
 
 export const metadata = {
-  title: "EBONY Modular Kitchens & Wardrobes in Raipur",
+  title: "Ebony — Modular Kitchens & Home Interiors in Raipur",
   description:
-    "Beautiful modular kitchens, wardrobes and walk-in closets in Raipur. Made in our own factory and fitted in 3 days. Visit our studio today.",
+    "Beautiful modular kitchens, wardrobes and home interiors in Raipur. Made in our own factory and fitted in just 3 days. Your dream kitchen awaits!",
 }
 
 export default function Page() {
   return (
-    <div className="bg-white min-h-screen text-slate-900 selection:bg-amber-500/20 selection:text-slate-900 overflow-x-hidden">
+    <div className="bg-[#FFFBF5] min-h-screen text-[#1A1A1A] selection:bg-[#C5A572]/20 selection:text-slate-900 overflow-x-hidden">
       <ScrollProgress />
       <Navbar />
 
       <main>
-        {/* Section 1: Hero with Video & 4-Stat Animated Trust Strip */}
+        {/* Section 1: Cinematic Hero with Video & 4-Stat Animated Trust Strip */}
         <HeroSection />
 
         {/* Section 2: Explore Modular Designs (4 Collections Bento Grid) */}
@@ -38,52 +39,57 @@ export default function Page() {
           <WhatWeMakeSection />
         </FadeReveal>
 
-        {/* Section 3: OUR COLLECTIONS — "Your dream kitchen awaits!" (5 Layouts) */}
+        {/* Section 3: OUR COLLECTIONS (6 Shapes Premium Grid) */}
         <FadeReveal>
           <KitchenConfigurationsSection />
         </FadeReveal>
 
-        {/* Section 4: Pick Your Style (12 Original Kitchen Designs with Filter Chips) */}
+        {/* Section 4: NEW — Kitchens as Unique as Your Home (6 Family & Budget Designs) */}
+        <FadeReveal>
+          <CustomKitchensSection />
+        </FadeReveal>
+
+        {/* Section 5: Pick Your Style (12 Original Kitchen Designs Gallery with Filter Chips) */}
         <FadeReveal>
           <KitchenStylesSection />
         </FadeReveal>
 
-        {/* Section 5: From Idea to Home in 4 Steps (Connected Process Track) */}
+        {/* Section 6: Your Dream Kitchen in 3 Steps (Simple Connected Journey) */}
         <FadeReveal>
           <ProcessTimelineSection />
         </FadeReveal>
 
-        {/* Section 6: Colours & Finishes You'll Love (8 Friendly Swatches) */}
+        {/* Section 7: Colours & Finishes You'll Love (8 Friendly Swatches) */}
         <FadeReveal>
           <SurfaceFinishesSection />
         </FadeReveal>
 
-        {/* Section 7: Space For Everything You Own (Merged Wardrobes & Walk-in Closets) */}
+        {/* Section 8: Space For Everything You Own (Sliding, Hinged, Walk-in Closets) */}
         <FadeReveal>
           <WardrobesSection />
         </FadeReveal>
 
-        {/* Section 8: Little Things, Big Comfort (4 Soft-Close Cards + Blum, Häfele, Hettich, Salice, Ebco) */}
+        {/* Section 9: Little Things, Big Comfort (Soft-close drawers, lift-up doors + Blum, Häfele, Hettich, Salice, Ebco) */}
         <FadeReveal>
           <InternalFittingsSection />
         </FadeReveal>
 
-        {/* Section 9: Homes We've Made Beautiful (6 Real Work Cards from Raipur & Nearby) */}
+        {/* Section 10: Homes We've Made Beautiful (6 Real Work Cards from Raipur & Nearby) */}
         <FadeReveal>
           <ProjectsShowcaseSection />
         </FadeReveal>
 
-        {/* Section 10: Stories From Happy Homes (Compact Moving Testimonials Marquee) */}
+        {/* Section 11: Happy Homes / Real Stories (Customer Reviews) */}
         <FadeReveal>
           <TestimonialsSection />
         </FadeReveal>
 
-        {/* Section 11: The EBONY Promise (Factory, Customisation, 3 Days, 10 Years Warranty) */}
+        {/* Section 12: Why Families Love Us (4 Reasons Homeowners Trust Ebony) */}
         <FadeReveal>
           <WhyEbonySection />
         </FadeReveal>
 
-        {/* Section 12: Let's Plan Your Kitchen Together (Studio CTA) */}
+        {/* Section 13: Let's Build Your Dream Kitchen (Studio CTA + 3-Field Quick Form) */}
         <FadeReveal>
           <StudioCtaSection />
         </FadeReveal>
@@ -92,7 +98,7 @@ export default function Page() {
       {/* Global Interactive Enquiry Modal */}
       <EnquiryModal />
 
-      {/* Mobile Sticky Action Bar & Desktop Floating Pill */}
+      {/* Mobile Sticky Action Bar & Desktop Floating WhatsApp/Call Pill */}
       <MobileStickyBar />
 
       {/* Master Footer */}

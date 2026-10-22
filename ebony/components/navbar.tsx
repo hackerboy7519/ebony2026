@@ -187,13 +187,13 @@ export function Navbar() {
             </Link>
           </nav>
 
-          {/* Right Header Actions: Book a Visit */}
+          {/* Right Header Actions: Get Free Quote */}
           <div className="hidden lg:flex items-center">
             <button
-              onClick={() => openEnquiryModal({ category: "Studio Consultation" })}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#B8923A] hover:bg-[#C99E4B] text-slate-950 font-mono text-[11px] uppercase tracking-wider font-bold transition-all duration-300 shadow-md hover:shadow-amber-500/20 active:scale-95 cursor-pointer"
+              onClick={() => openEnquiryModal({ category: "Get Free Quote" })}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#C5A572] hover:bg-[#D4B582] text-slate-950 font-mono text-[11px] uppercase tracking-wider font-bold transition-all duration-300 shadow-md hover:shadow-amber-500/20 active:scale-95 cursor-pointer"
             >
-              <span>Book a Visit</span>
+              <span>Get Free Quote</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
           </div>

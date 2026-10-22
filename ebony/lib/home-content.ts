@@ -1,5 +1,5 @@
-// EBONY Homepage Content — Simplified, Human, Warm & Friendly
-// 60% reduced text. No technical jargon. Written for everyday homeowners.
+// EBONY Homepage Content — AI-Firstified, Warm Luxury, Zero Jargon
+// Less is Luxury. Short, human, beautiful English for real families.
 
 export interface HomeContent {
   hero: {
@@ -33,9 +33,35 @@ export interface HomeContent {
       id: string
       name: string
       line: string
-      bestFor: string
+      tag: string
       image: string
+      href: string
     }[]
+  }
+  uniqueKitchens: {
+    kicker: string
+    title: string
+    subtitle: string
+    cards: {
+      id: string
+      icon: string
+      title: string
+      line: string
+      image: string
+      tag: string
+    }[]
+  }
+  process: {
+    kicker: string
+    title: string
+    subtitle: string
+    steps: {
+      num: string
+      title: string
+      line: string
+      desc: string
+    }[]
+    cta: string
   }
   finishes: {
     kicker: string
@@ -91,6 +117,7 @@ export interface HomeContent {
   testimonials: {
     kicker: string
     title: string
+    subtitle: string
     items: {
       id: string
       name: string
@@ -100,7 +127,7 @@ export interface HomeContent {
       rating: number
     }[]
   }
-  promise: {
+  whyLoveUs: {
     kicker: string
     title: string
     subtitle: string
@@ -108,15 +135,17 @@ export interface HomeContent {
       id: string
       title: string
       line: string
+      icon: string
       image: string
     }[]
-    materialsFootnote: {
+    footnote: {
       text: string
       label: string
       href: string
     }
   }
   finalCta: {
+    kicker: string
     title: string
     subtitle: string
     primaryBtn: string
@@ -126,31 +155,30 @@ export interface HomeContent {
 
 export const HOME_CONTENT: HomeContent = {
   hero: {
-    eyebrow: "Modular Kitchens & Wardrobes · Raipur",
-    title: "Kitchens You'll Love Coming Home To.",
-    subtitle:
-      "Beautiful modular kitchens and wardrobes, made in our own factory and fitted in just 3 days.",
-    primaryCta: { label: "See Our Designs", href: "#explore-designs" },
-    secondaryCta: { label: "Book a Visit", href: "/contact" },
+    eyebrow: "Ebony · Modular Kitchens & Interiors · Raipur",
+    title: "Your Dream Kitchen Awaits!",
+    subtitle: "Beautiful kitchens, built for your home and your budget.",
+    primaryCta: { label: "Explore Designs", href: "#collections" },
+    secondaryCta: { label: "Free Consultation", href: "#consultation" },
     scrollHint: "Scroll to explore",
   },
 
   trustStrip: [
     { value: "15+", label: "Years of happy kitchens" },
     { value: "500+", label: "Colours & finishes" },
-    { value: "3 Days", label: "To fit it at your home" },
-    { value: "10 Years", label: "Woodwork warranty" },
+    { value: "3 Days", label: "Clean home installation" },
+    { value: "10 Years", label: "Warranty on woodwork" },
   ],
 
   exploreDesigns: {
-    kicker: "WHAT WE MAKE",
+    kicker: "WHAT WE CREATE FOR YOU",
     title: "Explore Modular Designs",
-    subtitle: "Kitchens, wardrobes, dressing rooms and more, made to fit your home.",
+    subtitle: "Kitchens, wardrobes, dressing rooms and more, made to fit your life.",
     cards: [
       {
         id: "kitchens",
         title: "Modular Kitchens",
-        badge: "5 Layouts · 12 Styles",
+        badge: "6 Shapes · 12 Styles",
         description: "Smart, beautiful kitchens that make cooking a joy.",
         buttonText: "See Kitchens",
         href: "/kitchens",
@@ -159,7 +187,7 @@ export const HOME_CONTENT: HomeContent = {
       {
         id: "wardrobes",
         title: "Bespoke Wardrobes",
-        badge: "Roomy Storage",
+        badge: "Sliding & Hinged",
         description: "Roomy wardrobes with a place for everything you own.",
         buttonText: "See Wardrobes",
         href: "/wardrobes",
@@ -167,8 +195,8 @@ export const HOME_CONTENT: HomeContent = {
       },
       {
         id: "closets",
-        title: "Walk-in Closets",
-        badge: "Glass & Light Suites",
+        title: "Walk-in Dressing Rooms",
+        badge: "Warm Light Suites",
         description: "Your own dressing room, neat, illuminated and stylish.",
         buttonText: "See Closets",
         href: "/walk-in-closets",
@@ -177,7 +205,7 @@ export const HOME_CONTENT: HomeContent = {
       {
         id: "living-bar",
         title: "Bar & TV Units",
-        badge: "Custom Joinery",
+        badge: "Custom Living Joinery",
         description: "Stylish corners for family gatherings and weekend guests.",
         buttonText: "See Designs",
         href: "/projects#bar-unit",
@@ -186,51 +214,150 @@ export const HOME_CONTENT: HomeContent = {
     ],
   },
 
+  // Section 3: OUR COLLECTIONS (The Heart of the Site - 6 Shapes Grid)
   collections: {
     kicker: "OUR COLLECTIONS",
-    title: "Your dream kitchen awaits!",
-    subtitle: "Pick the shape that fits your space.",
+    title: "OUR COLLECTIONS",
+    subtitle: "Find the shape that fits your home. Click any layout to explore.",
     layouts: [
       {
-        id: "island",
-        name: "Island",
-        line: "A centre counter for cooking, chatting and breakfast.",
-        bestFor: "Big, open homes. Needs a room about 14 ft wide.",
-        image: "/img/kitchen-island-real.jpg",
-      },
-      {
         id: "l-shape",
-        name: "L-Shape",
-        line: "Uses two walls and keeps everything within easy reach.",
-        bestFor: "Most homes and medium kitchens.",
+        name: "L-Shaped",
+        line: "Perfect for corners. More space to move.",
+        tag: "Most Popular",
         image: "/img/kitchen-contemporary-real.jpg",
+        href: "/kitchens#l-shape",
       },
       {
         id: "u-shape",
-        name: "U-Shape",
-        line: "Three walls of storage and counter space.",
-        bestFor: "Big families and lots of cooking.",
+        name: "U-Shaped",
+        line: "More storage, more room to cook together.",
+        tag: "Family Sized",
         image: "/img/kitchen-layout-real.jpg",
+        href: "/kitchens#u-shape",
       },
       {
-        id: "parallel",
-        name: "Parallel",
-        line: "Two facing walls with a walkway in the middle.",
-        bestFor: "Narrow rooms and flats.",
+        id: "straight-parallel",
+        name: "Straight / Parallel",
+        line: "Smart and simple — ideal for smaller homes.",
+        tag: "Smart & Compact",
         image: "/img/kitchen-detail-real.jpg",
+        href: "/kitchens#parallel",
       },
       {
-        id: "straight",
-        name: "Straight",
-        line: "Everything along one wall. Simple, neat and compact.",
-        bestFor: "Small homes, studio apartments and tight spaces.",
-        image: "/img/kitchen-small-spaces.jpg",
+        id: "island",
+        name: "Island Kitchen",
+        line: "Modern and open — cook, chat, and gather.",
+        tag: "Spacious Living",
+        image: "/img/kitchen-island-real.jpg",
+        href: "/kitchens#island",
+      },
+      {
+        id: "g-shaped",
+        name: "G-Shaped",
+        line: "Extra counter space for big families.",
+        tag: "Maximum Storage",
+        image: "/img/kitchen-twotone-twist.jpg",
+        href: "/kitchens#g-shape",
+      },
+      {
+        id: "open-kitchen",
+        name: "Open Kitchen",
+        line: "Flows beautifully into your living room.",
+        tag: "Modern Lifestyle",
+        image: "/img/kitchen-garden-green.jpg",
+        href: "/kitchens#open",
       },
     ],
   },
 
+  // Section 4: NEW SECTION — KITCHENS AS UNIQUE AS YOUR HOME
+  uniqueKitchens: {
+    kicker: "DESIGNS FOR EVERY FAMILY & BUDGET",
+    title: "Kitchens as Unique as Your Home",
+    subtitle: "Whatever your space or budget, Ebony creates a kitchen you'll love.",
+    cards: [
+      {
+        id: "small-homes",
+        icon: "🏠",
+        title: "For Small Homes",
+        line: "Smart storage, zero wasted space.",
+        image: "/img/kitchen-small-spaces.jpg",
+        tag: "Compact Living",
+      },
+      {
+        id: "luxury-homes",
+        icon: "✨",
+        title: "Luxury for Big Homes",
+        line: "Rich finishes, a kitchen that feels like a showroom.",
+        image: "/img/kitchen-glass-glow.jpg",
+        tag: "Grand Villas",
+      },
+      {
+        id: "budget-homes",
+        icon: "💰",
+        title: "Beautiful on a Budget",
+        line: "Premium look, without the premium price tag.",
+        image: "/img/kitchen-curves-arches.jpg",
+        tag: "Value First",
+      },
+      {
+        id: "indian-cooking",
+        icon: "🍳",
+        title: "Built for Indian Cooking",
+        line: "Strong, easy to clean, made for daily tadka and spice.",
+        image: "/img/kitchen-rasoi-special.jpg",
+        tag: "Daily Cooking",
+      },
+      {
+        id: "open-airy",
+        icon: "🌿",
+        title: "Open & Airy",
+        line: "Your kitchen, beautifully connected to your living room.",
+        image: "/img/kitchen-style-boho.jpg",
+        tag: "Sunlight & Calm",
+      },
+      {
+        id: "smart-storage",
+        icon: "🗄️",
+        title: "Smart Storage",
+        line: "A place for everything. Everything in its place.",
+        image: "/img/kitchen-colour-pop.jpg",
+        tag: "Organized Living",
+      },
+    ],
+  },
+
+  // Section 5: OUR PROCESS — 3 Steps Only
+  process: {
+    kicker: "HOW IT WORKS",
+    title: "Your Dream Kitchen in 3 Steps",
+    subtitle: "Simple, stress-free, and transparent from first sketch to final handover.",
+    steps: [
+      {
+        num: "01",
+        title: "Meet & Plan",
+        line: "Tell us your dream.",
+        desc: "We listen to what you want, measure your space, and understand your family's routine.",
+      },
+      {
+        num: "02",
+        title: "Design & Build",
+        line: "See it in 3D first.",
+        desc: "Watch your kitchen come to life in realistic 3D, then we build it in our own factory.",
+      },
+      {
+        num: "03",
+        title: "Install & Enjoy",
+        line: "Fitted in just 3 days.",
+        desc: "Pre-finished modular units are installed cleanly at your home without dust or mess.",
+      },
+    ],
+    cta: "Book Free Consultation",
+  },
+
   finishes: {
-    kicker: "SURFACE CHOICES",
+    kicker: "COLOURS & TEXTURES",
     title: "Colours & Finishes You'll Love",
     subtitle: "500+ colours and finishes. Glossy, matte, wood-look and more.",
     swatches: [
@@ -244,7 +371,7 @@ export const HOME_CONTENT: HomeContent = {
       {
         id: "laminate",
         name: "Scratch-Safe Laminate",
-        line: "Tough, easy to wipe, many colours.",
+        line: "Tough, easy to wipe, hundreds of colours.",
         colorHint: "#C2B6A6",
         tag: "Durable",
       },
@@ -274,7 +401,7 @@ export const HOME_CONTENT: HomeContent = {
         name: "Stone Look",
         line: "Looks like marble. Handles hot pans and stains.",
         colorHint: "#7E7468",
-        tag: "Stone & Quartz",
+        tag: "Quartz & Ceramic",
       },
       {
         id: "metal",
@@ -316,7 +443,7 @@ export const HOME_CONTENT: HomeContent = {
       },
       {
         id: "walk-in",
-        name: "Walk-in Closets",
+        name: "Walk-in Dressing Rooms",
         line: "Your own dressing room with soft integrated lights and smart storage.",
         image: "/img/walk-in-closet-luxury.jpg",
         href: "/walk-in-closets",
@@ -328,7 +455,7 @@ export const HOME_CONTENT: HomeContent = {
   fittings: {
     kicker: "HARDWARE & MOTION",
     title: "Little Things, Big Comfort",
-    subtitle: "Smooth drawers, smart corners and fittings from brands we trust.",
+    subtitle: "Drawers that glide shut without a sound, and fittings from brands we trust.",
     items: [
       {
         id: "drawers",
@@ -417,15 +544,15 @@ export const HOME_CONTENT: HomeContent = {
   },
 
   testimonials: {
-    kicker: "REAL HOMES · REAL REVIEWS",
+    kicker: "HAPPY HOMES",
     title: "Stories From Happy Homes",
+    subtitle: "Real feedback from homeowners who trust Ebony.",
     items: [
       {
         id: "t-1",
         name: "Anita Sharma",
         city: "Raipur",
-        quote:
-          "Excellent design sense and flawless execution. Our kitchen looks stunning and the installation was super quick.",
+        quote: "Our kitchen looks stunning and the installation was super quick in just 3 days.",
         avatar: "AS",
         rating: 5,
       },
@@ -433,8 +560,7 @@ export const HOME_CONTENT: HomeContent = {
         id: "t-2",
         name: "Rahul Verma",
         city: "Bilaspur",
-        quote:
-          "From design to installation, the entire team was professional. Highly recommended for modular interiors.",
+        quote: "From 3D design to installation, the team was professional and honest.",
         avatar: "RV",
         rating: 5,
       },
@@ -442,8 +568,7 @@ export const HOME_CONTENT: HomeContent = {
         id: "t-3",
         name: "Neha & Karan",
         city: "Raipur",
-        quote:
-          "Premium quality and great attention to detail. Ebony truly transforms spaces into something special.",
+        quote: "Premium quality without the stress. Ebony truly transforms living spaces.",
         avatar: "NK",
         rating: 5,
       },
@@ -451,74 +576,61 @@ export const HOME_CONTENT: HomeContent = {
         id: "t-4",
         name: "Manoj Mandre",
         city: "Mumbai",
-        quote:
-          "EBONY understood our needs, conceptualised the design, and executed smart German engineering.",
+        quote: "Understood our needs and delivered smooth German soft-close fittings.",
         avatar: "MM",
-        rating: 5,
-      },
-      {
-        id: "t-5",
-        name: "Mr. Kanyalal",
-        city: "Delhi",
-        quote:
-          "In one word — Excellent! Marvellous quality and humble team. Highly satisfied with their service.",
-        avatar: "MK",
-        rating: 5,
-      },
-      {
-        id: "t-6",
-        name: "C.L. Sandesh",
-        city: "Bangalore",
-        quote:
-          "The finishing and accuracy EBONY provides are unmatchable. Installation services were beyond expectation.",
-        avatar: "CS",
         rating: 5,
       },
     ],
   },
 
-  promise: {
-    kicker: "WHY EBONY",
-    title: "The EBONY Promise",
-    subtitle: "What you can always count on.",
+  // Section: Why Families Love Us (replaces Why Ebony / Why Choose Us)
+  whyLoveUs: {
+    kicker: "THE EBONY PROMISE",
+    title: "Why Families Love Us",
+    subtitle: "Four simple reasons why homeowners trust Ebony for their dream kitchen.",
     points: [
       {
-        id: "factory",
-        title: "Made in Our Own Factory",
-        line: "Cut on German machines. Neat, exact, and no noisy cutting at your home.",
-        image: "/img/craftsmanship-detail.jpg",
-      },
-      {
-        id: "finishes-point",
-        title: "Your Size, Your Colour",
-        line: "500+ finishes, made to fit your room down to the millimeter.",
-        image: "/img/kitchen-boho-luxury.jpg",
-      },
-      {
-        id: "three-days",
-        title: "Fitted in 3 Days",
-        line: "Ready-made units and a clean, dust-free fitting at your residence.",
+        id: "delivery",
+        title: "On-Time Delivery",
+        line: "Fitted in about 3 days with zero noisy cutting or sawdust at your home.",
+        icon: "Clock",
         image: "/img/process-engineering.jpg",
+      },
+      {
+        id: "pricing",
+        title: "Transparent Pricing",
+        line: "Clear quotes. A luxury look and finish without hidden costs.",
+        icon: "ShieldCheck",
+        image: "/img/kitchen-curves-arches.jpg",
       },
       {
         id: "warranty",
         title: "10-Year Warranty",
-        line: "Checked 48 times before we hand it over, backed by 15+ years of care.",
+        line: "Checked 48 times before handover, backed by 15+ years of trusted care.",
+        icon: "Award",
         image: "/img/core-materials-luxury.jpg",
       },
+      {
+        id: "visit",
+        title: "Free Design Visit",
+        line: "Sit down with our designers, touch material samples, and see your 3D plan.",
+        icon: "Sparkles",
+        image: "/img/craftsmanship-detail.jpg",
+      },
     ],
-    materialsFootnote: {
+    footnote: {
       text: "Strong materials where it matters: waterproof plywood, strong board and stainless steel.",
       label: "Learn more",
       href: "/finishes",
     },
   },
 
+  // Final CTA: Let's Build Your Dream Kitchen
   finalCta: {
-    title: "Let's Plan Your Kitchen Together",
-    subtitle:
-      "Visit our Raipur studio or call us. We'll help you pick the right design for your space.",
-    primaryBtn: "Book a Visit",
+    kicker: "PRIVATE STUDIO & CONSULTATION",
+    title: "Let's Build Your Dream Kitchen",
+    subtitle: "Visit our Raipur studio or drop your details. We'll design your custom 3D plan.",
+    primaryBtn: "Book Free Consultation",
     callBtn: "Call +91 76669 02365",
   },
 }
