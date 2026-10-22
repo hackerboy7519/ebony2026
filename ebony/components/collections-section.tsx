@@ -12,7 +12,7 @@ export function CollectionsSection() {
         {/* Section Header matching reference */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 pb-8 border-b border-slate-100">
           <div>
-            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#B8923A] font-semibold block mb-3">
+            <span className="font-mono text-[13px] uppercase tracking-[0.12em] text-[#B8923A] font-semibold block mb-3">
               OUR COLLECTIONS
             </span>
             <h2 className="font-serif italic text-3xl sm:text-5xl md:text-6xl text-slate-950 font-normal tracking-tight">
@@ -22,7 +22,7 @@ export function CollectionsSection() {
           </div>
 
           <div className="max-w-md">
-            <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed mb-4">
+            <p className="text-slate-600 text-xs sm:text-sm font-normal leading-relaxed mb-4">
               From modular kitchens to complete home interiors, our collections
               combine timeless design with intelligent functionality.
             </p>
@@ -56,7 +56,7 @@ export function CollectionsSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
                 {/* Subtle corner index */}
-                <div className="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md text-white font-mono text-[10px] font-semibold tracking-wider">
+                <div className="absolute top-3.5 left-3.5 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md text-white font-mono text-xs font-semibold tracking-wider">
                   0{idx + 1}
                 </div>
               </div>
@@ -67,7 +67,7 @@ export function CollectionsSection() {
                   <h3 className="font-serif italic text-xl sm:text-2xl text-slate-950 group-hover:text-[#855E15] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-slate-500 text-xs font-light mt-0.5">
+                  <p className="text-slate-500 text-xs font-normal mt-0.5">
                     {item.tagline}
                   </p>
                 </div>

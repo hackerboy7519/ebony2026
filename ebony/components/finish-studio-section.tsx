@@ -87,7 +87,7 @@ export function FinishStudioSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-slate-100">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.22em] font-mono font-semibold bg-amber-50 text-amber-900 border border-amber-200/80 mb-3">
+            <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs uppercase tracking-[0.12em] font-mono font-semibold bg-amber-50 text-amber-900 border border-amber-200/80 mb-3">
               Surface Tactility
             </div>
             <h2 className="font-serif italic text-3xl sm:text-4xl md:text-5xl text-slate-950 font-normal">
@@ -130,7 +130,7 @@ export function FinishStudioSection() {
                     <h4 className="font-serif italic text-base text-slate-950 font-normal">
                       {f.name}
                     </h4>
-                    <span className="font-mono text-[9px] uppercase tracking-wider text-slate-500 block mt-0.5">
+                    <span className="font-mono text-xs uppercase tracking-wider text-slate-500 block mt-0.5">
                       {f.category}
                     </span>
                   </div>
@@ -147,16 +147,16 @@ export function FinishStudioSection() {
                 style={{ background: active.gradient || active.hex }}
               >
                 <div className="flex items-center justify-between">
-                  <span className="glass-pill px-4 py-1.5 rounded-full text-slate-900 font-mono text-[10px] uppercase tracking-widest font-semibold">
+                  <span className="glass-pill px-4 py-1.5 rounded-full text-slate-900 font-mono text-xs uppercase tracking-widest font-semibold">
                     {active.tag}
                   </span>
-                  <span className="px-3.5 py-1.5 rounded-full bg-slate-950/80 text-white font-mono text-[10px] uppercase tracking-widest backdrop-blur-md">
+                  <span className="px-3.5 py-1.5 rounded-full bg-slate-950/80 text-white font-mono text-xs uppercase tracking-widest backdrop-blur-md">
                     Daylight Calibrated
                   </span>
                 </div>
 
                 <div className="glass-card p-6 rounded-2xl border-white/80 max-w-sm">
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-amber-700 font-semibold block mb-1">
+                  <span className="font-mono text-xs uppercase tracking-wider text-amber-700 font-semibold block mb-1">
                     {active.category}
                   </span>
                   <h3 className="font-serif italic text-2xl text-slate-950 font-normal">

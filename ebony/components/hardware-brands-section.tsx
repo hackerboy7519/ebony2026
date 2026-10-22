@@ -13,7 +13,7 @@ export function HardwareBrandsSection() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="w-8 h-[1px] bg-[#B8923A]" />
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold">
+              <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold">
                 Hardware Excellence
               </span>
             </div>
@@ -21,7 +21,7 @@ export function HardwareBrandsSection() {
               World-Class Hardware Partners.
             </h2>
           </div>
-          <p className="font-sans text-sm sm:text-base text-slate-600 max-w-md font-light leading-relaxed">
+          <p className="font-sans text-sm sm:text-base text-slate-600 max-w-md font-normal leading-relaxed">
             We partner with Europe and India&apos;s most rigorous motion engineering brands to ensure every hinge, slide, and lift lasts 200,000+ cycles.
           </p>
         </div>
@@ -35,7 +35,7 @@ export function HardwareBrandsSection() {
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-slate-200/80 text-slate-800 font-semibold">
+                  <span className="font-mono text-xs uppercase tracking-wider px-2 py-0.5 rounded bg-slate-200/80 text-slate-800 font-semibold">
                     {brand.country}
                   </span>
                   <Award className="w-4 h-4 text-[#B8923A]" />
@@ -45,17 +45,17 @@ export function HardwareBrandsSection() {
                   {brand.name}
                 </h3>
 
-                <span className="font-mono text-[11px] text-[#B8923A] uppercase tracking-wider block mb-3 font-semibold">
+                <span className="font-mono text-[13px] text-[#B8923A] uppercase tracking-wider block mb-3 font-semibold">
                   {brand.specialty}
                 </span>
 
-                <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                <p className="font-sans text-xs text-slate-600 font-normal leading-relaxed">
                   {brand.description}
                 </p>
               </div>
 
               <div className="pt-4 mt-4 border-t border-slate-200/60">
-                <span className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">
+                <span className="font-mono text-xs text-slate-500 uppercase tracking-widest">
                   Verified Component
                 </span>
               </div>

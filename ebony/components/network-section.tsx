@@ -106,14 +106,14 @@ export function NetworkSection() {
             <div className="flex items-center gap-6">
               <div>
                 <span className="font-serif italic text-2xl text-ebony">300+</span>
-                <span className="font-mono text-[9px] uppercase tracking-wider text-graphite block">
+                <span className="font-mono text-xs uppercase tracking-wider text-graphite block">
                   Dealers & Distributors
                 </span>
               </div>
               <div className="w-px h-8 bg-hair" />
               <div>
                 <span className="font-serif italic text-2xl text-gold-deep">10+</span>
-                <span className="font-mono text-[9px] uppercase tracking-wider text-graphite block">
+                <span className="font-mono text-xs uppercase tracking-wider text-graphite block">
                   Franchise Hubs
                 </span>
               </div>
@@ -127,12 +127,12 @@ export function NetworkSection() {
           <div className="lg:col-span-7 bg-white rounded-md border border-hair p-8 sm:p-12 shadow-soft relative flex flex-col items-center justify-center min-h-[440px] sm:min-h-[520px]">
             {/* Top legend */}
             <div className="w-full flex items-center justify-between pb-6 mb-4 border-b border-hair">
-              <span className="font-mono text-[10px] tracking-widest uppercase text-graphite">
+              <span className="font-mono text-xs tracking-widest uppercase text-graphite">
                 Interactive Network Node Map
               </span>
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-gold animate-ping" />
-                <span className="font-mono text-[9px] uppercase tracking-wider text-gold-deep">
+                <span className="font-mono text-xs uppercase tracking-wider text-gold-deep">
                   Live Hubs
                 </span>
               </div>
@@ -218,7 +218,7 @@ export function NetworkSection() {
               </div>
             </div>
 
-            <p className="font-mono text-[9px] uppercase tracking-wider text-graphite text-center mt-4">
+            <p className="font-mono text-xs uppercase tracking-wider text-graphite text-center mt-4">
               Tap any node to view authorized regional distributor credentials
             </p>
           </div>
@@ -229,7 +229,7 @@ export function NetworkSection() {
               <div className="flex items-center justify-between pb-4 border-b border-hair">
                 <span className="text-label">Regional Location</span>
                 {selectedCity.isHeadquarters && (
-                  <span className="px-2.5 py-0.5 rounded bg-gold/15 text-gold-deep font-mono text-[9px] uppercase tracking-wider">
+                  <span className="px-2.5 py-0.5 rounded bg-gold/15 text-gold-deep font-mono text-xs uppercase tracking-wider">
                     HQ & Flagship
                   </span>
                 )}
@@ -248,7 +248,7 @@ export function NetworkSection() {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-gold-deep shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-mono text-[9px] uppercase tracking-wider text-graphite block">
+                    <span className="font-mono text-xs uppercase tracking-wider text-graphite block">
                       Address / Regional Coverage
                     </span>
                     <span className="font-sans text-sm text-ebony">
@@ -260,7 +260,7 @@ export function NetworkSection() {
                 <div className="flex items-start gap-3">
                   <Building className="w-4 h-4 text-gold-deep shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-mono text-[9px] uppercase tracking-wider text-graphite block">
+                    <span className="font-mono text-xs uppercase tracking-wider text-graphite block">
                       Dealer Network Strength
                     </span>
                     <span className="font-sans text-sm text-ebony">
@@ -300,7 +300,7 @@ export function NetworkSection() {
                 </p>
                 <Link
                   href="/contact"
-                  className="font-mono text-[10px] uppercase tracking-wider text-gold-deep font-semibold inline-flex items-center gap-1 hover:underline"
+                  className="font-mono text-xs uppercase tracking-wider text-gold-deep font-semibold inline-flex items-center gap-1 hover:underline"
                 >
                   Apply for Franchise Opportunity →
                 </Link>

@@ -20,7 +20,7 @@ import { MobileStickyBar } from "@/components/mobile-sticky-bar"
 export const metadata = {
   title: "Ebony — Modular Kitchens & Home Interiors in Raipur",
   description:
-    "Beautiful modular kitchens, wardrobes and home interiors in Raipur. Made in our own factory and tailored precisely to your space. Your dream kitchen awaits!",
+    "Beautiful modular kitchens, wardrobes and walk-in closets made just for you. Designed around your family, made in our own Raipur factory and fitted in about 3 days.",
 }
 
 export default function Page() {

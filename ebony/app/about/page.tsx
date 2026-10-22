@@ -43,7 +43,7 @@ export default function AboutPage() {
         <section className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 pt-8 pb-12 border-b border-slate-100">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="max-w-2xl">
-              <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#B8923A] font-semibold block mb-3">
+              <span className="font-mono text-[13px] uppercase tracking-[0.12em] text-[#B8923A] font-semibold block mb-3">
                 ESTABLISHED 2009 · 15+ YEARS OF MASTERY
               </span>
               <h1 className="font-serif italic text-4xl sm:text-5xl md:text-6xl text-slate-950 font-normal leading-[1.1]">
@@ -51,7 +51,7 @@ export default function AboutPage() {
                 <span className="text-[#855E15] not-italic font-medium">their moment.</span>
               </h1>
             </div>
-            <p className="text-slate-600 max-w-sm text-xs sm:text-sm leading-relaxed font-light">
+            <p className="text-slate-600 max-w-sm text-xs sm:text-sm leading-relaxed font-normal">
               EBONY Modular Kulture was founded on the belief that genuine luxury is the absence of compromise. Over 15 years, our Raipur studio has quietly become India&apos;s benchmark for bespoke modular interiors.
             </p>
           </div>
@@ -82,7 +82,7 @@ export default function AboutPage() {
         {/* Heritage Milestones */}
         <section className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 py-12">
           <div className="mb-12">
-            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#B8923A] font-semibold block mb-2">
+            <span className="font-mono text-[13px] uppercase tracking-[0.12em] text-[#B8923A] font-semibold block mb-2">
               HERITAGE
             </span>
             <h2 className="font-serif italic text-3xl sm:text-4xl text-slate-950 font-normal">
@@ -99,7 +99,7 @@ export default function AboutPage() {
                 <h4 className="font-sans text-sm font-semibold text-slate-900 mb-2">
                   {m.title}
                 </h4>
-                <p className="text-slate-600 text-xs font-light leading-relaxed">
+                <p className="text-slate-600 text-xs font-normal leading-relaxed">
                   {m.desc}
                 </p>
               </div>

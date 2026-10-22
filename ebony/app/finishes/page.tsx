@@ -33,14 +33,14 @@ export default function FinishesPage() {
 
           <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
             <div className="max-w-3xl">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+              <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-3">
                 MATERIAL LIBRARY &amp; SUBSTRATES
               </span>
               <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal leading-[1.1] tracking-tight mb-6">
                 500+ Finishes, <br />
                 <span className="italic">Enduring Tactile Luxury.</span>
               </h1>
-              <p className="font-sans text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
+              <p className="font-sans text-sm sm:text-base text-white/80 font-normal leading-relaxed mb-8 max-w-2xl">
                 From 6-sided seamless Italian PU lacquers and optical acrylics to indestructible SS 304 surgical stainless steel and BWP Marine Plywood. Explore materials engineered for a lifetime.
               </p>
 
@@ -74,7 +74,7 @@ export default function FinishesPage() {
                   <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
                     500+ Custom Color Codes
                   </h3>
-                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                  <p className="font-sans text-xs text-slate-600 font-normal leading-relaxed">
                     Custom RAL and Pantone color matching in seamless Italian PU spray lacquer applied in sterile cleanroom environments.
                   </p>
                 </div>
@@ -88,7 +88,7 @@ export default function FinishesPage() {
                   <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
                     Zero-Joint Laser Edging
                   </h3>
-                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                  <p className="font-sans text-xs text-slate-600 font-normal leading-relaxed">
                     German laser edge-banding seals panel borders invisibly with waterproof polymer fusion, eliminating dirt lines and water ingress.
                   </p>
                 </div>
@@ -102,7 +102,7 @@ export default function FinishesPage() {
                   <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
                     Thermal Healing Surfaces
                   </h3>
-                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                  <p className="font-sans text-xs text-slate-600 font-normal leading-relaxed">
                     High-pressure nanotechnology laminates and ultra-matte surfaces that resist fingerprints and allow micro-scratches to heal with heat.
                   </p>
                 </div>
@@ -120,13 +120,13 @@ export default function FinishesPage() {
         {/* Studio Swatch Invitation CTA */}
         <section className="py-20 bg-[#0B0F19] text-white text-center">
           <div className="max-w-4xl mx-auto px-5 sm:px-8">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+            <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-3">
               FEEL THE TACTILE QUALITY
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal mb-6">
               Touch 500+ Finishes in Our Studio.
             </h2>
-            <p className="font-sans text-sm sm:text-base text-white/70 font-light leading-relaxed mb-8 max-w-xl mx-auto">
+            <p className="font-sans text-sm sm:text-base text-white/70 font-normal leading-relaxed mb-8 max-w-xl mx-auto">
               Screen renders cannot convey the velvety touch of Italian super-matte lacquer or the weighty glide of an anodised bronze shutter. Visit our Raipur flagship studio.
             </p>
             <Link

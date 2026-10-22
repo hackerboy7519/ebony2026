@@ -105,7 +105,7 @@ export const InfiniteMovingCards = ({
                     {[...Array(item.rating || 5)].map((_, i) => (
                       <span key={i} className="text-xs">★</span>
                     ))}
-                    <span className="font-mono text-[10px] text-slate-400 ml-1.5 font-semibold">VERIFIED HOME</span>
+                    <span className="font-mono text-xs text-slate-500 ml-1.5 font-semibold">VERIFIED HOME</span>
                   </div>
                   <p className="font-serif italic text-base leading-relaxed text-slate-800 font-normal mb-6">
                     &ldquo;{item.quote}&rdquo;
@@ -116,10 +116,10 @@ export const InfiniteMovingCards = ({
                     <h4 className="font-sans text-sm font-semibold text-slate-900 tracking-tight">
                       {item.name}
                     </h4>
-                    <p className="font-mono text-[11px] text-slate-400">{item.title}</p>
+                    <p className="font-mono text-[13px] text-slate-500">{item.title}</p>
                   </div>
                   {item.city && (
-                    <span className="text-[10px] font-mono tracking-widest uppercase px-2.5 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-600 font-semibold">
+                    <span className="text-xs font-mono tracking-widest uppercase px-2.5 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-600 font-semibold">
                       {item.city}
                     </span>
                   )}
@@ -130,10 +130,10 @@ export const InfiniteMovingCards = ({
               <div className="flex items-center justify-between py-1">
                 <div>
                   <h4 className="font-serif italic text-lg text-slate-900">{item.name}</h4>
-                  <p className="font-mono text-[11px] text-slate-400">{item.title}</p>
+                  <p className="font-mono text-[13px] text-slate-500">{item.title}</p>
                 </div>
                 {item.badge && (
-                  <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-amber-800 bg-amber-50/80 border border-amber-200/60 px-3 py-1 rounded-full">
+                  <span className="text-xs font-mono font-semibold uppercase tracking-wider text-amber-800 bg-amber-50/80 border border-amber-200/60 px-3 py-1 rounded-full">
                     {item.badge}
                   </span>
                 )}

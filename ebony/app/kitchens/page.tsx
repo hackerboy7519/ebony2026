@@ -35,14 +35,14 @@ export default function KitchensPage() {
 
           <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
             <div className="max-w-3xl">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+              <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-3">
                 CULINARY ARCHITECTURE
               </span>
               <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal leading-[1.1] tracking-tight mb-6">
                 Modular Kitchens, <br />
                 <span className="italic">Engineered for Life.</span>
               </h1>
-              <p className="font-sans text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
+              <p className="font-sans text-sm sm:text-base text-white/80 font-normal leading-relaxed mb-8 max-w-2xl">
                 Where culinary ergonomics meets understated luxury. Every EBONY kitchen is built with 100% BWP Marine Plywood or surgical SS 304 carcasses, German CNC tolerances, and whisper-quiet Blum motion technology.
               </p>
 
@@ -76,7 +76,7 @@ export default function KitchensPage() {
                   <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
                     100% Boiling Water Proof
                   </h3>
-                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                  <p className="font-sans text-xs text-slate-600 font-normal leading-relaxed">
                     IS 710 calibrated marine plywood or SS 304 surgical stainless steel base carcasses guarantee zero swelling or fungal decay.
                   </p>
                 </div>
@@ -90,7 +90,7 @@ export default function KitchensPage() {
                   <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
                     Chef&apos;s Work Triangle
                   </h3>
-                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                  <p className="font-sans text-xs text-slate-600 font-normal leading-relaxed">
                     Engineered distances between refrigeration, washing, and cooking zones minimize fatigue and optimize culinary preparation.
                   </p>
                 </div>
@@ -104,7 +104,7 @@ export default function KitchensPage() {
                   <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
                     Blum Aventos Motion
                   </h3>
-                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                  <p className="font-sans text-xs text-slate-600 font-normal leading-relaxed">
                     Motorized and mechanical lift-up systems for overhead cabinets that open effortlessly and stay in place without head collisions.
                   </p>
                 </div>
@@ -133,13 +133,13 @@ export default function KitchensPage() {
               </div>
 
               <div className="lg:col-span-6">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+                <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-3">
                   SMART INTERNAL STORAGE
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-slate-950 font-normal mb-6">
                   Tall Grocery Pantries, Magic Corner Trays &amp; Hidden Appliance Stations.
                 </h2>
-                <p className="font-sans text-sm sm:text-base text-slate-600 font-light leading-relaxed mb-6">
+                <p className="font-sans text-sm sm:text-base text-slate-600 font-normal leading-relaxed mb-6">
                   A truly luxurious kitchen looks neat and clutter-free every single day. Store your daily groceries in full-height pull-outs, reach corner utensils effortlessly with smooth swivel trays, and tuck your mixer and toaster away into a hidden countertop station.
                 </p>
 
@@ -175,13 +175,13 @@ export default function KitchensPage() {
         {/* Consultation Call to Action */}
         <section className="py-20 bg-[#0B0F19] text-white text-center">
           <div className="max-w-4xl mx-auto px-5 sm:px-8">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+            <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-3">
               BEGIN YOUR CULINARY PROJECT
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal mb-6">
               Bring Your Floor Plan to Our Studio.
             </h2>
-            <p className="font-sans text-sm sm:text-base text-white/70 font-light leading-relaxed mb-8 max-w-xl mx-auto">
+            <p className="font-sans text-sm sm:text-base text-white/70 font-normal leading-relaxed mb-8 max-w-xl mx-auto">
               Our architects will review your dimensions, recommend the ideal layout, and provide photorealistic 3D visuals with exact material samples.
             </p>
             <Link

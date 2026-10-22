@@ -14,7 +14,7 @@ export function CoreMaterialsSection() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="w-8 h-[1px] bg-[#B8923A]" />
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold">
+              <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold">
                 Substrate Engineering
               </span>
             </div>
@@ -22,7 +22,7 @@ export function CoreMaterialsSection() {
               Three Certified Core Materials.
             </h2>
           </div>
-          <p className="font-sans text-sm sm:text-base text-slate-600 max-w-md font-light leading-relaxed">
+          <p className="font-sans text-sm sm:text-base text-slate-600 max-w-md font-normal leading-relaxed">
             Every EBONY carcass is engineered for purpose. We pair the right substrate to the right zone to guarantee lifetime structural integrity.
           </p>
         </div>
@@ -38,7 +38,7 @@ export function CoreMaterialsSection() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent" />
           <div className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10 text-white max-w-lg">
-            <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-2">
+            <span className="font-mono text-xs sm:text-[13px] uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-2">
               ZERO COMPROMISE ON CARCASS INTEGRITY
             </span>
             <p className="font-serif text-xl sm:text-2xl text-white font-normal">
@@ -56,7 +56,7 @@ export function CoreMaterialsSection() {
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-[10px] uppercase tracking-wider px-2.5 py-1 rounded bg-amber-100/80 text-amber-900 font-bold">
+                  <span className="font-mono text-xs uppercase tracking-wider px-2.5 py-1 rounded bg-amber-100/80 text-amber-900 font-bold">
                     {mat.badge}
                   </span>
                   <Shield className="w-4 h-4 text-[#B8923A]" />
@@ -66,13 +66,13 @@ export function CoreMaterialsSection() {
                   {mat.name}
                 </h3>
 
-                <p className="font-sans text-xs sm:text-sm text-slate-600 font-light leading-relaxed mb-6">
+                <p className="font-sans text-xs sm:text-sm text-slate-600 font-normal leading-relaxed mb-6">
                   {mat.description}
                 </p>
 
                 <div className="space-y-3 pt-4 border-t border-slate-200/80">
                   <div>
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-slate-400 block mb-1">
+                    <span className="font-mono text-xs uppercase tracking-wider text-slate-500 block mb-1">
                       Engineered Application Zones
                     </span>
                     <p className="font-sans text-xs text-slate-800 font-medium">
@@ -81,7 +81,7 @@ export function CoreMaterialsSection() {
                   </div>
 
                   <div className="flex items-center justify-between pt-2">
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-slate-400">
+                    <span className="font-mono text-xs uppercase tracking-wider text-slate-500">
                       Density
                     </span>
                     <span className="font-mono text-xs font-bold text-slate-900">
@@ -90,7 +90,7 @@ export function CoreMaterialsSection() {
                   </div>
 
                   <div className="flex items-center justify-between pt-1">
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-slate-400">
+                    <span className="font-mono text-xs uppercase tracking-wider text-slate-500">
                       Standard
                     </span>
                     <span className="font-mono text-xs text-emerald-700 font-semibold flex items-center gap-1">

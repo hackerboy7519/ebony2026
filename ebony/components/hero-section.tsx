@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
-import { ArrowDown, ArrowRight, Volume2, VolumeX, Play, Pause, Sparkles } from "lucide-react"
+import { ArrowRight, Volume2, VolumeX } from "lucide-react"
 import { openEnquiryModal } from "@/components/enquiry-modal"
 import { HOME_CONTENT } from "@/lib/home-content"
 
@@ -30,32 +30,42 @@ function StatCounter({ end, suffix, label }: { end: number; suffix: string; labe
     const duration = 1600
     const start = performance.now()
     const tick = (now: number) => {
-      const elapsed = now - start
-      const progress = Math.min(elapsed / duration, 1)
+      const progress = Math.min((now - start) / duration, 1)
       const eased = 1 - Math.pow(1 - progress, 3)
-      setCount(Math.floor(eased * end))
+      setCount(Math.round(eased * end))
       if (progress < 1) requestAnimationFrame(tick)
     }
     requestAnimationFrame(tick)
   }, [started, end])
 
   return (
-    <div ref={ref} className="text-center px-4 py-4 sm:py-6">
-      <div className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#C5A572]">
+    <div ref={ref} className="text-center px-3 py-6 sm:py-8">
+      <div className="font-serif text-[2rem] sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#D8B97F] tabular-nums">
         {count}
         {suffix}
       </div>
-      <div className="text-white/75 text-xs sm:text-sm font-light mt-1.5 leading-snug">
-        {label}
-      </div>
+      <div className="text-white/80 text-sm sm:text-[15px] mt-2 leading-snug">{label}</div>
     </div>
   )
 }
 
+/** Splits a line into words that rise in one after another. */
+function RisingWords({ text, startDelay, className }: { text: string; startDelay: number; className?: string }) {
+  return (
+    <span className={className}>
+      {text.split(" ").map((word, i) => (
+        <span key={`${word}-${i}`} className="rise-word" style={{ animationDelay: `${startDelay + i * 90}ms` }}>
+          {word}
+          {" "}
+        </span>
+      ))}
+    </span>
+  )
+}
+
 export function HeroSection() {
-  const { eyebrow, title, subtitle, primaryCta, secondaryCta } = HOME_CONTENT.hero
+  const { eyebrow, title, accent, subtitle, primaryCta, secondaryCta } = HOME_CONTENT.hero
   const [isMuted, setIsMuted] = useState(false)
-  const [isPlaying, setIsPlaying] = useState(true)
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
@@ -66,11 +76,9 @@ export function HeroSection() {
     const playPromise = video.play()
     if (playPromise !== undefined) {
       playPromise
-        .then(() => {
-          setIsMuted(false)
-        })
+        .then(() => setIsMuted(false))
         .catch(() => {
-          // Browser prevented unmuted autoplay; start muted then unmute on first user gesture
+          // Browser blocked sound on autoplay: play muted, then turn sound on at the first tap or click
           video.muted = true
           setIsMuted(true)
           video.play().catch(() => {})
@@ -89,139 +97,103 @@ export function HeroSection() {
     }
   }, [])
 
-  const togglePlay = () => {
-    if (!videoRef.current) return
-    if (isPlaying) {
-      videoRef.current.pause()
-      setIsPlaying(false)
-    } else {
-      videoRef.current.play()
-      setIsPlaying(true)
-    }
-  }
-
-  const toggleMute = () => {
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation()
     if (!videoRef.current) return
     const next = !isMuted
     videoRef.current.muted = next
     setIsMuted(next)
   }
 
+  const titleWords = title.split(" ").length
+
   return (
     <div className="relative w-full overflow-hidden bg-[#0A0D14] text-white">
-      {/* Hero Canvas */}
-      <section id="hero" className="relative min-h-[92svh] sm:min-h-[94svh] w-full flex flex-col justify-between overflow-hidden">
-        {/* Full-Bleed Background Video with subtle atmospheric zoom */}
+      <section id="hero" className="relative min-h-[100svh] w-full flex flex-col overflow-hidden">
+        {/* Background video with a slow, breathing zoom */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <video
             ref={videoRef}
             src="/hero-video.mp4"
+            poster="/img/hero-kitchen.jpg"
             autoPlay
             loop
             muted={isMuted}
             playsInline
-            className="w-full h-full object-cover scale-105 filter brightness-[0.68] contrast-[1.08] transition-transform duration-1000 ease-out"
+            className="w-full h-full object-cover animate-slow-zoom brightness-[0.62] contrast-[1.08]"
           />
-          {/* Cinematic ambient overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D14] via-black/45 to-[#0A0D14]/80" />
-          <div className="absolute inset-0 bg-radial from-transparent via-black/20 to-black/60 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A0D14] via-black/35 to-black/70" />
         </div>
 
-        {/* Top Spacer for fixed navbar */}
-        <div className="pt-24 sm:pt-32" />
+        <div className="pt-28 sm:pt-32" />
 
-        {/* Main Centered Content */}
-        <div className="relative z-10 max-w-5xl mx-auto w-full px-5 sm:px-8 py-10 flex-1 flex flex-col justify-center items-center text-center">
-          {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6 animate-in fade-in duration-700">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C5A572] animate-pulse" />
-            <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-white/90 font-medium">
-              {eyebrow}
-            </span>
-          </div>
+        <div className="relative z-10 max-w-5xl mx-auto w-full px-5 sm:px-8 pb-24 flex-1 flex flex-col justify-center items-center text-center">
+          <span
+            className="rise-word inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-7 text-[13px] sm:text-sm font-medium tracking-wide text-white/90"
+            style={{ animationDelay: "150ms" }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D8B97F] animate-pulse" />
+            {eyebrow}
+          </span>
 
-          {/* Tagline — Large, elegant serif, generous letter-spacing, not shouting */}
-          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] text-white font-normal leading-[1.08] tracking-tight mb-5">
-            Your Dream Kitchen <br />
-            <span className="italic text-[#C5A572]">Awaits!</span>
+          <h1 className="font-serif text-[2.6rem] leading-[1.08] sm:text-6xl md:text-7xl lg:text-[5.25rem] text-white font-normal tracking-tight mb-6 text-balance">
+            <RisingWords text={title} startDelay={300} />
+            <br className="hidden sm:block" />
+            <RisingWords text={accent} startDelay={300 + titleWords * 90} className="italic text-[#D8B97F]" />
           </h1>
 
-          {/* Subtitle — One human line (max 12 words) */}
-          <p className="text-white/85 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto mb-9">
+          <p
+            className="rise-word text-white/90 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
+            style={{ animationDelay: "900ms" }}
+          >
             {subtitle}
           </p>
 
-          {/* Two CTAs: Primary warm gold/black + Ghost outline */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full sm:w-auto">
+          <div
+            className="rise-word flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto"
+            style={{ animationDelay: "1100ms" }}
+          >
             <Link
               href={primaryCta.href}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#C5A572] hover:bg-[#D4B582] text-slate-950 font-mono text-xs uppercase tracking-widest font-bold transition-all duration-300 shadow-xl shadow-amber-500/25 active:scale-95 text-center"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#C5A572] hover:bg-[#D4B582] text-slate-950 text-[15px] font-semibold transition-all duration-300 shadow-xl shadow-amber-500/20 active:scale-95"
             >
               <span>{primaryCta.label}</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
 
             <button
-              onClick={() => openEnquiryModal({ category: "Free Design Consultation" })}
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-white font-mono text-xs uppercase tracking-widest font-semibold transition-all duration-300 active:scale-95 text-center cursor-pointer"
+              onClick={() => openEnquiryModal({ category: "Free Design Visit" })}
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-white text-[15px] font-semibold transition-all duration-300 active:scale-95 cursor-pointer"
             >
               {secondaryCta.label}
             </button>
           </div>
         </div>
 
-        {/* Bottom Bar: Video controls & Scroll hint */}
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-5 sm:px-8 lg:px-12 pb-6 pt-3 flex items-center justify-between border-t border-white/15 text-xs font-mono">
-          {/* Left: Volume & Play/Pause */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={toggleMute}
-              className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-colors cursor-pointer"
-              aria-label={isMuted ? "Unmute audio" : "Mute audio"}
-            >
-              {isMuted ? (
-                <VolumeX className="w-3.5 h-3.5 text-amber-400" />
-              ) : (
-                <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
-              )}
-              <span className="text-[10px] tracking-wider font-mono">
-                {isMuted ? "Muted" : "Sound"}
-              </span>
-            </button>
+        {/* Small sound toggle — the only control left on the video */}
+        <button
+          onClick={toggleMute}
+          className="absolute z-10 bottom-6 left-5 sm:left-8 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md flex items-center justify-center text-white transition-colors cursor-pointer"
+          aria-label={isMuted ? "Turn sound on" : "Turn sound off"}
+        >
+          {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-[#D8B97F]" />}
+        </button>
 
-            <button
-              onClick={togglePlay}
-              className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-colors cursor-pointer"
-              aria-label={isPlaying ? "Pause video" : "Play video"}
-            >
-              {isPlaying ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3 ml-0.5" />}
-            </button>
-          </div>
-
-          {/* Center: Scroll to explore */}
-          <Link
-            href="#collections"
-            className="group flex items-center gap-2 text-white/70 hover:text-white tracking-[0.2em] uppercase text-[10px] transition-colors"
-          >
-            <span>Scroll to explore</span>
-            <ArrowDown className="w-3 h-3 text-[#C5A572] transition-transform duration-300 group-hover:translate-y-1" />
-          </Link>
-
-          {/* Right: Studio Location indicator */}
-          <div className="text-[10px] text-white/60 tracking-wider hidden sm:block">
-            Raipur Flagship Studio
-          </div>
+        {/* Scroll cue */}
+        <div className="absolute z-10 bottom-7 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center" aria-hidden="true">
+          <span className="w-6 h-10 rounded-full border-2 border-white/40 flex justify-center pt-2">
+            <span className="w-1 h-2 rounded-full bg-[#D8B97F] animate-bounce" />
+          </span>
         </div>
       </section>
 
-      {/* Trust Strip: 4 Animated Counters in a clean luxury row */}
-      <div className="relative z-20 border-y border-white/10 bg-[#0A0D14]">
+      {/* Trust strip */}
+      <div className="relative z-20 border-t border-white/10 bg-[#0A0D14]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
-            <StatCounter end={15} suffix="+" label="Years of happy kitchens" />
-            <StatCounter end={500} suffix="+" label="Colours & finishes" />
-            <StatCounter end={100} suffix="%" label="Custom tailored designs" />
-            <StatCounter end={10} suffix=" Years" label="Warranty on woodwork" />
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10 [&>*:nth-child(2)]:border-l [&>*:nth-child(2)]:border-white/10 md:[&>*:nth-child(2)]:border-l-0">
+            {HOME_CONTENT.trustStrip.map((s) => (
+              <StatCounter key={s.label} end={s.end} suffix={s.suffix} label={s.label} />
+            ))}
           </div>
         </div>
       </div>

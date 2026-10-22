@@ -178,7 +178,7 @@ export function PhilosophySection() {
                 key={pillar.number}
                 className="pillar-card flex gap-5 items-start group cursor-default"
               >
-                <div className="shrink-0 mt-1 w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-mono font-medium tracking-wider bg-gold/10 text-gold-deep transition-all duration-300 group-hover:scale-110 group-hover:bg-gold/20">
+                <div className="shrink-0 mt-1 w-8 h-8 rounded-full flex items-center justify-center text-xs font-mono font-medium tracking-wider bg-gold/10 text-gold-deep transition-all duration-300 group-hover:scale-110 group-hover:bg-gold/20">
                   {pillar.number}
                 </div>
                 <div>

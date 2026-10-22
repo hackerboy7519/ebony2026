@@ -58,6 +58,7 @@
   }
 
   html {
+    overflow-x: clip;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -68,9 +69,9 @@
     background-color: #FFFFFF;
     color: #0F172A;
     font-family: var(--font-sans), "Poppins", system-ui, -apple-system, sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: clip;
   }
 }
 
@@ -121,9 +122,9 @@
 
 .text-label {
   font-family: var(--font-sans), "Poppins", system-ui, sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold-deep);
 }
@@ -134,9 +135,9 @@
   align-items: center;
   gap: 0.5rem;
   font-family: var(--font-sans), "Poppins", system-ui, sans-serif;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold-deep);
 }
@@ -329,10 +330,6 @@ img {
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;
 }
 
-section {
-  transition: opacity 0.6s ease;
-}
-
 /* Subtle hover lift for interactive cards */
 .hover-lift {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
@@ -363,3 +360,130 @@ section {
   animation-play-state: paused;
 }
 
+
+/* ═══════════════════════════════════════════
+   Readability + "alive" polish layer
+   ═══════════════════════════════════════════ */
+
+/* Section kicker: small gold label that is still easy to read */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans), "Poppins", system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7A5C2E;
+}
+.kicker::before {
+  content: "";
+  width: 1.75rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: 0.7;
+}
+.kicker-dark {
+  color: #D8B97F;
+}
+
+/* Gold text that reads well on white (WCAG AA) */
+.text-gold-ink { color: #8E6D38; }
+
+/* Soft fade at both ends of a moving strip */
+.edge-fade {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+
+/* Card arrow that slides on hover */
+.card-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  transition: transform 0.45s cubic-bezier(0.32, 0.72, 0, 1), background-color 0.3s ease, color 0.3s ease;
+}
+.group:hover .card-arrow,
+.group:focus-visible .card-arrow {
+  transform: rotate(-45deg) scale(1.06);
+}
+
+/* Light sweep across an image on hover */
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.22) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform 0.9s cubic-bezier(0.32, 0.72, 0, 1);
+  pointer-events: none;
+}
+.group:hover .shine::after {
+  transform: translateX(120%);
+}
+
+/* Words that rise in one by one (hero) */
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(0.6em); filter: blur(6px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+.rise-word {
+  display: inline-block;
+  opacity: 0;
+  animation: riseIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Gentle float for small decorative badges */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float { animation: floatY 5s ease-in-out infinite; }
+
+/* Slow zoom on the hero video */
+@keyframes slowZoom {
+  from { transform: scale(1.05); }
+  to { transform: scale(1.14); }
+}
+.animate-slow-zoom { animation: slowZoom 18s ease-in-out infinite alternate; }
+
+/* Loader */
+@keyframes loaderLine {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes loaderWord {
+  0% { opacity: 0; transform: translateY(10px); }
+  15%, 85% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rise-word { opacity: 1; animation: none; }
+  .animate-float, .animate-slow-zoom, .animate-marquee-smooth, .text-foil { animation: none !important; }
+  .shine::after { display: none; }
+}
+
+/* Loader failsafe: if scripts never run, the intro still gets out of the way */
+@keyframes loaderFailsafe {
+  to { opacity: 0; visibility: hidden; }
+}
+.ebony-loader {
+  animation: loaderFailsafe 0.5s ease 4.5s forwards;
+}
+html[data-loading] #hero .rise-word {
+  animation-play-state: paused;
+}

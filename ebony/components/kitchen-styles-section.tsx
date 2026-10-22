@@ -2,68 +2,62 @@
 
 import { useState, useMemo } from "react"
 import Image from "next/image"
-import { Sparkles, ArrowRight, Check } from "lucide-react"
-import { KITCHEN_DESIGNS, KitchenDesign } from "@/lib/kitchen-designs"
+import { ChevronDown, Plus } from "lucide-react"
+import { KITCHEN_DESIGNS } from "@/lib/kitchen-designs"
 import { KitchenSketch } from "@/components/kitchen-sketch"
 import { openEnquiryModal } from "@/components/enquiry-modal"
+import { HOME_CONTENT } from "@/lib/home-content"
+import { SectionHeader } from "@/components/ui/section-header"
 import { cn } from "@/lib/utils"
 
 const FILTER_TABS = [
-  { id: "all", label: "All Designs" },
-  { id: "light", label: "Light & Bright" },
-  { id: "dark", label: "Dark & Rich" },
+  { id: "all", label: "All" },
+  { id: "light", label: "Light & bright" },
+  { id: "dark", label: "Dark & rich" },
   { id: "colourful", label: "Colourful" },
-  { id: "natural", label: "Natural & Wood" },
-  { id: "small", label: "Small Spaces" },
+  { id: "natural", label: "Natural wood" },
+  { id: "small", label: "Small spaces" },
 ]
 
+const FIRST_ROWS = 6
+
 export function KitchenStylesSection() {
+  const { kicker, title, accent, subtitle, showMore, showLess } = HOME_CONTENT.styles
   const [activeFilter, setActiveFilter] = useState("all")
+  const [expanded, setExpanded] = useState(false)
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({})
 
   const filteredDesigns = useMemo(() => {
     if (activeFilter === "all") return KITCHEN_DESIGNS
-    return KITCHEN_DESIGNS.filter((d) => d.tags.includes(activeFilter as any))
+    return KITCHEN_DESIGNS.filter((d) => d.tags.includes(activeFilter as (typeof d.tags)[number]))
   }, [activeFilter])
 
-  const handleImageError = (id: string) => {
-    setImageErrors((prev) => ({ ...prev, [id]: true }))
-  }
+  // Show 6 at first so the page stays light; "All" can expand to every style
+  const canExpand = filteredDesigns.length > FIRST_ROWS
+  const visible = expanded || !canExpand ? filteredDesigns : filteredDesigns.slice(0, FIRST_ROWS)
 
   return (
-    <section id="kitchen-styles" className="relative bg-white py-24 sm:py-32 border-b border-slate-100">
+    <section id="kitchen-styles" className="relative bg-white py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
-          <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="w-8 h-[1px] bg-[#B8923A]" />
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold">
-                Kitchen Design Gallery
-              </span>
-            </div>
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-slate-950 font-normal leading-[1.1] tracking-tight">
-              Pick Your Style
-            </h2>
-          </div>
-          <p className="font-sans text-sm sm:text-base text-slate-600 max-w-md font-light leading-relaxed">
-            Find the look that feels like you. 12 original designs crafted for real homes.
-          </p>
-        </div>
+        <SectionHeader kicker={kicker} title={title} accent={accent} subtitle={subtitle} />
 
-        {/* Filter Chips */}
-        <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-10 no-scrollbar">
+        {/* Filters: wrap on desktop, swipe on phones */}
+        <div className="-mx-5 px-5 sm:mx-0 sm:px-0 flex sm:flex-wrap items-center gap-2.5 overflow-x-auto sm:overflow-visible no-scrollbar pb-2 mb-10">
           {FILTER_TABS.map((tab) => {
             const isSelected = tab.id === activeFilter
             return (
               <button
                 key={tab.id}
-                onClick={() => setActiveFilter(tab.id)}
+                onClick={() => {
+                  setActiveFilter(tab.id)
+                  setExpanded(false)
+                }}
+                aria-pressed={isSelected}
                 className={cn(
-                  "px-5 py-2.5 rounded-full font-mono text-xs uppercase tracking-wider font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer",
+                  "px-5 py-2.5 rounded-full text-[15px] font-medium whitespace-nowrap transition-all duration-300 cursor-pointer",
                   isSelected
-                    ? "bg-slate-950 text-white shadow-md scale-105"
-                    : "bg-slate-100 text-slate-700 hover:text-slate-950 hover:bg-slate-200"
+                    ? "bg-slate-950 text-white shadow-lg shadow-slate-900/20"
+                    : "bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-950"
                 )}
               >
                 {tab.label}
@@ -72,89 +66,67 @@ export function KitchenStylesSection() {
           })}
         </div>
 
-        {/* 12 Designs Grid (3 Columns on Desktop, Responsive) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
-          {filteredDesigns.map((design) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {visible.map((design) => {
             const hasError = imageErrors[design.id]
             return (
-              <div
+              <button
                 key={design.id}
-                className="group bg-[#FAFAFA] rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                type="button"
+                onClick={() => openEnquiryModal({ design: design.name, category: "Kitchen style" })}
+                className="group text-left bg-[#FAFAFA] rounded-[1.75rem] overflow-hidden ring-1 ring-slate-200 hover:ring-[#C5A572]/60 hover:shadow-2xl hover:shadow-slate-300/50 transition-all duration-500 hover:-translate-y-1.5 flex flex-col cursor-pointer animate-in fade-in zoom-in-95 duration-500"
               >
-                {/* Photo or SVG Architectural Sketch Fallback */}
-                <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-100">
+                <div className="shine relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
                   {!hasError && design.image ? (
                     <Image
                       src={design.image}
-                      alt={design.alt || `${design.name} modular kitchen`}
+                      alt={design.alt || `${design.name} kitchen`}
                       fill
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      onError={() => handleImageError(design.id)}
+                      className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.06]"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      onError={() => setImageErrors((prev) => ({ ...prev, [design.id]: true }))}
                     />
                   ) : (
                     <KitchenSketch palette={design.colours} />
                   )}
 
-                  {/* Gradient Overlay for card readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-
-                  {/* Top Best-For Pill */}
-                  <div className="absolute top-4 left-4 bg-slate-950/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20">
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-amber-300 font-semibold">
-                      {design.bestFor}
-                    </span>
-                  </div>
-
-                  {/* Bottom 3 Colour Palette Dots on Image */}
-                  <div className="absolute bottom-3 right-4 flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                  {/* Colour palette of this style */}
+                  <span className="absolute bottom-4 left-4 flex items-center gap-1.5 bg-white/90 backdrop-blur-md px-2.5 py-1.5 rounded-full">
                     {design.colours.map((hex, i) => (
-                      <span
-                        key={i}
-                        className="w-3.5 h-3.5 rounded-full border border-white/40 shadow-sm"
-                        style={{ backgroundColor: hex }}
-                        title={hex}
-                      />
+                      <span key={i} className="w-4 h-4 rounded-full ring-1 ring-black/10" style={{ backgroundColor: hex }} />
                     ))}
-                  </div>
+                  </span>
+
+                  {/* "Get this look" appears on hover */}
+                  <span className="absolute inset-x-4 bottom-4 hidden lg:flex justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-950 text-white text-sm font-semibold">
+                      <Plus className="w-4 h-4" />
+                      Get this look
+                    </span>
+                  </span>
                 </div>
 
-                {/* Card Content */}
-                <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="font-serif text-2xl text-slate-950 font-normal mb-1.5">
-                      {design.name}
-                    </h3>
-                    <p className="font-sans text-xs sm:text-sm text-slate-600 font-light leading-relaxed mb-6">
-                      {design.line}
-                    </p>
-                  </div>
-
-                  {/* Action Bar */}
-                  <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
-                    <div className="flex items-center gap-1 text-[11px] font-mono text-slate-500">
-                      <Sparkles className="w-3 h-3 text-[#B8923A]" />
-                      <span>Custom built</span>
-                    </div>
-
-                    <button
-                      onClick={() =>
-                        openEnquiryModal({
-                          design: design.name,
-                          category: "Kitchen Design Enquiry",
-                        })
-                      }
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-950 hover:bg-[#B8923A] text-white font-mono text-[11px] uppercase tracking-wider font-bold transition-all duration-200 cursor-pointer active:scale-95 shadow-sm"
-                    >
-                      <span>Get This Look</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
+                <div className="p-6 sm:p-7">
+                  <p className="text-[13px] font-semibold text-[#8E6D38] mb-1.5">Best for: {design.bestFor}</p>
+                  <h3 className="font-serif text-2xl text-slate-950 font-normal mb-1.5">{design.name}</h3>
+                  <p className="text-[15px] text-slate-600 leading-relaxed">{design.line}</p>
                 </div>
-              </div>
+              </button>
             )
           })}
         </div>
+
+        {canExpand && (
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => setExpanded((v) => !v)}
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full ring-1 ring-slate-300 hover:ring-slate-950 text-slate-950 text-[15px] font-semibold transition-all duration-300 cursor-pointer"
+            >
+              {expanded ? showLess : showMore}
+              <ChevronDown className={cn("w-4 h-4 transition-transform duration-300", expanded && "rotate-180")} />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )

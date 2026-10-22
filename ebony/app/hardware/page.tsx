@@ -33,14 +33,14 @@ export default function HardwarePage() {
 
           <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
             <div className="max-w-3xl">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+              <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-3">
                 PRECISION MOTION ENGINEERING
               </span>
               <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal leading-[1.1] tracking-tight mb-6">
                 Hardware Partners, <br />
                 <span className="italic">200,000 Cycles of Perfection.</span>
               </h1>
-              <p className="font-sans text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
+              <p className="font-sans text-sm sm:text-base text-white/80 font-normal leading-relaxed mb-8 max-w-2xl">
                 We equip every drawer, lift, and hinge with certified components from Blum, Häfele, Hettich, Salice, and Ebco. Tested for 20 years of daily use without sag or misalignment.
               </p>
 
@@ -74,7 +74,7 @@ export default function HardwarePage() {
                   <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
                     200,000 Cycle Testing
                   </h3>
-                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                  <p className="font-sans text-xs text-slate-600 font-normal leading-relaxed">
                     Certified to withstand 200,000 opening and closing cycles under full load without loss of soft-close damping or hinge alignment.
                   </p>
                 </div>
@@ -88,7 +88,7 @@ export default function HardwarePage() {
                   <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
                     Blum Aventos Motion
                   </h3>
-                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                  <p className="font-sans text-xs text-slate-600 font-normal leading-relaxed">
                     Bi-fold and up-and-over mechanisms engineered to stop reliably at any opening angle with feather-light touch and integrated Blumotion.
                   </p>
                 </div>
@@ -102,7 +102,7 @@ export default function HardwarePage() {
                   <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
                     10-Year Comprehensive Warranty
                   </h3>
-                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                  <p className="font-sans text-xs text-slate-600 font-normal leading-relaxed">
                     All genuine motion hardware is protected by EBONY&apos;s 10-year warranty and backed by lifetime after-sales technical support.
                   </p>
                 </div>
@@ -122,13 +122,13 @@ export default function HardwarePage() {
         {/* Studio Invitation CTA */}
         <section className="py-20 bg-[#0B0F19] text-white text-center">
           <div className="max-w-4xl mx-auto px-5 sm:px-8">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+            <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-3">
               FEEL THE ENGINEERING
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal mb-6">
               Test Our Hardware Live.
             </h2>
-            <p className="font-sans text-sm sm:text-base text-white/70 font-light leading-relaxed mb-8 max-w-xl mx-auto">
+            <p className="font-sans text-sm sm:text-base text-white/70 font-normal leading-relaxed mb-8 max-w-xl mx-auto">
               Visit our Raipur studio to experience the feather-light opening and silent damping of authentic Blum and Hettich motion systems.
             </p>
             <Link

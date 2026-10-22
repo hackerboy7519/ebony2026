@@ -46,14 +46,14 @@ export function FeaturedProjectsSection() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#B8923A] font-semibold block mb-3">
+          <span className="font-mono text-xs sm:text-[13px] uppercase tracking-[0.12em] text-[#B8923A] font-semibold block mb-3">
             FEATURED PROJECTS · CENTRAL INDIA
           </span>
           <h2 className="font-serif italic text-3xl sm:text-5xl md:text-6xl text-slate-950 font-normal tracking-tight leading-[1.1] mb-4">
             Real homes. <br />
             <span className="text-[#855E15] not-italic font-medium">Real stories.</span>
           </h2>
-          <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed">
+          <p className="text-slate-600 text-xs sm:text-sm font-normal leading-relaxed">
             A selection of our latest bespoke modular kitchens, wardrobes and complete
             home interiors across Raipur, Bilaspur, and Chhattisgarh.
           </p>
@@ -89,10 +89,10 @@ export function FeaturedProjectsSection() {
 
                     {/* Corner Tag */}
                     <div className="absolute top-4 left-4 flex items-center gap-2">
-                      <span className="px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-white font-mono text-[10px] font-bold tracking-widest border border-white/10">
+                      <span className="px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-white font-mono text-xs font-bold tracking-widest border border-white/10">
                         {item.num}
                       </span>
-                      <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-slate-950 font-mono text-[10px] font-semibold tracking-wider flex items-center gap-1">
+                      <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-slate-950 font-mono text-xs font-semibold tracking-wider flex items-center gap-1">
                         <MapPin className="w-3 h-3 text-[#B8923A]" />
                         {item.location}
                       </span>
@@ -106,7 +106,7 @@ export function FeaturedProjectsSection() {
                     !isImageLeft ? "lg:col-start-1" : ""
                   }`}
                 >
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#B8923A] font-bold mb-2">
+                  <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold mb-2">
                     {item.category}
                   </span>
 
@@ -114,7 +114,7 @@ export function FeaturedProjectsSection() {
                     {item.title}
                   </h3>
 
-                  <p className="text-slate-600 text-xs sm:text-sm font-light leading-relaxed mb-6">
+                  <p className="text-slate-600 text-xs sm:text-sm font-normal leading-relaxed mb-6">
                     {item.description}
                   </p>
 
@@ -123,7 +123,7 @@ export function FeaturedProjectsSection() {
                     {item.specs.map((spec) => (
                       <span
                         key={spec}
-                        className="px-3 py-1 text-[11px] font-mono text-slate-700 bg-slate-50 border border-slate-200 rounded-full"
+                        className="px-3 py-1 text-[13px] font-mono text-slate-700 bg-slate-50 border border-slate-200 rounded-full"
                       >
                         {spec}
                       </span>

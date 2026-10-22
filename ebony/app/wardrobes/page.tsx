@@ -32,14 +32,14 @@ export default function WardrobesPage() {
 
           <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
             <div className="max-w-3xl">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+              <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-3">
                 PERSONAL SANCTUARIES
               </span>
               <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal leading-[1.1] tracking-tight mb-6">
                 Bespoke Wardrobes, <br />
                 <span className="italic">Built Around the Way You Live.</span>
               </h1>
-              <p className="font-sans text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
+              <p className="font-sans text-sm sm:text-base text-white/80 font-normal leading-relaxed mb-8 max-w-2xl">
                 Transform morning routines into an experience of quiet luxury and absolute order. Floor-to-ceiling sliding and hinged wardrobe systems engineered with Italian damping and sensor illumination.
               </p>
 
@@ -73,7 +73,7 @@ export default function WardrobesPage() {
                   <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
                     Floor-to-Ceiling Custom Fit
                   </h3>
-                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                  <p className="font-sans text-xs text-slate-600 font-normal leading-relaxed">
                     Custom built to your room height with zero wasted space above. Seamless profiles eliminate dust ledges and create a grand, built-in look.
                   </p>
                 </div>
@@ -87,7 +87,7 @@ export default function WardrobesPage() {
                   <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
                     Concealed Sensor LED
                   </h3>
-                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                  <p className="font-sans text-xs text-slate-600 font-normal leading-relaxed">
                     Warm 3000K vertical LED channels integrated into the aluminum stiles ignite automatically when doors slide or hinge open.
                   </p>
                 </div>
@@ -101,7 +101,7 @@ export default function WardrobesPage() {
                   <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
                     Anti-Tarnish Velvet Trays
                   </h3>
-                  <p className="font-sans text-xs text-slate-600 font-light leading-relaxed">
+                  <p className="font-sans text-xs text-slate-600 font-normal leading-relaxed">
                     Custom accessory drawers for luxury watches, precious jewelry, silk ties, and sunglasses lined with anti-tarnish Italian velvet.
                   </p>
                 </div>
@@ -130,13 +130,13 @@ export default function WardrobesPage() {
               </div>
 
               <div className="lg:col-span-6">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+                <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-3">
                   EASY EVERYDAY COMFORTS
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-slate-950 font-normal mb-6">
                   Hidden Slide-Out Mirrors &amp; Easy Pull-Down Hangers.
                 </h2>
-                <p className="font-sans text-sm sm:text-base text-slate-600 font-light leading-relaxed mb-6">
+                <p className="font-sans text-sm sm:text-base text-slate-600 font-normal leading-relaxed mb-6">
                   Getting dressed in the morning should feel relaxed and effortless. Pull out a full-length dressing mirror whenever you need it, and glide high-up clothes hangers right down to your hand without needing a step stool.
                 </p>
 
@@ -169,13 +169,13 @@ export default function WardrobesPage() {
         {/* Bottom CTA */}
         <section className="py-20 bg-[#0B0F19] text-white text-center">
           <div className="max-w-4xl mx-auto px-5 sm:px-8">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+            <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-3">
               ELEVATE YOUR BEDROOM
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal mb-6">
               Customized to Your Exact Ceiling Height.
             </h2>
-            <p className="font-sans text-sm sm:text-base text-white/70 font-light leading-relaxed mb-8 max-w-xl mx-auto">
+            <p className="font-sans text-sm sm:text-base text-white/70 font-normal leading-relaxed mb-8 max-w-xl mx-auto">
               Our master craftsmen build to 0.1mm tolerances. Visit our showroom or request a home space audit in Raipur and across India.
             </p>
             <Link

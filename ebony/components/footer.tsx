@@ -2,187 +2,171 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Phone, Mail, MapPin, ArrowRight } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, ArrowUp, ArrowUpRight, MessageCircle } from "lucide-react"
 import { BRAND } from "@/lib/content"
+
+const WHATSAPP_URL = "https://wa.me/917974209352?text=Hello%20Ebony%2C%20I%20am%20interested%20in%20a%20new%20kitchen."
+
+const EXPLORE = [
+  { label: "Home", href: "/" },
+  { label: "Our Work", href: "/projects" },
+  { label: "Colours & Finishes", href: "/finishes" },
+  { label: "Fittings", href: "/hardware" },
+  { label: "About Us", href: "/about" },
+  { label: "Contact", href: "/contact" },
+]
+
+const MAKE = [
+  { label: "Modular Kitchens", href: "/kitchens" },
+  { label: "Island Kitchens", href: "/kitchens#island" },
+  { label: "L-Shaped Kitchens", href: "/kitchens#l-shape" },
+  { label: "Wardrobes", href: "/wardrobes" },
+  { label: "Walk-in Closets", href: "/walk-in-closets" },
+  { label: "Bar & TV Units", href: "/projects#bar-unit" },
+]
 
 export function Footer() {
   return (
-    <footer className="bg-white text-slate-900 border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-16 sm:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-14 border-b border-slate-100">
-          {/* Brand Column (Left - 4 Cols) */}
-          <div className="lg:col-span-4">
-            <Link href="/" className="inline-block mb-4">
-              <Image
-                src="/logo.png"
-                alt={BRAND.name}
-                width={130}
-                height={38}
-                className="object-contain"
-                style={{ width: "auto", height: "auto" }}
-              />
-            </Link>
-            <p className="font-serif italic text-base text-slate-800 mb-2">
-              Kitchens You&apos;ll Love Coming Home To.
+    <footer className="relative bg-[#0A0D14] text-white overflow-hidden pb-[76px] md:pb-0">
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[80vw] max-w-[900px] h-[320px] bg-[#C5A572]/10 blur-[140px] rounded-full pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-20 sm:pt-24">
+        {/* Closing line + quick actions */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 pb-14 border-b border-white/10">
+          <div className="max-w-2xl">
+            <Image
+              src="/logo.png"
+              alt={BRAND.name}
+              width={140}
+              height={40}
+              className="object-contain brightness-125 mb-8"
+              style={{ width: "auto", height: "auto" }}
+            />
+            <p className="font-serif text-[2rem] sm:text-5xl leading-[1.15] tracking-tight">
+              Kitchens you&apos;ll love <span className="italic text-[#D8B97F]">coming home to.</span>
             </p>
-            <p className="font-sans text-xs sm:text-sm text-slate-600 font-light leading-relaxed max-w-sm mb-6">
-              Beautiful modular kitchens, wardrobes and walk-in closets. Made in our own factory and fitted in just 3 days.
-            </p>
-
-            <div className="text-xs font-mono text-slate-500">
-              German CNC Precision · Raipur Studio
-            </div>
           </div>
+          <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-[#C5A572] hover:bg-[#D4B582] text-slate-950 text-[15px] font-semibold transition-colors"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Chat on WhatsApp
+            </a>
+            <a
+              href={`tel:${BRAND.phoneRaw}`}
+              className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white text-[15px] font-semibold transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              Call {BRAND.phone}
+            </a>
+          </div>
+        </div>
 
-          {/* EXPLORE Links Column (3 Cols) */}
-          <div className="lg:col-span-2 sm:col-span-1">
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#B8923A] font-bold mb-4">
-              EXPLORE
-            </h4>
-            <ul className="flex flex-col gap-2.5 font-sans text-xs sm:text-sm text-slate-600">
-              <li>
-                <Link href="/" className="hover:text-slate-950 transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/kitchens" className="hover:text-slate-950 transition-colors">
-                  Kitchens (12 Styles)
-                </Link>
-              </li>
-              <li>
-                <Link href="/wardrobes" className="hover:text-slate-950 transition-colors">
-                  Wardrobes &amp; Closets
-                </Link>
-              </li>
-              <li>
-                <Link href="/finishes" className="hover:text-slate-950 transition-colors">
-                  Colours &amp; Finishes
-                </Link>
-              </li>
-              <li>
-                <Link href="/hardware" className="hover:text-slate-950 transition-colors">
-                  Fittings
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects" className="hover:text-slate-950 transition-colors">
-                  Our Work
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-slate-950 transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-slate-950 transition-colors">
-                  Contact
-                </Link>
-              </li>
+        {/* Links */}
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-x-6 gap-y-12 py-14">
+          <nav className="lg:col-span-3" aria-label="Explore">
+            <h3 className="text-sm font-semibold text-[#D8B97F] mb-5">Explore</h3>
+            <ul className="space-y-3">
+              {EXPLORE.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-[15px] text-white/75 hover:text-white transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* COLLECTIONS Links Column (3 Cols) */}
-          <div className="lg:col-span-3 sm:col-span-1">
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#B8923A] font-bold mb-4">
-              COLLECTIONS
-            </h4>
-            <ul className="flex flex-col gap-2.5 font-sans text-xs sm:text-sm text-slate-600">
-              <li>
-                <Link href="/kitchens#island" className="hover:text-slate-950 transition-colors">
-                  Island Kitchens
-                </Link>
-              </li>
-              <li>
-                <Link href="/kitchens#l-shape" className="hover:text-slate-950 transition-colors">
-                  L-Shape Kitchens
-                </Link>
-              </li>
-              <li>
-                <Link href="/kitchens#parallel" className="hover:text-slate-950 transition-colors">
-                  Parallel Kitchens
-                </Link>
-              </li>
-              <li>
-                <Link href="/wardrobes#sliding" className="hover:text-slate-950 transition-colors">
-                  Sliding Wardrobes
-                </Link>
-              </li>
-              <li>
-                <Link href="/wardrobes#hinged" className="hover:text-slate-950 transition-colors">
-                  Hinged Wardrobes
-                </Link>
-              </li>
-              <li>
-                <Link href="/walk-in-closets" className="hover:text-slate-950 transition-colors">
-                  Walk-in Dressing Rooms
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects#bar-unit" className="hover:text-slate-950 transition-colors">
-                  Bar &amp; TV Units
-                </Link>
-              </li>
+          <nav className="lg:col-span-3" aria-label="What we make">
+            <h3 className="text-sm font-semibold text-[#D8B97F] mb-5">What we make</h3>
+            <ul className="space-y-3">
+              {MAKE.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-[15px] text-white/75 hover:text-white transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* CONTACT Info Column (3 Cols) */}
-          <div className="lg:col-span-3">
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-[#B8923A] font-bold mb-4">
-              STUDIO &amp; CONTACT
-            </h4>
-            <div className="flex flex-col gap-3 font-sans text-xs sm:text-sm text-slate-600">
-              <a
-                href={`tel:${BRAND.phoneRaw}`}
-                className="flex items-center gap-2.5 hover:text-slate-950 transition-colors font-mono"
-              >
-                <Phone className="w-4 h-4 text-[#B8923A] shrink-0" />
-                <span>{BRAND.phone}</span>
-              </a>
-
-              <a
-                href={`mailto:${BRAND.email}`}
-                className="flex items-center gap-2.5 hover:text-slate-950 transition-colors"
-              >
-                <Mail className="w-4 h-4 text-[#B8923A] shrink-0" />
-                <span>{BRAND.email}</span>
-              </a>
-
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#B8923A] shrink-0 mt-0.5" />
-                <span>{BRAND.address}</span>
-              </div>
-
+          <div className="col-span-2 lg:col-span-6 grid sm:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-sm font-semibold text-[#D8B97F] mb-5">Visit our studio</h3>
+              <ul className="space-y-4 text-[15px] text-white/80">
+                <li className="flex items-start gap-3">
+                  <MapPin className="w-[18px] h-[18px] text-[#D8B97F] shrink-0 mt-0.5" />
+                  <span>VIP Road / Shankar Nagar, Raipur, Chhattisgarh 492001</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Clock className="w-[18px] h-[18px] text-[#D8B97F] shrink-0 mt-0.5" />
+                  <span>Mon – Sat, 10:30 AM – 8:00 PM</span>
+                </li>
+              </ul>
               <a
                 href={BRAND.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-mono text-xs text-[#B8923A] font-bold uppercase tracking-wider hover:underline mt-2"
+                className="group inline-flex items-center gap-1.5 mt-5 text-[15px] font-semibold text-white hover:text-[#D8B97F] transition-colors"
               >
-                <span>Get Directions (Google Maps)</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                Get directions
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[#D8B97F] mb-5">Talk to us</h3>
+              <ul className="space-y-4 text-[15px]">
+                <li>
+                  <a href={`tel:${BRAND.phoneRaw}`} className="flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+                    <Phone className="w-[18px] h-[18px] text-[#D8B97F] shrink-0" />
+                    {BRAND.phone}
+                  </a>
+                </li>
+                <li>
+                  <a href={`mailto:${BRAND.email}`} className="flex items-center gap-3 text-white/80 hover:text-white transition-colors break-all">
+                    <Mail className="w-[18px] h-[18px] text-[#D8B97F] shrink-0" />
+                    {BRAND.email}
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
 
-        {/* Bottom Legal Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[11px] text-slate-500">
-          <p>© {new Date().getFullYear()} EBONY Modular Interiors. All rights reserved.</p>
-          <div className="flex flex-wrap items-center gap-5">
-            <Link href="/privacy" className="hover:text-slate-900 transition-colors">
-              Privacy Policy
+        {/* Bottom bar */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-7 border-t border-white/10 text-sm text-white/60">
+          <p>© {new Date().getFullYear()} EBONY Modular Kulture. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy" className="hover:text-white transition-colors">
+              Privacy
             </Link>
-            <span>·</span>
-            <Link href="/terms" className="hover:text-slate-900 transition-colors">
-              Terms &amp; Conditions
+            <Link href="/terms" className="hover:text-white transition-colors">
+              Terms
             </Link>
-            <span>·</span>
-            <span className="text-slate-700">German CNC Machinery · Raipur, CG</span>
+            <button
+              type="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="group inline-flex items-center gap-1.5 text-white/80 hover:text-white transition-colors cursor-pointer"
+            >
+              Back to top
+              <ArrowUp className="w-4 h-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Big brand wordmark */}
+      <p
+        aria-hidden="true"
+        className="font-serif text-center leading-[0.8] tracking-tight text-[26vw] sm:text-[22vw] text-transparent select-none pointer-events-none -mb-[3vw]"
+        style={{ WebkitTextStroke: "1px rgba(216,185,127,0.22)" }}
+      >
+        EBONY
+      </p>
     </footer>
   )
 }

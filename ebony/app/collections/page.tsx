@@ -73,14 +73,14 @@ export default function CollectionsPage() {
         <section className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 pt-8 pb-12 border-b border-slate-100">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#B8923A] font-semibold block mb-3">
+              <span className="font-mono text-[13px] uppercase tracking-[0.12em] text-[#B8923A] font-semibold block mb-3">
                 CURATED SPACES &amp; PROJECTS
               </span>
               <h1 className="font-serif italic text-4xl sm:text-5xl md:text-6xl text-slate-950 font-normal leading-[1.1]">
                 Portfolio <span className="text-[#855E15] not-italic font-medium">Lookbook</span>
               </h1>
             </div>
-            <p className="text-slate-600 max-w-sm text-xs sm:text-sm leading-relaxed font-light">
+            <p className="text-slate-600 max-w-sm text-xs sm:text-sm leading-relaxed font-normal">
               Over 450 active modular configurations. Every space engineered with 0.1mm German precision and tailored to your home.
             </p>
           </div>
@@ -136,12 +136,12 @@ export default function CollectionsPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
 
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-slate-900 font-mono text-[10px] uppercase tracking-wider font-semibold">
+                    <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-slate-900 font-mono text-xs uppercase tracking-wider font-semibold">
                       {item.category}
                     </span>
                   </div>
 
-                  <div className="absolute bottom-4 left-4 text-white font-serif italic text-2xl font-light">
+                  <div className="absolute bottom-4 left-4 text-white font-serif italic text-2xl font-normal">
                     0{idx + 1}
                   </div>
                 </div>
@@ -151,7 +151,7 @@ export default function CollectionsPage() {
                     <h3 className="font-serif italic text-2xl text-slate-950 group-hover:text-[#855E15] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-slate-600 text-xs font-light mt-1">
+                    <p className="text-slate-600 text-xs font-normal mt-1">
                       {item.subtitle}
                     </p>
                   </div>

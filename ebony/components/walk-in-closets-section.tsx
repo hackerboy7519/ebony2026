@@ -18,7 +18,7 @@ export function WalkInClosetsSection() {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="w-8 h-[1px] bg-[#B8923A]" />
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold">
+              <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold">
                 Dressing Suites & Sanctuaries
               </span>
             </div>
@@ -26,7 +26,7 @@ export function WalkInClosetsSection() {
               Walk-in Closets.
             </h2>
           </div>
-          <p className="font-sans text-sm sm:text-base text-white/70 max-w-md font-light leading-relaxed">
+          <p className="font-sans text-sm sm:text-base text-white/70 max-w-md font-normal leading-relaxed">
             Haute dressing suites featuring smoked bronze vitrines, 3000K vertical LED channels, anti-tarnish velvet jewelry organizers, and full-height shoe displays.
           </p>
         </div>
@@ -47,7 +47,7 @@ export function WalkInClosetsSection() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute top-4 left-4 bg-black/75 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/15">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-[#B8923A] font-bold">
+                  <span className="font-mono text-xs uppercase tracking-widest text-[#B8923A] font-bold">
                     Suite 0{idx + 1}
                   </span>
                 </div>
@@ -58,13 +58,13 @@ export function WalkInClosetsSection() {
                   <h3 className="font-serif text-xl sm:text-2xl text-white font-normal mb-3">
                     {closet.name}
                   </h3>
-                  <p className="font-sans text-xs sm:text-sm text-white/70 font-light leading-relaxed mb-6">
+                  <p className="font-sans text-xs sm:text-sm text-white/70 font-normal leading-relaxed mb-6">
                     {closet.description}
                   </p>
                 </div>
 
                 <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-amber-400">
+                  <span className="inline-flex items-center gap-1.5 text-[13px] font-mono text-amber-400">
                     <Sparkles className="w-3 h-3" />
                     <span>Bespoke Illumination</span>
                   </span>
@@ -87,7 +87,7 @@ export function WalkInClosetsSection() {
             <h4 className="font-serif text-2xl text-white font-normal mb-1">
               Design Your Private Dressing Room
             </h4>
-            <p className="font-sans text-xs sm:text-sm text-white/70 font-light">
+            <p className="font-sans text-xs sm:text-sm text-white/70 font-normal">
               Schedule a 3D architectural consultation at our Raipur flagship studio.
             </p>
           </div>

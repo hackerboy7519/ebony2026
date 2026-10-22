@@ -72,7 +72,7 @@ export function StatsSection() {
     >
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         <div className="text-center max-w-xl mx-auto mb-16">
-          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-amber-700 font-semibold block mb-3">
+          <span className="font-mono text-[13px] uppercase tracking-[0.12em] text-amber-700 font-semibold block mb-3">
             Track Record · Est. 2009
           </span>
           <h2 className="font-serif italic text-3xl sm:text-4xl text-slate-900 font-normal">
@@ -89,7 +89,7 @@ export function StatsSection() {
               className="double-bezel group transition-transform duration-500 hover:-translate-y-1"
             >
               <div className="double-bezel-inner p-6 md:p-8 text-center flex flex-col items-center justify-between min-h-[170px] md:min-h-[190px]">
-                <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400 font-medium">
+                <span className="font-mono text-xs uppercase tracking-widest text-slate-500 font-medium">
                   EBONY METRIC
                 </span>
                 
@@ -102,7 +102,7 @@ export function StatsSection() {
                 </div>
 
                 <div className="pt-2 border-t border-slate-100 w-full">
-                  <p className="font-mono text-[11px] uppercase tracking-wider text-slate-700 font-medium">
+                  <p className="font-mono text-[13px] uppercase tracking-wider text-slate-700 font-medium">
                     {stat.label}
                   </p>
                 </div>

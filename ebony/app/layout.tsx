@@ -18,9 +18,9 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "EBONY — Luxury Modular Interiors | German-Engineered Kitchen, Wardrobe & Bedroom",
+  title: "Ebony — Modular Kitchens & Wardrobes in Raipur",
   description:
-    "EBONY crafts extraordinary modular interiors — kitchens, wardrobes, and bed sets — with German precision, 500+ finishes, 0% defect policy, and custom area design. Est. 2009, Raipur.",
+    "Beautiful modular kitchens, wardrobes and walk-in closets, made in our own factory in Raipur and fitted in about 3 days. 500+ finishes, 10-year warranty, free design visit.",
   keywords: [
     "luxury modular interiors",
     "modular kitchen",
@@ -94,12 +94,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${playfair.variable} ${poppins.variable} antialiased`}
     >
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#0B0F19" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        {/* Set before first paint so the hero waits for the intro curtain */}
+        <script dangerouslySetInnerHTML={{ __html: `document.documentElement.dataset.loading="1"` }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

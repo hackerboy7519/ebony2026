@@ -19,14 +19,14 @@ export function ProcessTimelineSection() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#C5A572] font-mono text-[10px] uppercase tracking-[0.25em] mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#C5A572] font-mono text-xs uppercase tracking-[0.12em] mb-4">
             <Sparkles className="w-3 h-3" />
             <span>{kicker}</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-normal tracking-tight">
             Your Dream Kitchen in <span className="italic text-[#C5A572]">3 Steps</span>
           </h2>
-          <p className="text-white/75 text-base sm:text-lg mt-3 font-light leading-relaxed">
+          <p className="text-white/75 text-base sm:text-lg mt-3 font-normal leading-relaxed">
             {subtitle}
           </p>
         </div>
@@ -91,7 +91,7 @@ export function ProcessTimelineSection() {
                       <p className="text-amber-200 text-sm font-medium mb-3">
                         {step.line}
                       </p>
-                      <p className="text-white/65 text-xs sm:text-sm font-light leading-relaxed">
+                      <p className="text-white/65 text-xs sm:text-sm font-normal leading-relaxed">
                         {step.desc}
                       </p>
                     </div>
@@ -138,7 +138,7 @@ export function ProcessTimelineSection() {
                   <p className="text-amber-200 text-xs font-medium mt-0.5 mb-1.5">
                     {step.line}
                   </p>
-                  <p className="text-white/70 text-xs leading-relaxed font-light">
+                  <p className="text-white/70 text-xs leading-relaxed font-normal">
                     {step.desc}
                   </p>
                 </div>
@@ -156,7 +156,7 @@ export function ProcessTimelineSection() {
             <span>{cta}</span>
             <ArrowRight className="w-4 h-4" />
           </button>
-          <p className="text-white/50 text-xs mt-3 font-light">
+          <p className="text-white/65 text-xs mt-3 font-normal">
             Visit our studio at Shankar Nagar Corridor, Raipur · No pushy sales, just honest advice.
           </p>
         </div>

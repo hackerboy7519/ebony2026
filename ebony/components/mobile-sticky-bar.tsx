@@ -2,81 +2,76 @@
 
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
-import { Phone, MessageSquare, Calendar, Sparkles } from "lucide-react"
+import { Phone, MessageCircle } from "lucide-react"
 import { BRAND } from "@/lib/content"
 import { openEnquiryModal } from "@/components/enquiry-modal"
+import { cn } from "@/lib/utils"
+
+const WHATSAPP_URL = "https://wa.me/917974209352?text=Hello%20Ebony%2C%20I%20am%20interested%20in%20a%20new%20kitchen."
 
 export function MobileStickyBar() {
   const pathname = usePathname()
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setVisible(window.scrollY > 250)
-    }
+    const handleScroll = () => setVisible(window.scrollY > 400)
+    handleScroll()
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  if (pathname === "/contact" || !visible) return null
-
-  const phoneRaw = BRAND.phone.replace(/\s+/g, "")
-  const whatsappUrl = `https://wa.me/917974209352?text=Hello%20Ebony,%20I%20am%20interested%20in%20modular%20interiors`
+  if (pathname === "/contact") return null
 
   return (
     <>
-      {/* Mobile Sticky Bottom Bar (Below 768px) */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#0B0F19]/95 backdrop-blur-lg border-t border-white/15 px-3 py-2.5 flex items-center justify-between gap-2 shadow-[0_-10px_25px_rgba(0,0,0,0.5)] animate-in slide-in-from-bottom duration-300">
+      {/* Phones: one calm bar with the three things people actually want */}
+      <div
+        className={cn(
+          "md:hidden fixed bottom-0 inset-x-0 z-40 bg-[#0B0F19]/95 backdrop-blur-lg border-t border-white/10 px-3 pt-2.5 pb-[calc(0.625rem+env(safe-area-inset-bottom))] flex items-center gap-2 transition-transform duration-500",
+          visible ? "translate-y-0" : "translate-y-full"
+        )}
+      >
         <a
-          href={`tel:${phoneRaw}`}
-          className="flex-1 min-h-[44px] flex items-center justify-center gap-1.5 rounded-full bg-white/10 hover:bg-white/15 border border-white/20 text-white font-mono text-[11px] uppercase tracking-wider font-semibold active:scale-95 transition-all"
+          href={`tel:${BRAND.phoneRaw}`}
+          aria-label={`Call ${BRAND.phone}`}
+          className="w-12 h-12 shrink-0 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-[#D8B97F] active:scale-95 transition-transform"
         >
-          <Phone className="w-3.5 h-3.5 text-[#C5A572]" />
-          <span>Call</span>
+          <Phone className="w-5 h-5" />
         </a>
-
         <a
-          href={whatsappUrl}
+          href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 min-h-[44px] flex items-center justify-center gap-1.5 rounded-full bg-emerald-600/90 hover:bg-emerald-600 text-white font-mono text-[11px] uppercase tracking-wider font-semibold active:scale-95 transition-all"
+          className="flex-1 h-12 rounded-full bg-[#25D366] text-slate-950 flex items-center justify-center gap-2 text-[15px] font-semibold active:scale-95 transition-transform"
         >
-          <MessageSquare className="w-3.5 h-3.5" />
-          <span>WhatsApp</span>
+          <MessageCircle className="w-5 h-5" />
+          WhatsApp
         </a>
-
         <button
-          onClick={() => openEnquiryModal({ category: "Free Design Visit" })}
-          className="flex-[1.3] min-h-[44px] flex items-center justify-center gap-1.5 rounded-full bg-[#C5A572] hover:bg-[#D4B582] text-slate-950 font-mono text-[11px] uppercase tracking-wider font-bold active:scale-95 transition-all shadow-md shadow-amber-500/20 cursor-pointer"
+          onClick={() => openEnquiryModal({ category: "Free design visit" })}
+          className="flex-1 h-12 rounded-full bg-[#C5A572] text-slate-950 text-[15px] font-semibold active:scale-95 transition-transform cursor-pointer"
         >
-          <Calendar className="w-3.5 h-3.5" />
-          <span>Free Visit</span>
+          Free Visit
         </button>
       </div>
 
-      {/* Desktop Floating WhatsApp + Call Pill at bottom-right (always visible after scroll) */}
-      <div className="hidden md:flex fixed right-6 bottom-8 z-40 items-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-300">
-        {/* WhatsApp Button */}
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex items-center gap-2 px-4 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-mono text-xs uppercase tracking-wider font-bold shadow-2xl hover:shadow-emerald-500/30 transition-all duration-300 hover:scale-105"
-          title="Chat on WhatsApp"
-        >
-          <MessageSquare className="w-4 h-4 fill-white" />
-          <span>WhatsApp</span>
-        </a>
-
-        {/* Free Consultation Pill */}
-        <button
-          onClick={() => openEnquiryModal({ category: "Free Design Consultation" })}
-          className="group flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-slate-950/95 hover:bg-slate-900 border border-[#C5A572]/60 text-white font-mono text-xs uppercase tracking-wider font-bold shadow-2xl hover:shadow-amber-500/25 transition-all duration-300 hover:scale-105 cursor-pointer backdrop-blur-md"
-        >
-          <Sparkles className="w-4 h-4 text-[#C5A572] animate-pulse" />
-          <span>Free Consultation</span>
-        </button>
-      </div>
+      {/* Desktop: a single floating WhatsApp button */}
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
+        className={cn(
+          "group hidden md:flex fixed right-6 bottom-7 z-40 items-center gap-2.5 pl-4 pr-5 h-14 rounded-full bg-[#25D366] hover:bg-[#1ebe5b] text-slate-950 text-[15px] font-semibold shadow-xl shadow-black/25 transition-all duration-500",
+          visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0 pointer-events-none"
+        )}
+      >
+        <span className="relative flex">
+          <span className="absolute inset-0 rounded-full bg-white/60 animate-ping" />
+          <MessageCircle className="relative w-6 h-6" />
+        </span>
+        Chat with us
+      </a>
     </>
   )
 }

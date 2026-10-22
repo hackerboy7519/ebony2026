@@ -46,10 +46,10 @@ export function ValuePillarsSection() {
                   <IconComponent className="w-5 h-5" />
                 </div>
 
-                <h3 className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-white mb-2">
+                <h3 className="font-mono text-xs font-bold uppercase tracking-[0.12em] text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-white/60 text-xs font-light leading-relaxed max-w-[220px]">
+                <p className="text-white/60 text-xs font-normal leading-relaxed max-w-[220px]">
                   {item.desc}
                 </p>
               </div>

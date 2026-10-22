@@ -14,7 +14,7 @@ export default function TermsPage() {
 
       <main className="pt-28 sm:pt-36 pb-24">
         <div className="max-w-4xl mx-auto px-5 sm:px-8">
-          <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+          <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-3">
             LEGAL FRAMEWORK
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl text-slate-950 font-normal mb-8">

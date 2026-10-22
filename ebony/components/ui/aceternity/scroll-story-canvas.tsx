@@ -197,7 +197,7 @@ export function ScrollStoryCanvas() {
                 transition={{ duration: 0.3 }}
                 className="bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-xl px-6 py-4 shadow-lg max-w-md"
               >
-                <div className="flex items-center gap-2 font-mono text-[11px] text-amber-700 font-bold uppercase tracking-wider mb-1">
+                <div className="flex items-center gap-2 font-mono text-[13px] text-amber-700 font-bold uppercase tracking-wider mb-1">
                   <span>{activeChapter.num}</span>
                   <span>·</span>
                   <span>{activeChapter.tag}</span>
@@ -210,7 +210,7 @@ export function ScrollStoryCanvas() {
 
             {/* Micro Slider */}
             <div className="bg-white/90 backdrop-blur-md border border-slate-200 rounded-lg px-4 py-2.5 shadow-sm flex items-center gap-3 w-full max-w-xs">
-              <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">Scrub</span>
+              <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">Scrub</span>
               <input
                 type="range"
                 min={1}

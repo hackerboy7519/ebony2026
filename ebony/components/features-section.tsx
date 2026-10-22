@@ -17,14 +17,14 @@ export function FeaturesSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-slate-100">
           <div>
-            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-amber-700 font-semibold block mb-3">
+            <span className="font-mono text-[13px] uppercase tracking-[0.12em] text-amber-700 font-semibold block mb-3">
               The EBONY Standard · 0% Defect Policy
             </span>
             <h2 className="font-serif italic text-3xl sm:text-4xl md:text-5xl text-slate-900 font-normal">
               Excellence by Design, <span className="text-amber-800 not-italic font-medium">Engineered for Decades</span>
             </h2>
           </div>
-          <p className="text-slate-600 max-w-sm text-xs sm:text-sm font-light leading-relaxed">
+          <p className="text-slate-600 max-w-sm text-xs sm:text-sm font-normal leading-relaxed">
             Four foundational pillars that guarantee seamless execution, uncompromising material standards, and lifelong peace of mind.
           </p>
         </div>
@@ -42,7 +42,7 @@ export function FeaturesSection() {
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-amber-50/80 border border-amber-200/60 text-amber-800">
                       {ICONS[feature.icon]}
                     </div>
-                    <span className="font-mono text-[11px] text-slate-400 font-medium tracking-widest">
+                    <span className="font-mono text-[13px] text-slate-500 font-medium tracking-widest">
                       0{idx + 1}
                     </span>
                   </div>
@@ -50,13 +50,13 @@ export function FeaturesSection() {
                   <h3 className="font-serif italic text-xl text-slate-900 mb-2.5 group-hover:text-amber-800 transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-slate-600 text-xs font-light leading-relaxed">
+                  <p className="text-slate-600 text-xs font-normal leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
 
                 <div className="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400">
+                  <span className="text-xs font-mono uppercase tracking-widest text-slate-500">
                     Institutional Standard
                   </span>
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />

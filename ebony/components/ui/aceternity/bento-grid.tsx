@@ -49,7 +49,7 @@ export const BentoGridItem = ({
       <div className="relative w-full h-full min-h-[10rem] rounded-lg overflow-hidden flex items-center justify-center">
         {header}
         {badge && (
-          <span className="absolute top-3 left-3 z-10 text-[10px] uppercase font-mono tracking-wider font-semibold px-2 py-0.5 rounded bg-white/90 backdrop-blur-sm text-slate-900 border border-slate-200/80 shadow-sm">
+          <span className="absolute top-3 left-3 z-10 text-xs uppercase font-mono tracking-wider font-semibold px-2 py-0.5 rounded bg-white/90 backdrop-blur-sm text-slate-900 border border-slate-200/80 shadow-sm">
             {badge}
           </span>
         )}

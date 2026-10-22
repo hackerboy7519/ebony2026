@@ -32,14 +32,14 @@ export default function ProjectsPage() {
 
           <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
             <div className="max-w-3xl">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+              <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-3">
                 REAL RESIDENCES · REAL STORIES
               </span>
               <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal leading-[1.1] tracking-tight mb-6">
                 Completed Projects, <br />
                 <span className="italic">Crafted to 0.1mm.</span>
               </h1>
-              <p className="font-sans text-sm sm:text-base text-white/80 font-light leading-relaxed mb-8 max-w-2xl">
+              <p className="font-sans text-sm sm:text-base text-white/80 font-normal leading-relaxed mb-8 max-w-2xl">
                 Explore our portfolio of signature residential interiors across Central India and pan-India. Every joint, reveal, and panel reflects our zero-defect philosophy.
               </p>
 
@@ -103,38 +103,38 @@ export default function ProjectsPage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute top-4 left-4 bg-slate-950/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-[#B8923A] font-bold">
+                  <span className="font-mono text-xs uppercase tracking-widest text-[#B8923A] font-bold">
                     Signature Case Study
                   </span>
                 </div>
               </div>
 
               <div className="lg:col-span-6">
-                <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+                <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-3">
                   PENTHOUSE RESIDENCE · SHANKAR NAGAR
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-slate-950 font-normal mb-6">
                   Island Kitchen with Quartzite Waterfall &amp; Fluted Oak.
                 </h2>
-                <p className="font-sans text-sm sm:text-base text-slate-600 font-light leading-relaxed mb-6">
+                <p className="font-sans text-sm sm:text-base text-slate-600 font-normal leading-relaxed mb-6">
                   The client sought a showstopper culinary centerpiece that flowed seamlessly into the penthouse dining and lounge space. EBONY engineered a 10-foot waterfall island with continuous grain quartz, hidden J-pull Blum Legrabox drawers, and motorized Aventos bi-fold lift-ups.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100 mb-8">
                   <div>
-                    <span className="font-mono text-[10px] uppercase text-slate-400 block mb-1">Configuration</span>
+                    <span className="font-mono text-xs uppercase text-slate-500 block mb-1">Configuration</span>
                     <p className="font-sans text-xs sm:text-sm text-slate-800 font-semibold">Island with Perimeter Larder</p>
                   </div>
                   <div>
-                    <span className="font-mono text-[10px] uppercase text-slate-400 block mb-1">Substrate Core</span>
+                    <span className="font-mono text-xs uppercase text-slate-500 block mb-1">Substrate Core</span>
                     <p className="font-sans text-xs sm:text-sm text-slate-800 font-semibold">IS 710 BWP Marine Plywood</p>
                   </div>
                   <div>
-                    <span className="font-mono text-[10px] uppercase text-slate-400 block mb-1">Surface Finish</span>
+                    <span className="font-mono text-xs uppercase text-slate-500 block mb-1">Surface Finish</span>
                     <p className="font-sans text-xs sm:text-sm text-slate-800 font-semibold">Super-Matte Italian PU Lacquer</p>
                   </div>
                   <div>
-                    <span className="font-mono text-[10px] uppercase text-slate-400 block mb-1">Hardware</span>
+                    <span className="font-mono text-xs uppercase text-slate-500 block mb-1">Hardware</span>
                     <p className="font-sans text-xs sm:text-sm text-slate-800 font-semibold">Blum Aventos &amp; Legrabox</p>
                   </div>
                 </div>
@@ -154,13 +154,13 @@ export default function ProjectsPage() {
         {/* Consultation CTA */}
         <section className="py-20 bg-[#0B0F19] text-white text-center">
           <div className="max-w-4xl mx-auto px-5 sm:px-8">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#B8923A] font-bold block mb-3">
+            <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#B8923A] font-bold block mb-3">
               YOUR RESIDENCE IS NEXT
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal mb-6">
               Start Your Bespoke Journey.
             </h2>
-            <p className="font-sans text-sm sm:text-base text-white/70 font-light leading-relaxed mb-8 max-w-xl mx-auto">
+            <p className="font-sans text-sm sm:text-base text-white/70 font-normal leading-relaxed mb-8 max-w-xl mx-auto">
               Schedule a design session at our Raipur flagship studio. Let our senior interior architects bring your dream space into photorealistic 3D.
             </p>
             <Link

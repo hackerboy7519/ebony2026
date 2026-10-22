@@ -28,14 +28,14 @@ export function CraftsmanshipSection() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7">
-              <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#C99E4B] font-semibold block mb-3">
+              <span className="font-mono text-[13px] uppercase tracking-[0.12em] text-[#C99E4B] font-semibold block mb-3">
                 CRAFTED WITH PURPOSE
               </span>
               <h2 className="font-serif italic text-3xl sm:text-5xl md:text-6xl text-white font-normal tracking-tight leading-[1.1] mb-6">
                 Details that <br />
                 <span className="text-white not-italic font-medium">make the difference.</span>
               </h2>
-              <p className="text-white/70 text-sm sm:text-base font-light leading-relaxed max-w-xl mb-8">
+              <p className="text-white/70 text-sm sm:text-base font-normal leading-relaxed max-w-xl mb-8">
                 Every edge, every finish and every element is crafted with precision —
                 because true luxury lives in the details.
               </p>
@@ -66,7 +66,7 @@ export function CraftsmanshipSection() {
                   <div className="font-serif italic text-3xl sm:text-4xl lg:text-5xl text-white font-normal mb-2">
                     {stat.value}
                   </div>
-                  <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-[#C99E4B] font-semibold">
+                  <div className="font-mono text-xs sm:text-xs uppercase tracking-[0.12em] text-[#C99E4B] font-semibold">
                     {stat.label}
                   </div>
                 </div>

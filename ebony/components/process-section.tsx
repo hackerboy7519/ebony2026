@@ -145,7 +145,7 @@ export function ProcessSection() {
                     <h3 className="font-serif italic text-xl text-ebony group-hover:text-gold-deep transition-colors duration-300">
                       {step.title}
                     </h3>
-                    <span className="font-mono text-[9px] tracking-[0.15em] uppercase px-3 py-1 rounded-full bg-gold/8 text-gold-deep opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                    <span className="font-mono text-xs tracking-[0.15em] uppercase px-3 py-1 rounded-full bg-gold/8 text-gold-deep opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                       {step.stat}
                     </span>
                   </div>
@@ -169,7 +169,7 @@ export function ProcessSection() {
               <p className="font-serif italic text-3xl md:text-4xl text-gold-deep mb-1">
                 {stat.value}
               </p>
-              <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-graphite">
+              <p className="font-mono text-xs tracking-[0.15em] uppercase text-graphite">
                 {stat.label}
               </p>
             </div>

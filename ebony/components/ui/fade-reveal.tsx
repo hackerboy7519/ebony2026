@@ -19,12 +19,14 @@ export function FadeReveal({
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        // Also reveal anything already above the screen (page reloaded mid-way, or a jump link)
+        if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
           setIsVisible(true)
           observer.disconnect()
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      // threshold 0 so very tall sections still reveal; start a little before they reach the screen
+      { threshold: 0, rootMargin: "0px 0px 15% 0px" }
     )
 
     if (ref.current) {

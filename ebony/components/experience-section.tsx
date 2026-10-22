@@ -19,14 +19,14 @@ export function ExperienceSection() {
             {/* Left Content Column */}
             <div className="lg:col-span-6 flex flex-col justify-between">
               <div>
-                <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#B8923A] font-semibold block mb-3">
+                <span className="font-mono text-[13px] uppercase tracking-[0.12em] text-[#B8923A] font-semibold block mb-3">
                   THE EBONY EXPERIENCE
                 </span>
                 <h2 className="font-serif italic text-3xl sm:text-5xl md:text-6xl text-slate-950 font-normal tracking-tight leading-[1.1] mb-6">
                   Not just furniture. <br />
                   <span className="text-[#855E15] not-italic font-medium">A way of living.</span>
                 </h2>
-                <p className="text-slate-600 text-sm sm:text-base font-light leading-relaxed max-w-lg mb-8">
+                <p className="text-slate-600 text-sm sm:text-base font-normal leading-relaxed max-w-lg mb-8">
                   We make the design-to-installation process simple, personal and transparent
                   — so you can enjoy the transformation without the stress.
                 </p>
@@ -50,7 +50,7 @@ export function ExperienceSection() {
                     <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-slate-950 mb-1.5">
                       {step.title}
                     </h3>
-                    <p className="text-slate-500 text-xs font-light leading-relaxed">
+                    <p className="text-slate-500 text-xs font-normal leading-relaxed">
                       {step.description}
                     </p>
                   </div>

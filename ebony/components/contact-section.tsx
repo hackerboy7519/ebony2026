@@ -118,13 +118,13 @@ export function ContactSection() {
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         {/* Header */}
         <div className="contact-header text-center mb-16 max-w-2xl mx-auto">
-          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#B8923A] font-semibold block mb-3">
+          <span className="font-mono text-[13px] uppercase tracking-[0.12em] text-[#B8923A] font-semibold block mb-3">
             PRIVATE CONSULTATION · RAIPUR FLAGSHIP & PAN-INDIA
           </span>
           <h2 className="font-serif italic text-3xl sm:text-4xl md:text-5xl text-slate-950 font-normal">
             Commission Your Space With <span className="text-[#855E15] not-italic font-medium">EBONY</span>
           </h2>
-          <p className="text-slate-600 mt-4 text-xs sm:text-sm font-light leading-relaxed">
+          <p className="text-slate-600 mt-4 text-xs sm:text-sm font-normal leading-relaxed">
             Schedule an appointment with our senior design architects. We bring your vision to life with 0.1mm German precision and lifetime care.
           </p>
           <div className="w-12 h-0.5 bg-gradient-to-r from-transparent via-[#B8923A] to-transparent mx-auto mt-6" />
@@ -177,7 +177,7 @@ export function ContactSection() {
                       <div className="flex flex-col gap-1.5">
                         <label
                           htmlFor="contact-name"
-                          className="font-mono text-[10px] tracking-widest uppercase text-slate-500 font-semibold"
+                          className="font-mono text-xs tracking-widest uppercase text-slate-500 font-semibold"
                         >
                           Full Name *
                         </label>
@@ -196,7 +196,7 @@ export function ContactSection() {
                       <div className="flex flex-col gap-1.5">
                         <label
                           htmlFor="contact-phone"
-                          className="font-mono text-[10px] tracking-widest uppercase text-slate-500 font-semibold"
+                          className="font-mono text-xs tracking-widest uppercase text-slate-500 font-semibold"
                         >
                           Phone Number *
                         </label>
@@ -218,7 +218,7 @@ export function ContactSection() {
                       <div className="flex flex-col gap-1.5">
                         <label
                           htmlFor="contact-email"
-                          className="font-mono text-[10px] tracking-widest uppercase text-slate-500 font-semibold"
+                          className="font-mono text-xs tracking-widest uppercase text-slate-500 font-semibold"
                         >
                           Email Address
                         </label>
@@ -236,7 +236,7 @@ export function ContactSection() {
                       <div className="flex flex-col gap-1.5">
                         <label
                           htmlFor="contact-city"
-                          className="font-mono text-[10px] tracking-widest uppercase text-slate-500 font-semibold"
+                          className="font-mono text-xs tracking-widest uppercase text-slate-500 font-semibold"
                         >
                           City / Location
                         </label>
@@ -262,7 +262,7 @@ export function ContactSection() {
                     <div className="flex flex-col gap-2">
                       <label
                         htmlFor="contact-interest"
-                        className="font-mono text-[10px] tracking-widest uppercase text-slate-500 font-semibold"
+                        className="font-mono text-xs tracking-widest uppercase text-slate-500 font-semibold"
                       >
                         Space of Interest
                       </label>
@@ -291,7 +291,7 @@ export function ContactSection() {
                     <div className="flex flex-col gap-1.5">
                       <label
                         htmlFor="contact-message"
-                        className="font-mono text-[10px] tracking-widest uppercase text-slate-500 font-semibold"
+                        className="font-mono text-xs tracking-widest uppercase text-slate-500 font-semibold"
                       >
                         Architectural Vision & Floorplan Details
                       </label>
@@ -366,7 +366,7 @@ export function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-mono text-[10px] tracking-widest uppercase text-slate-400 mb-0.5">
+                  <p className="font-mono text-xs tracking-widest uppercase text-slate-500 mb-0.5">
                     Direct Client Line
                   </p>
                   <a
@@ -375,7 +375,7 @@ export function ContactSection() {
                   >
                     {BRAND.phone}
                   </a>
-                  <p className="font-mono text-[10px] text-slate-500 mt-1">Mon–Sat · 10:00 AM – 8:00 PM IST</p>
+                  <p className="font-mono text-xs text-slate-500 mt-1">Mon–Sat · 10:00 AM – 8:00 PM IST</p>
                 </div>
               </div>
             </div>
@@ -399,7 +399,7 @@ export function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-mono text-[10px] tracking-widest uppercase text-slate-400 mb-0.5">
+                  <p className="font-mono text-xs tracking-widest uppercase text-slate-500 mb-0.5">
                     Architectural Inquiries
                   </p>
                   <a
@@ -408,7 +408,7 @@ export function ContactSection() {
                   >
                     {BRAND.email}
                   </a>
-                  <p className="font-mono text-[10px] text-slate-500 mt-1">Typical response within 4 hours</p>
+                  <p className="font-mono text-xs text-slate-500 mt-1">Typical response within 4 hours</p>
                 </div>
               </div>
             </div>
@@ -437,27 +437,27 @@ export function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-mono text-[10px] tracking-widest uppercase text-slate-400 mb-0.5">
+                  <p className="font-mono text-xs tracking-widest uppercase text-slate-500 mb-0.5">
                     Flagship Studio & Experience Lab
                   </p>
                   <p className="font-serif italic text-xl text-slate-900">
                     Raipur, Chhattisgarh 492001
                   </p>
-                  <p className="font-mono text-[10px] text-slate-500 mt-1">India · Private visits by reservation</p>
+                  <p className="font-mono text-xs text-slate-500 mt-1">India · Private visits by reservation</p>
                 </div>
               </div>
             </div>
 
             {/* Cities Served */}
             <div className="p-6 rounded-3xl border border-slate-100 bg-slate-50/50">
-              <p className="font-mono text-[10px] tracking-widest uppercase text-slate-400 mb-3 font-semibold">
+              <p className="font-mono text-xs tracking-widest uppercase text-slate-500 mb-3 font-semibold">
                 Pan-India Experience Network
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {CITIES.map((city) => (
                   <span
                     key={city}
-                    className="px-2.5 py-1 text-[11px] font-mono text-slate-600 bg-white border border-slate-200 rounded-full"
+                    className="px-2.5 py-1 text-[13px] font-mono text-slate-600 bg-white border border-slate-200 rounded-full"
                   >
                     {city}
                   </span>

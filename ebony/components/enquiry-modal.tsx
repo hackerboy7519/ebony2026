@@ -208,7 +208,7 @@ export function EnquiryModal() {
                     Phone Number *
                   </label>
                   <div className="relative">
-                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40 text-xs font-mono">
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/60 text-xs font-mono">
                       +91
                     </span>
                     <input
@@ -285,7 +285,7 @@ export function EnquiryModal() {
                 </button>
               </div>
 
-              <p className="text-[11px] text-white/45 text-center pt-1 font-light">
+              <p className="text-[13px] text-white/45 text-center pt-1 font-normal">
                 Direct studio phone:{" "}
                 <a href="tel:+917974209352" className="text-amber-400 hover:underline font-mono">
                   +91 79742 09352

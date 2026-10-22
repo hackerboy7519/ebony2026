@@ -22,7 +22,7 @@ export default function NotFound() {
             Even the best blueprints <br />
             <span className="italic">sometimes shift.</span>
           </h1>
-          <p className="font-sans text-sm sm:text-base text-slate-600 font-light leading-relaxed mb-10 max-w-lg mx-auto">
+          <p className="font-sans text-sm sm:text-base text-slate-600 font-normal leading-relaxed mb-10 max-w-lg mx-auto">
             The page you are looking for has been relocated or does not exist. Allow us to guide you back to our bespoke architectural collections.
           </p>
 

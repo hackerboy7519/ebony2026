@@ -38,7 +38,7 @@ export function TimelineSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-8 border-b border-slate-100">
           <div>
-            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-amber-700 font-semibold block mb-3">
+            <span className="font-mono text-[13px] uppercase tracking-[0.12em] text-amber-700 font-semibold block mb-3">
               The 72-Hour Standard
             </span>
             <h2 className="font-serif italic text-3xl sm:text-4xl md:text-5xl text-slate-900 font-normal">
@@ -76,23 +76,23 @@ export function TimelineSection() {
                       fill
                       className="object-cover transition-transform duration-700 hover:scale-105"
                     />
-                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-white font-mono text-[10px] font-bold tracking-widest border border-white/10">
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-white font-mono text-xs font-bold tracking-widest border border-white/10">
                       DAY {stage.day}
                     </div>
                   </div>
 
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-amber-700 font-semibold block mb-1">
+                  <span className="font-mono text-xs uppercase tracking-wider text-amber-700 font-semibold block mb-1">
                     {stage.phase}
                   </span>
                   <h3 className="font-serif italic text-xl text-slate-900 font-normal mb-2">
                     {stage.title}
                   </h3>
-                  <p className="text-slate-600 text-xs font-light leading-relaxed">
+                  <p className="text-slate-600 text-xs font-normal leading-relaxed">
                     {stage.desc}
                   </p>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[13px] font-mono text-slate-500">
                   <span>PHASE 0{idx + 1}</span>
                   <span className="text-amber-700 font-medium">Verified · 0% Defect</span>
                 </div>
