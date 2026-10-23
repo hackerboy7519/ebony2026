@@ -102,10 +102,10 @@ export function Navbar() {
               {BRAND.phone}
             </a>
             <button
-              onClick={() => openEnquiryModal({ category: "Free quote" })}
+              onClick={() => openEnquiryModal({ category: "Quote request" })}
               className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#C5A572] hover:bg-[#D4B582] text-slate-950 text-sm font-semibold transition-all duration-300 active:scale-95 cursor-pointer"
             >
-              Get a Free Quote
+              Get a Quote
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
             </button>
           </div>
@@ -209,12 +209,12 @@ export function Navbar() {
             <button
               onClick={() => {
                 setMenuOpen(false)
-                openEnquiryModal({ category: "Free design visit" })
+                openEnquiryModal({ category: "Design visit" })
               }}
               tabIndex={menuOpen ? 0 : -1}
               className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-[#C5A572] text-slate-950 text-base font-semibold active:scale-[0.98] transition-transform cursor-pointer"
             >
-              Book a Free Visit
+              Book a Home Visit
               <ArrowRight className="w-4 h-4" />
             </button>
             <div className="grid grid-cols-2 gap-3">

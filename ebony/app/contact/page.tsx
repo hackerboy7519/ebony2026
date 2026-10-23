@@ -10,7 +10,7 @@ import { BRAND, CITIES } from "@/lib/content"
 export const metadata = {
   title: "Contact Ebony — Call, WhatsApp or Visit Our Raipur Studio",
   description:
-    "Talk to Ebony about your new kitchen or wardrobe. Call, WhatsApp, visit our Raipur studio, or ask for a free call back.",
+    "Talk to Ebony about your new kitchen or wardrobe. Call, WhatsApp, visit our Raipur studio, or ask us to call you back.",
 }
 
 const WHATSAPP_URL = "https://wa.me/917974209352?text=Hello%20Ebony%2C%20I%20would%20like%20to%20talk%20about%20my%20home."
@@ -47,7 +47,7 @@ const QUICK = [
 
 const NEXT_STEPS = [
   { title: "We call you", line: "A friendly chat about your home, your needs and your budget." },
-  { title: "Free home visit", line: "We come over and measure every wall — no charge." },
+  { title: "Home visit", line: "We come over and measure every wall before we design." },
   { title: "See it in 3D", line: "You see exactly how your new kitchen will look before we make it." },
 ]
 

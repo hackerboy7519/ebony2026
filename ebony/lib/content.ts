@@ -240,7 +240,7 @@ export const SURFACE_FINISHES = [
     category: "Lacquered Finishes",
     finishType: "Gloss & Deep Satin Matte",
     description:
-      "Multi-coat Italian polyurethane spray lacquer applied in cleanrooms. Completely seamless edge-free face with silky tactile warmth and zero yellowing.",
+      "Multi-coat Italian polyurethane spray lacquer applied in cleanrooms. A seamless face with no visible edges, silky tactile warmth and zero yellowing.",
     features: ["Seamless 6-sided finish", "Zero edge-band lines", "Custom RAL/Pantone color matching"],
     durability: "High scratch & UV resistance",
     badge: "Signature Finish",
@@ -526,7 +526,7 @@ export const HOMEOWNER_TESTIMONIALS = [
     location: "VIP Road, Raipur",
     project: "Island Kitchen & Master Wardrobe",
     quote:
-      "Excellent design sense and flawless execution. Our island kitchen looks stunning and the on-site installation was clean and completely hassle-free.",
+      "Excellent design sense and flawless execution. Our island kitchen looks stunning and the on-site installation was clean, quick and completely smooth.",
     rating: 5,
     avatar: "AS",
   },

@@ -16,7 +16,7 @@ export const KITCHEN_DESIGNS: KitchenDesign[] = [
   {
     id: "clean-modern",
     name: "Clean & Modern",
-    line: "Smooth, handle-free doors and a look that never ages.",
+    line: "Smooth, handleless doors and a look that never ages.",
     colours: ["#2B2B2B", "#F5F5F2", "#C9C5BC"],
     bestFor: "Modern flats & open rooms",
     tags: ["all", "light"],

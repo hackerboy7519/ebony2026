@@ -150,7 +150,7 @@ export function ProcessTimelineSection() {
         {/* Bottom Centered CTA */}
         <div className="text-center pt-4">
           <button
-            onClick={() => openEnquiryModal({ category: "Free 3D Design Session" })}
+            onClick={() => openEnquiryModal({ category: "3D Design Session" })}
             className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#C5A572] hover:bg-[#D4B582] text-slate-950 font-mono text-xs uppercase tracking-widest font-bold transition-all duration-300 shadow-xl shadow-amber-500/20 active:scale-95 cursor-pointer"
           >
             <span>{cta}</span>

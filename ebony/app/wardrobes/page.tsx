@@ -145,7 +145,7 @@ export default function WardrobesPage() {
                     "Hidden Slide-Out Dressing Mirror — smoothly pulls out and turns to any angle, then slides away invisibly",
                     "Pull-Down Clothes Hanger Lift — brings upper hanging shirts, sarees & suits down to easy reaching height",
                     "Soft-Close Glass Shoe Shelves — keeps your footwear neatly organized and instantly visible",
-                    "Velvet Jewelry & Watch Drawers — soft compartments that keep your valuables organized and scratch-free",
+                    "Velvet Jewelry & Watch Drawers — soft compartments that keep your valuables organized and safe from scratches",
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-xs sm:text-sm text-slate-700">
                       <CheckCircle2 className="w-4 h-4 text-[#B8923A] shrink-0" />

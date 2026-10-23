@@ -177,7 +177,7 @@ export const HOME_CONTENT: HomeContent = {
     accent: "made just for you.",
     subtitle: "Designed around your family, made in our own factory, and fitted in your home in about 3 days.",
     primaryCta: { label: "See Our Designs", href: "#explore-designs" },
-    secondaryCta: { label: "Book a Free Visit", href: "#consultation" },
+    secondaryCta: { label: "Book a Home Visit", href: "#consultation" },
   },
 
   trustStrip: [
@@ -331,7 +331,7 @@ export const HOME_CONTENT: HomeContent = {
         title: "Smart Storage",
         line: "A place for everything, so your counters stay clear.",
         image: "/img/kitchen-colour-pop.jpg",
-        tag: "Clutter-free",
+        tag: "Clutter-proof",
       },
     ],
   },
@@ -339,7 +339,7 @@ export const HOME_CONTENT: HomeContent = {
   process: {
     kicker: "How it works",
     title: "Your new kitchen in 3 easy steps",
-    subtitle: "Simple and stress-free, from the first chat to the day you start cooking.",
+    subtitle: "Simple and easy, from the first chat to the day you start cooking.",
     steps: [
       {
         num: "01",
@@ -360,7 +360,7 @@ export const HOME_CONTENT: HomeContent = {
         desc: "Our team fits everything cleanly at your home — no dust, no mess.",
       },
     ],
-    cta: "Book a Free Visit",
+    cta: "Book a Home Visit",
   },
 
   styles: {
@@ -390,7 +390,7 @@ export const HOME_CONTENT: HomeContent = {
       { id: "membrane", name: "Classic Carved", line: "Soft curves and grooves for a traditional feel.", colorHint: "#D4C7B5", tag: "Traditional" },
       { id: "stone", name: "Stone Look", line: "Looks like marble, and handles hot pans and stains.", colorHint: "#7E7468", tag: "Strong" },
       { id: "metal", name: "Metal Shine", line: "Gold, bronze or silver touches for a rich look.", colorHint: "#B8923A", tag: "Rich" },
-      { id: "steel", name: "Stainless Steel", line: "Rust-free and perfect near the sink.", colorHint: "#94A3B8", tag: "Rust-free" },
+      { id: "steel", name: "Stainless Steel", line: "Will not rust, so it is perfect near the sink.", colorHint: "#94A3B8", tag: "Rust-proof" },
     ],
   },
 
@@ -543,12 +543,40 @@ export const HOME_CONTENT: HomeContent = {
     kicker: "Why Ebony",
     title: "Why families",
     accent: "choose us",
-    subtitle: "Four simple promises we keep in every home.",
+    subtitle: "Seven simple promises we keep in every home.",
     points: [
+      {
+        id: "lifetime-ss304",
+        title: "Lifetime Warranty on SS 304",
+        line: "Every SS 304 stainless steel basket and fitting we fit comes with a lifetime warranty.",
+        icon: "ShieldCheck",
+        image: "/img/why-ss304-basket.jpg",
+      },
+      {
+        id: "warranty",
+        title: "10-Year Warranty",
+        line: "Strong materials and careful checks, backed by 10 years of warranty on woodwork.",
+        icon: "Award",
+        image: "/img/craftsmanship-detail.jpg",
+      },
+      {
+        id: "materials",
+        title: "Material Quality",
+        line: "Waterproof plywood, branded hardware and SS 304 steel. You see every sample first.",
+        icon: "Layers",
+        image: "/img/core-materials-luxury.jpg",
+      },
+      {
+        id: "after-sales",
+        title: "After-Sales Support",
+        line: "A hinge to adjust or a drawer to fix later? Call us and our team comes back to help.",
+        icon: "Wrench",
+        image: "/img/why-after-sales.jpg",
+      },
       {
         id: "delivery",
         title: "No Mess at Home",
-        line: "Everything is made in our factory, so fitting is quick, clean and dust-free.",
+        line: "Everything is made in our factory, so fitting is quick and clean, with almost no dust.",
         icon: "Clock",
         image: "/img/process-engineering.jpg",
       },
@@ -556,38 +584,31 @@ export const HOME_CONTENT: HomeContent = {
         id: "pricing",
         title: "Clear, Honest Pricing",
         line: "You get a clear quote upfront. No hidden costs, no surprises.",
-        icon: "ShieldCheck",
+        icon: "BadgeCheck",
         image: "/img/kitchen-curves-arches.jpg",
       },
       {
-        id: "warranty",
-        title: "10-Year Warranty",
-        line: "Strong materials and careful checks, backed by 10 years of warranty on woodwork.",
-        icon: "Award",
-        image: "/img/core-materials-luxury.jpg",
-      },
-      {
         id: "visit",
-        title: "Free Design Visit",
+        title: "Home Design Visit",
         line: "We visit your home, measure every wall and show you the design in 3D.",
-        icon: "Sparkles",
-        image: "/img/craftsmanship-detail.jpg",
+        icon: "Ruler",
+        image: "/img/kitchen-layout-real.jpg",
       },
     ],
     footnote: {
-      text: "We use waterproof plywood, strong boards and rust-free steel where it matters most.",
+      text: "We use waterproof plywood, strong boards and rust-proof steel where it matters most.",
       label: "See our materials",
       href: "/finishes",
     },
   },
 
   finalCta: {
-    kicker: "Free design visit",
+    kicker: "Home design visit",
     title: "Let's design your",
     accent: "dream kitchen",
-    subtitle: "Tell us a little about your home. We'll call you back and plan a free visit at a time that suits you.",
-    formTitle: "Book your free visit",
+    subtitle: "Tell us a little about your home. We'll call you back and plan a visit at a time that suits you.",
+    formTitle: "Book your visit",
     formNote: "Just 3 details. No pushy sales calls.",
-    primaryBtn: "Book My Free Visit",
+    primaryBtn: "Book My Visit",
   },
 }

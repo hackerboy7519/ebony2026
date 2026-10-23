@@ -470,11 +470,31 @@ img {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* Soft ring that keeps numbered photo markers noticeable */
+@keyframes hotspotPulse {
+  0% { transform: scale(0.85); opacity: 0.85; }
+  100% { transform: scale(1.65); opacity: 0; }
+}
+.hotspot-pulse {
+  animation: hotspotPulse 2.6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* Gallery cards cascade in one after another */
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.card-in {
+  animation: cardIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .rise-word { opacity: 1; animation: none; }
   .animate-float, .animate-slow-zoom, .animate-marquee-smooth, .text-foil { animation: none !important; }
   .shine::after { display: none; }
+  .hotspot-pulse { animation: none; opacity: 0; }
+  .card-in { animation: none; }
 }
 
 /* Loader failsafe: if scripts never run, the intro still gets out of the way */

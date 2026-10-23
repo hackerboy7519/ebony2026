@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { KitchenConfigurationsSection } from "@/components/kitchen-configurations-section"
 import { KitchenStylesSection } from "@/components/kitchen-styles-section"
+import { ComfortSection } from "@/components/comfort-section"
 import { EnquiryModal } from "@/components/enquiry-modal"
 import { MobileStickyBar } from "@/components/mobile-sticky-bar"
 import { ArrowUpRight, CheckCircle2, ShieldCheck, Sparkles, ChefHat } from "lucide-react"
@@ -113,6 +114,9 @@ export default function KitchensPage() {
           </div>
         </section>
 
+        {/* Comfort: numbered reach points on a real kitchen photo */}
+        <ComfortSection />
+
         {/* Layout Configurations */}
         <div id="configurations">
           <KitchenConfigurationsSection />
@@ -140,7 +144,7 @@ export default function KitchensPage() {
                   Tall Grocery Pantries, Magic Corner Trays &amp; Hidden Appliance Stations.
                 </h2>
                 <p className="font-sans text-sm sm:text-base text-slate-600 font-normal leading-relaxed mb-6">
-                  A truly luxurious kitchen looks neat and clutter-free every single day. Store your daily groceries in full-height pull-outs, reach corner utensils effortlessly with smooth swivel trays, and tuck your mixer and toaster away into a hidden countertop station.
+                  A truly luxurious kitchen looks neat and tidy every single day. Store your daily groceries in full-height pull-outs, reach corner utensils effortlessly with smooth swivel trays, and tuck your mixer and toaster away into a hidden countertop station.
                 </p>
 
                 <ul className="space-y-3 mb-8">

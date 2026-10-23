@@ -162,7 +162,7 @@ export function HeroSection() {
             </Link>
 
             <button
-              onClick={() => openEnquiryModal({ category: "Free Design Visit" })}
+              onClick={() => openEnquiryModal({ category: "Design Visit" })}
               className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-white text-[15px] font-semibold transition-all duration-300 active:scale-95 cursor-pointer"
             >
               {secondaryCta.label}

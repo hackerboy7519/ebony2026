@@ -37,7 +37,7 @@ export default function TermsPage() {
               2. 3-Day Installation Protocol
             </h2>
             <p>
-              Our 3-day on-site assembly commitment applies following complete civil, electrical, plumbing, and flooring readiness of the site. The site must be dust-free and have uninterrupted electrical supply to ensure our laser alignment and 48-point handover audit can proceed on schedule.
+              Our 3-day on-site assembly commitment applies following complete civil, electrical, plumbing, and flooring readiness of the site. The site must be clean of construction dust and have uninterrupted electrical supply to ensure our laser alignment and 48-point handover audit can proceed on schedule.
             </p>
 
             <h2 className="font-serif text-2xl text-slate-950 font-normal pt-4">

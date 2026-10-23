@@ -20,7 +20,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Ebony — Modular Kitchens & Wardrobes in Raipur",
   description:
-    "Beautiful modular kitchens, wardrobes and walk-in closets, made in our own factory in Raipur and fitted in about 3 days. 500+ finishes, 10-year warranty, free design visit.",
+    "Beautiful modular kitchens, wardrobes and walk-in closets, made in our own factory in Raipur and fitted in about 3 days. 500+ finishes, a 10-year warranty and a home design visit.",
   keywords: [
     "luxury modular interiors",
     "modular kitchen",

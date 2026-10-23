@@ -48,10 +48,10 @@ export function MobileStickyBar() {
           WhatsApp
         </a>
         <button
-          onClick={() => openEnquiryModal({ category: "Free design visit" })}
+          onClick={() => openEnquiryModal({ category: "Design visit" })}
           className="flex-1 h-12 rounded-full bg-[#C5A572] text-slate-950 text-[15px] font-semibold active:scale-95 transition-transform cursor-pointer"
         >
-          Free Visit
+          Book Visit
         </button>
       </div>
 

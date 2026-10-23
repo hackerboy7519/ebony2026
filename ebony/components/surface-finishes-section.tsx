@@ -81,10 +81,10 @@ export function SurfaceFinishesSection() {
             </ul>
 
             <button
-              onClick={() => openEnquiryModal({ design: active.name, category: "Free finish samples" })}
+              onClick={() => openEnquiryModal({ design: active.name, category: "Finish samples" })}
               className="group w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-slate-950 hover:bg-[#8E6D38] text-white text-[15px] font-semibold transition-colors duration-300 cursor-pointer"
             >
-              Ask for free samples
+              Ask for samples
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
             <Link

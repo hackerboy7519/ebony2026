@@ -34,8 +34,8 @@ export function StudioCtaSection() {
           name: form.name,
           phone: form.phone,
           city: form.city,
-          interest: "Homepage free visit request",
-          message: `Free visit request from ${form.name} in ${form.city}.`,
+          interest: "Homepage visit request",
+          message: `Visit request from ${form.name} in ${form.city}.`,
         }),
       })
       const data = await res.json()
@@ -116,7 +116,7 @@ export function StudioCtaSection() {
                 <h3 className="font-serif text-3xl text-white font-normal">Thank you, {form.name}!</h3>
                 <p className="text-white/80 text-base max-w-sm mx-auto leading-relaxed">
                   Our team will call you on <span className="text-[#D8B97F] font-semibold">{form.phone}</span> soon to
-                  plan your free visit.
+                  plan your visit.
                 </p>
               </div>
             ) : (
