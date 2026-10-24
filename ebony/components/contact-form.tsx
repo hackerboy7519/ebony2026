@@ -60,10 +60,10 @@ export function ContactForm() {
           <span className="font-semibold text-slate-950">{form.phone}</span> soon.
         </p>
         <Link
-          href="/projects"
-          className="group mt-8 inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 hover:bg-[#8E6D38] text-white text-[15px] font-semibold transition-colors"
+          href="/collections"
+          className="group mt-8 inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-slate-950 hover:bg-[#C5A572] hover:text-slate-950 text-white text-[15px] font-semibold transition-all duration-300 shadow-md"
         >
-          See our work while you wait
+          <span>Explore design collections while you wait</span>
           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
         </Link>
       </div>
@@ -84,8 +84,8 @@ export function ContactForm() {
       />
 
       <div>
-        <h2 className="font-serif text-[1.75rem] sm:text-3xl text-slate-950">Ask for a call back</h2>
-        <p className="text-[15px] text-slate-600 mt-1">Takes less than a minute.</p>
+        <h2 className="font-serif text-[1.75rem] sm:text-3xl text-slate-950">Curate Your Bespoke Space</h2>
+        <p className="text-[15px] text-slate-600 mt-1">Share your vision with our design architects.</p>
       </div>
 
       <fieldset>
@@ -194,7 +194,7 @@ export function ContactForm() {
         disabled={loading}
         className="group w-full py-4 px-8 rounded-full bg-[#C5A572] hover:bg-[#D4B582] text-slate-950 text-base font-semibold transition-colors shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer active:scale-[0.99]"
       >
-        {loading ? "Sending…" : "Call me back"}
+        {loading ? "Sending…" : "Reserve Design Session"}
         {!loading && <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />}
       </button>
 

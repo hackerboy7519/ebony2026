@@ -4,12 +4,14 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { SurfaceFinishesSection } from "@/components/surface-finishes-section"
 import { CoreMaterialsSection } from "@/components/core-materials-section"
+import { EnquiryModal } from "@/components/enquiry-modal"
+import { MobileStickyBar } from "@/components/mobile-sticky-bar"
 import { ArrowUpRight, Palette, Layers, Sparkles } from "lucide-react"
 
 export const metadata = {
-  title: "500+ Surface Finishes & Core Materials — EBONY Modular Interiors",
+  title: "Curated Surface Finishes & Core Materials — EBONY Modular Interiors",
   description:
-    "Explore 500+ bespoke finishes: Italian PU lacquers, anti-fingerprint laminates, optical acrylics, smoked glass, Terulam stone, and certified BWP Marine Plywood & SS304 substrates.",
+    "Explore curated bespoke finishes: Italian PU lacquers, anti-fingerprint laminates, optical acrylics, smoked glass, Terulam stone, and certified BWP Marine Plywood & SS304 substrates.",
 }
 
 export default function FinishesPage() {
@@ -37,8 +39,8 @@ export default function FinishesPage() {
                 MATERIAL LIBRARY &amp; SUBSTRATES
               </span>
               <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal leading-[1.1] tracking-tight mb-6">
-                500+ Finishes, <br />
-                <span className="italic">Enduring Tactile Luxury.</span>
+                Curated Finishes, <br />
+                <span className="not-italic text-[#D8B97F]">Enduring Tactile Luxury.</span>
               </h1>
               <p className="font-sans text-sm sm:text-base text-white/80 font-normal leading-relaxed mb-8 max-w-2xl">
                 From 6-sided seamless Italian PU lacquers and optical acrylics to indestructible SS 304 surgical stainless steel and BWP Marine Plywood. Explore materials engineered for a lifetime.
@@ -55,7 +57,7 @@ export default function FinishesPage() {
                   href="/contact"
                   className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-300 backdrop-blur-md"
                 >
-                  Touch Swatches at Studio
+                  Experience Finishes in Person
                 </Link>
               </div>
             </div>
@@ -72,7 +74,7 @@ export default function FinishesPage() {
                 </div>
                 <div>
                   <h3 className="font-serif text-lg text-slate-950 font-normal mb-1">
-                    500+ Custom Color Codes
+                    Bespoke Color Matching
                   </h3>
                   <p className="font-sans text-xs text-slate-600 font-normal leading-relaxed">
                     Custom RAL and Pantone color matching in seamless Italian PU spray lacquer applied in sterile cleanroom environments.
@@ -124,7 +126,7 @@ export default function FinishesPage() {
               FEEL THE TACTILE QUALITY
             </span>
             <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal mb-6">
-              Touch 500+ Finishes in Our Studio.
+              Experience Our Finishes in Person.
             </h2>
             <p className="font-sans text-sm sm:text-base text-white/70 font-normal leading-relaxed mb-8 max-w-xl mx-auto">
               Screen renders cannot convey the velvety touch of Italian super-matte lacquer or the weighty glide of an anodised bronze shutter. Visit our Raipur flagship studio.
@@ -133,12 +135,15 @@ export default function FinishesPage() {
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#B8923A] hover:bg-[#C99E4B] text-slate-950 font-mono text-xs uppercase tracking-wider font-bold transition-all duration-300 shadow-xl"
             >
-              <span>Schedule Studio Visit</span>
+              <span>Reserve Design Session</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
         </section>
       </main>
+
+      <EnquiryModal />
+      <MobileStickyBar />
 
       <Footer />
     </div>

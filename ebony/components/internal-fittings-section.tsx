@@ -50,7 +50,7 @@ export function InternalFittingsSection() {
             href="/hardware"
             className="group inline-flex items-center gap-2 text-[15px] font-semibold text-[#D8B97F] hover:text-white transition-colors shrink-0"
           >
-            See all fittings
+            Explore Engineering Hardware
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>

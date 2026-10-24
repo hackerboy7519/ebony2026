@@ -375,7 +375,7 @@ export function KitchenStudio() {
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2.5 min-h-[56px] rounded-full bg-[#0B1020] hover:bg-[#1A2238] text-white text-base font-semibold transition-colors active:scale-[0.99]"
           >
-            Get this design <ArrowRight className="w-[18px] h-[18px]" />
+            Bring This Design to Life <ArrowRight className="w-[18px] h-[18px]" />
           </a>
           <p className="-mt-2 text-center text-sm text-[#5A5F6D]">
             or call <a href={`tel:${BRAND.phoneRaw}`} className="font-semibold text-[#0B1020]">{BRAND.phone}</a>

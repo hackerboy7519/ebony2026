@@ -17,7 +17,6 @@ const NAV_ITEMS = [
   { label: "Collections", href: "/collections" },
   { label: "Chef's Corner", href: "/chefs-favourite-corner" },
   { label: "3D Studio", href: "/kitchen-studio" },
-  { label: "Our Work", href: "/projects" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ]
@@ -63,7 +62,7 @@ export function Navbar() {
         )}
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between">
-          <Link href="/" className="flex items-center group" aria-label="Ebony home">
+          <Link href="/" className="flex items-center group cursor-pointer" aria-label="Ebony Home">
             <span className="relative h-8 sm:h-9 w-28 sm:w-32 flex items-center">
               <Image
                 src="/logo.png"
@@ -106,10 +105,10 @@ export function Navbar() {
               {BRAND.phone}
             </a>
             <button
-              onClick={() => openEnquiryModal({ category: "Quote request" })}
-              className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#C5A572] hover:bg-[#D4B582] text-slate-950 text-sm font-semibold transition-all duration-300 active:scale-95 cursor-pointer"
+              onClick={() => openEnquiryModal({ category: "Design Consultation" })}
+              className="group inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#C5A572] hover:bg-[#D4B582] text-slate-950 text-sm font-semibold transition-all duration-300 active:scale-95 cursor-pointer shadow-md shadow-amber-500/10"
             >
-              Get a Quote
+              Curate Your Space
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
             </button>
           </div>
@@ -213,12 +212,12 @@ export function Navbar() {
             <button
               onClick={() => {
                 setMenuOpen(false)
-                openEnquiryModal({ category: "Design visit" })
+                openEnquiryModal({ category: "Design Consultation" })
               }}
               tabIndex={menuOpen ? 0 : -1}
-              className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-[#C5A572] text-slate-950 text-base font-semibold active:scale-[0.98] transition-transform cursor-pointer"
+              className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-[#C5A572] text-slate-950 text-base font-semibold active:scale-[0.98] transition-transform cursor-pointer shadow-lg"
             >
-              Book a Home Visit
+              Curate Your Space
               <ArrowRight className="w-4 h-4" />
             </button>
             <div className="grid grid-cols-2 gap-3">

@@ -2,59 +2,61 @@
 
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
-import { ArrowRight, Volume2, VolumeX } from "lucide-react"
+import { ArrowRight, Volume2, VolumeX, Compass, Sparkles, Layers, ShieldCheck } from "lucide-react"
 import { openEnquiryModal } from "@/components/enquiry-modal"
 import { HOME_CONTENT } from "@/lib/home-content"
 
-function StatCounter({ end, suffix, label }: { end: number; suffix: string; label: string }) {
-  const [count, setCount] = useState(0)
-  const [started, setStarted] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
+const ICON_MAP = {
+  Compass,
+  Sparkles,
+  Layers,
+  ShieldCheck,
+}
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setStarted(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.2 }
-    )
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [])
-
-  useEffect(() => {
-    if (!started) return
-    const duration = 1600
-    const start = performance.now()
-    const tick = (now: number) => {
-      const progress = Math.min((now - start) / duration, 1)
-      const eased = 1 - Math.pow(1 - progress, 3)
-      setCount(Math.round(eased * end))
-      if (progress < 1) requestAnimationFrame(tick)
-    }
-    requestAnimationFrame(tick)
-  }, [started, end])
+function TrustPillar({
+  title,
+  subtitle,
+  iconName,
+}: {
+  title: string
+  subtitle: string
+  iconName: string
+}) {
+  const IconComponent = ICON_MAP[iconName as keyof typeof ICON_MAP] || Sparkles
 
   return (
-    <div ref={ref} className="text-center px-3 py-6 sm:py-8">
-      <div className="font-serif text-[2rem] sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#D8B97F] tabular-nums">
-        {count}
-        {suffix}
+    <div className="flex flex-col items-center text-center px-4 py-6 sm:py-8 group transition-colors">
+      <div className="w-11 h-11 rounded-full bg-white/[0.06] border border-white/10 flex items-center justify-center text-[#D8B97F] mb-3 group-hover:border-[#D8B97F]/50 group-hover:bg-white/[0.1] group-hover:scale-105 transition-all duration-300">
+        <IconComponent className="w-5 h-5 text-[#D8B97F]" />
       </div>
-      <div className="text-white/80 text-sm sm:text-[15px] mt-2 leading-snug">{label}</div>
+      <div className="font-serif text-lg sm:text-xl font-normal tracking-tight text-[#D8B97F]">
+        {title}
+      </div>
+      <div className="text-white/75 text-xs sm:text-[14px] mt-1.5 leading-snug max-w-[240px]">
+        {subtitle}
+      </div>
     </div>
   )
 }
 
-/** Splits a line into words that rise in one after another. */
-function RisingWords({ text, startDelay, className }: { text: string; startDelay: number; className?: string }) {
+/** Splits a line into words that rise in one after another with smooth blur and motion. */
+function RisingWords({
+  text,
+  startDelay,
+  className,
+}: {
+  text: string
+  startDelay: number
+  className?: string
+}) {
   return (
     <span className={className}>
       {text.split(" ").map((word, i) => (
-        <span key={`${word}-${i}`} className="rise-word" style={{ animationDelay: `${startDelay + i * 90}ms` }}>
+        <span
+          key={`${word}-${i}`}
+          className="rise-word inline-block"
+          style={{ animationDelay: `${startDelay + i * 110}ms` }}
+        >
           {word}
           {" "}
         </span>
@@ -136,11 +138,20 @@ export function HeroSection() {
             {eyebrow}
           </span>
 
-          <h1 className="font-serif text-[2.6rem] leading-[1.08] sm:text-6xl md:text-7xl lg:text-[5.25rem] text-white font-normal tracking-tight mb-6 text-balance">
-            <RisingWords text={title} startDelay={300} />
-            <br className="hidden sm:block" />
-            <RisingWords text={accent} startDelay={300 + titleWords * 90} className="italic text-[#D8B97F]" />
-          </h1>
+          <div className="relative mb-6 max-w-4xl">
+            {/* Ambient subtle warm gold glow behind the title */}
+            <div className="absolute -inset-x-8 -top-10 -bottom-10 bg-[#D8B97F]/10 blur-3xl rounded-full hero-glow-pulse pointer-events-none" />
+
+            <h1 className="relative font-serif text-[2.6rem] leading-[1.08] sm:text-6xl md:text-7xl lg:text-[5.25rem] font-normal tracking-tight text-balance">
+              <RisingWords text={title} startDelay={300} className="text-white font-normal not-italic" />
+              <br className="hidden sm:block" />
+              <RisingWords
+                text={accent}
+                startDelay={300 + titleWords * 110}
+                className="hero-gold-shimmer font-normal not-italic"
+              />
+            </h1>
+          </div>
 
           <p
             className="rise-word text-white/90 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10"
@@ -162,7 +173,7 @@ export function HeroSection() {
             </Link>
 
             <button
-              onClick={() => openEnquiryModal({ category: "Design Visit" })}
+              onClick={() => openEnquiryModal({ category: "Design Consultation" })}
               className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-white text-[15px] font-semibold transition-all duration-300 active:scale-95 cursor-pointer"
             >
               {secondaryCta.label}
@@ -187,12 +198,17 @@ export function HeroSection() {
         </div>
       </section>
 
-      {/* Trust strip */}
+      {/* Trust pillars strip (replaces numbers for fresh atelier credibility) */}
       <div className="relative z-20 border-t border-white/10 bg-[#0A0D14]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/10 [&>*:nth-child(2)]:border-l [&>*:nth-child(2)]:border-white/10 md:[&>*:nth-child(2)]:border-l-0">
-            {HOME_CONTENT.trustStrip.map((s) => (
-              <StatCounter key={s.label} end={s.end} suffix={s.suffix} label={s.label} />
+            {HOME_CONTENT.trustStrip.map((p) => (
+              <TrustPillar
+                key={p.title}
+                title={p.title}
+                subtitle={p.subtitle}
+                iconName={p.icon}
+              />
             ))}
           </div>
         </div>

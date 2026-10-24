@@ -3,11 +3,13 @@ import Image from "next/image"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { StudioCtaSection } from "@/components/studio-cta-section"
+import { EnquiryModal } from "@/components/enquiry-modal"
+import { MobileStickyBar } from "@/components/mobile-sticky-bar"
 
 export const metadata: Metadata = {
-  title: "Three Steps to a Finished Home | EBONY German Engineering",
+  title: "Three Steps to a Finished Home | EBONY Modern Engineering",
   description:
-    "Discover how EBONY delivers bespoke modular kitchens and interiors in just 3 steps with German CNC precision and zero on-site carpenter chaos.",
+    "Discover how EBONY delivers bespoke modular kitchens and interiors in 3 seamless steps with precision engineering and zero on-site carpenter chaos.",
 }
 
 const STAGES = [
@@ -15,7 +17,7 @@ const STAGES = [
     day: "01",
     subtitle: "Step 01 · Space Audit & Laser Shell",
     title: "Laser Shell & Modular Carcass",
-    desc: "German-trained technicians anchor base modules with 0.1mm tolerance using 3D laser levels. Damp-proof neoprene mounts isolate moisture and floor variations.",
+    desc: "Precision technicians anchor base modules with 0.1mm tolerance using 3D laser levels. Damp-proof neoprene mounts isolate moisture and floor variations.",
     image: "/img/process-engineering.jpg",
   },
   {
@@ -29,7 +31,7 @@ const STAGES = [
     day: "03",
     subtitle: "Step 03 · Ambient Illumination & Handover",
     title: "Integrated Illumination & Handover",
-    desc: "Recessed 3000K warm LED channels are powered on. The 48-point zero-defect audit is signed off, and your 10-year warranty certificate is handed over.",
+    desc: "Recessed 3000K warm LED channels are powered on. The 48-point zero-defect audit is signed off, and your comprehensive warranty certificate is handed over.",
     image: "/img/hero-kitchen.jpg",
   },
 ]
@@ -47,8 +49,8 @@ export default function ProcessPage() {
               <span className="font-mono text-[13px] uppercase tracking-[0.12em] text-[#B8923A] font-semibold block mb-3">
                 ENGINEERING STANDARD
               </span>
-              <h1 className="font-serif italic text-4xl sm:text-5xl md:text-6xl text-slate-950 font-normal leading-[1.1]">
-                Three Steps to a <span className="text-[#855E15] not-italic font-medium">Finished Home</span>
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-slate-950 font-normal leading-[1.1]">
+                Three Steps to a <span className="text-[#855E15] font-medium">Finished Home</span>
               </h1>
             </div>
             <p className="text-slate-600 max-w-sm text-xs sm:text-sm leading-relaxed font-normal">
@@ -84,7 +86,7 @@ export default function ProcessPage() {
                 <span className="font-mono text-[13px] uppercase tracking-[0.12em] text-[#B8923A] font-semibold block mb-2">
                   {s.subtitle}
                 </span>
-                <h2 className="font-serif italic text-3xl sm:text-4xl text-slate-950 font-normal mb-4">
+                <h2 className="font-serif text-3xl sm:text-4xl text-slate-950 font-normal mb-4">
                   {s.title}
                 </h2>
                 <p className="text-slate-600 text-sm font-normal leading-relaxed mb-6">
@@ -93,7 +95,7 @@ export default function ProcessPage() {
                 <div className="pt-4 border-t border-slate-100 flex items-center gap-6 font-mono text-xs text-slate-500">
                   <span className="text-[#855E15] font-semibold">±0.1 mm CNC Tolerance</span>
                   <span>·</span>
-                  <span>10-Year Warranty</span>
+                  <span>Comprehensive Warranty</span>
                 </div>
               </div>
             </div>
@@ -103,6 +105,9 @@ export default function ProcessPage() {
         {/* Unified Studio Booking Section matching homepage */}
         <StudioCtaSection />
       </main>
+
+      <EnquiryModal />
+      <MobileStickyBar />
 
       <Footer />
     </div>

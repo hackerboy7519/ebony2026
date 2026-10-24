@@ -12,7 +12,7 @@ import { ArrowUpRight, CheckCircle2, ShieldCheck, Sparkles, ChefHat } from "luci
 export const metadata = {
   title: "Modular Kitchens — EBONY Modular Interiors",
   description:
-    "Explore German-engineered luxury modular kitchens. L-shape, U-shape, parallel, straight, and island kitchen layouts with 500+ finishes and Blum motion technology.",
+    "Explore German-engineered luxury modular kitchens. L-shape, U-shape, parallel, straight, and island kitchen layouts with curated finishes and Blum motion technology.",
 }
 
 export default function KitchensPage() {
@@ -41,7 +41,7 @@ export default function KitchensPage() {
               </span>
               <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal leading-[1.1] tracking-tight mb-6">
                 Modular Kitchens, <br />
-                <span className="italic">Engineered for Life.</span>
+                <span className="not-italic text-[#D8B97F]">Engineered for Life.</span>
               </h1>
               <p className="font-sans text-sm sm:text-base text-white/80 font-normal leading-relaxed mb-8 max-w-2xl">
                 Where culinary ergonomics meets understated luxury. Every EBONY kitchen is built with 100% BWP Marine Plywood or surgical SS 304 carcasses, German CNC tolerances, and whisper-quiet Blum motion technology.
@@ -58,7 +58,7 @@ export default function KitchensPage() {
                   href="/contact"
                   className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-300 backdrop-blur-md"
                 >
-                  Book 3D Design Session
+                  Curate 3D Design Session
                 </Link>
               </div>
             </div>
@@ -165,7 +165,7 @@ export default function KitchensPage() {
                   href="/contact"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-slate-950 hover:bg-[#B8923A] text-white font-mono text-xs uppercase tracking-wider font-bold transition-all duration-300"
                 >
-                  <span>Request Kitchen Catalog</span>
+                  <span>Request Curated Lookbook</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -192,7 +192,7 @@ export default function KitchensPage() {
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#B8923A] hover:bg-[#C99E4B] text-slate-950 font-mono text-xs uppercase tracking-wider font-bold transition-all duration-300 shadow-xl"
             >
-              <span>Book Kitchen Consultation</span>
+              <span>Curate Your Culinary Space</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>

@@ -8,12 +8,13 @@ import { StudioCtaSection } from "@/components/studio-cta-section"
 import { EnquiryModal } from "@/components/enquiry-modal"
 import { MobileStickyBar } from "@/components/mobile-sticky-bar"
 import { CollectionsBrowser } from "@/components/collections/collections-browser"
+import { ProjectsShowcaseSection } from "@/components/projects-showcase-section"
 import { COLLECTION_CATEGORIES, COLLECTION_ITEMS } from "@/lib/collections"
 
 export const metadata: Metadata = {
-  title: "Collections — Kitchen, Wardrobe, TV & Bar Unit Design Ideas | EBONY",
+  title: "Collections & Real Residences — EBONY Modular Interiors",
   description:
-    "Browse modular kitchen, wardrobe, TV unit and bar unit design ideas from EBONY, Raipur. Pick a look you love and we make it to fit your home.",
+    "Explore bespoke modular kitchen, wardrobe, TV unit and bar unit collections from EBONY, Raipur. Real homes, real case studies, and design ideas.",
 }
 
 // Small rounded photos that sit inside the headline between words
@@ -39,7 +40,7 @@ export default function CollectionsPage() {
       <main className="pt-24 sm:pt-28">
         {/* Hero: left-aligned headline with photos set between the words */}
         <section className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-10 sm:pt-16 pb-14 sm:pb-20">
-          <span className="kicker">Collections</span>
+          <span className="kicker">Collections &amp; Showcase</span>
           <h1 className="font-serif font-normal text-slate-950 tracking-tight leading-[1.08] text-[2.5rem] sm:text-6xl lg:text-[4.4rem] mt-5 max-w-5xl text-balance">
             {/* Photos hug the word before them, so the text reads cleanly when they are hidden on phones */}
             <span className="whitespace-nowrap">
@@ -53,7 +54,7 @@ export default function CollectionsPage() {
               units<InlinePhoto src={HEADLINE_PHOTOS[2]} />
             </span>{" "}
             made for{" "}
-            <span className="italic text-[#9A7637]">your home.</span>
+            <span className="not-italic text-[#9A7637]">your home.</span>
           </h1>
 
           <div className="sm:hidden mt-8 grid grid-cols-3 gap-3">
@@ -66,7 +67,7 @@ export default function CollectionsPage() {
 
           <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:items-end">
             <p className="lg:col-span-6 text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
-              Browse design ideas, keep the ones you love, and we make them to fit your space, budget and taste.
+              Browse design ideas, explore completed residences, and we make every module to fit your space, routine, and taste.
             </p>
             <dl className="lg:col-span-6 lg:justify-self-end flex gap-10 sm:gap-14">
               {COLLECTION_CATEGORIES.map((c) => (
@@ -81,14 +82,18 @@ export default function CollectionsPage() {
           </div>
         </section>
 
+        {/* Collections Catalog Browser */}
         <CollectionsBrowser />
+
+        {/* Real Completed Residences Showcase (Merged with Collections) */}
+        <ProjectsShowcaseSection />
 
         {/* Plan it your way */}
         <section className="py-16 sm:py-24 bg-[#0B0F19] text-white">
           <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
             <span className="kicker kicker-dark">Plan it your way</span>
             <h2 className="font-serif text-[2.1rem] leading-[1.12] sm:text-5xl font-normal tracking-tight mt-4 max-w-2xl">
-              Found a look? <span className="italic text-[#D8B97F]">Make it yours.</span>
+              Found a look? <span className="not-italic text-[#D8B97F]">Make it yours.</span>
             </h2>
 
             <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">

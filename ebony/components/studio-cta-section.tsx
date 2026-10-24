@@ -72,7 +72,7 @@ export function StudioCtaSection() {
           <div className="lg:col-span-6">
             <span className="kicker kicker-dark">{kicker}</span>
             <h2 className="font-serif text-[2.4rem] sm:text-5xl md:text-6xl text-white font-normal tracking-tight leading-[1.1] mt-4">
-              {title} <span className="italic text-[#D8B97F]">{accent}</span>
+              {title} <span className="not-italic text-[#D8B97F]">{accent}</span>
             </h2>
             <p className="text-white/85 text-base sm:text-lg leading-relaxed mt-5 max-w-lg mb-9">{subtitle}</p>
 

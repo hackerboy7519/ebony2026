@@ -44,7 +44,7 @@ export function ProjectsShowcaseSection() {
           {filteredProjects.map((project) => (
             <Link
               key={project.id}
-              href="/projects"
+              href="/collections"
               className="group relative rounded-[1.75rem] overflow-hidden aspect-[4/5] sm:aspect-[4/5] bg-slate-900 animate-in fade-in zoom-in-95 duration-500"
             >
               <Image
@@ -68,10 +68,10 @@ export function ProjectsShowcaseSection() {
 
         <div className="text-center">
           <Link
-            href="/projects"
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-950 hover:bg-[#8E6D38] text-white text-[15px] font-semibold transition-colors duration-300"
+            href="/collections"
+            className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-slate-950 hover:bg-[#C5A572] hover:text-slate-950 text-white text-[15px] font-semibold transition-all duration-300 shadow-md"
           >
-            See all our work
+            <span>Explore All Collections</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>

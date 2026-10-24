@@ -77,10 +77,10 @@ export default function ContactPage() {
               <span className="text-white">Contact</span>
             </nav>
             <h1 className="font-serif text-[2.6rem] leading-[1.08] sm:text-6xl lg:text-7xl tracking-tight max-w-3xl">
-              Let&apos;s talk about <span className="italic text-[#D8B97F]">your new home</span>
+              Let&apos;s talk about <span className="not-italic text-[#D8B97F]">your new home</span>
             </h1>
             <p className="text-base sm:text-lg text-white/85 leading-relaxed mt-6 max-w-xl">
-              Call, WhatsApp or drop by our Raipur studio. Or fill in the short form and we&apos;ll call you back.
+              Connect via phone, WhatsApp, or visit our Raipur studio. Or share your details below to begin curating your space.
             </p>
           </div>
         </section>

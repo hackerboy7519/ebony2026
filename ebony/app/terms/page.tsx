@@ -34,17 +34,17 @@ export default function TermsPage() {
             </p>
 
             <h2 className="font-serif text-2xl text-slate-950 font-normal pt-4">
-              2. 3-Day Installation Protocol
+              2. Precision Installation Protocol
             </h2>
             <p>
-              Our 3-day on-site assembly commitment applies following complete civil, electrical, plumbing, and flooring readiness of the site. The site must be clean of construction dust and have uninterrupted electrical supply to ensure our laser alignment and 48-point handover audit can proceed on schedule.
+              Our rapid on-site assembly commences following complete civil, electrical, plumbing, and flooring readiness of the site. Because cabinetry is pre-engineered in our factory, on-site installation proceeds smoothly with minimal dust and laser-calibrated alignment.
             </p>
 
             <h2 className="font-serif text-2xl text-slate-950 font-normal pt-4">
-              3. 10-Year Warranty &amp; Hardware
+              3. Comprehensive Warranty &amp; Hardware
             </h2>
             <p>
-              All genuine motion hardware (Blum, Häfele, Hettich, Salice, Ebco) and calibrated substrates (IS 710 Marine Plywood, SS 304, HDHMR) carry EBONY&apos;s 10-year comprehensive warranty against manufacturing defects, delamination, and mechanical failure under standard domestic usage.
+              All genuine motion hardware (Blum, Häfele, Hettich, Salice, Ebco) and calibrated substrates (IS 710 Marine Plywood, SS 304, HDHMR) carry EBONY&apos;s comprehensive quality assurance against manufacturing defects, delamination, and mechanical failure under standard domestic usage.
             </p>
 
             <h2 className="font-serif text-2xl text-slate-950 font-normal pt-4">

@@ -10,7 +10,7 @@ export interface HomeContent {
     primaryCta: { label: string; href: string }
     secondaryCta: { label: string; href: string }
   }
-  trustStrip: { end: number; suffix: string; label: string }[]
+  trustStrip: { title: string; subtitle: string; icon: string }[]
   exploreDesigns: {
     kicker: string
     title: string
@@ -84,6 +84,8 @@ export interface HomeContent {
       line: string
       colorHint: string
       tag: string
+      image: string
+      finishDetail: string
     }[]
   }
   wardrobes: {
@@ -175,16 +177,16 @@ export const HOME_CONTENT: HomeContent = {
     eyebrow: "Modular kitchens & wardrobes · Raipur",
     title: "Beautiful kitchens,",
     accent: "made just for you.",
-    subtitle: "Designed around your family, made in our own factory, and fitted in your home in about 3 days.",
-    primaryCta: { label: "See Our Designs", href: "#explore-designs" },
-    secondaryCta: { label: "Book a Home Visit", href: "#consultation" },
+    subtitle: "Designed around your family, crafted with machine precision in our Raipur factory, and fitted seamlessly in your home.",
+    primaryCta: { label: "Explore The Collections", href: "#explore-designs" },
+    secondaryCta: { label: "Curate Your Space", href: "#consultation" },
   },
 
   trustStrip: [
-    { end: 15, suffix: "+", label: "Years making homes beautiful" },
-    { end: 500, suffix: "+", label: "Colours & finishes to choose from" },
-    { end: 3, suffix: " Days", label: "To fit your new kitchen" },
-    { end: 10, suffix: " Years", label: "Warranty on woodwork" },
+    { title: "Bespoke Design", subtitle: "Tailored to your family's routine & space", icon: "Compass" },
+    { title: "Curated Finishes", subtitle: "Anti-scratch, moisture & heat resistant textures", icon: "Sparkles" },
+    { title: "Machine Precision", subtitle: "Factory-calibrated with 0.1mm joinery accuracy", icon: "Layers" },
+    { title: "Dedicated Care", subtitle: "Direct studio guidance from measurement to handover", icon: "ShieldCheck" },
   ],
 
   exploreDesigns: {
@@ -196,10 +198,10 @@ export const HOME_CONTENT: HomeContent = {
       {
         id: "kitchens",
         title: "Modular Kitchens",
-        badge: "6 layouts · 12 styles",
+        badge: "Custom layouts & styles",
         description: "Plenty of storage, easy to clean and a joy to cook in.",
         href: "/kitchens",
-        image: "/img/modular-kitchen-showcase.jpg",
+        image: "/img/kitchen-island-real.jpg",
       },
       {
         id: "wardrobes",
@@ -222,7 +224,7 @@ export const HOME_CONTENT: HomeContent = {
         title: "Bar & TV Units",
         badge: "For your living room",
         description: "Stylish units for movie nights and weekend guests.",
-        href: "/projects#bar-unit",
+        href: "/collections",
         image: "/img/bar-unit-luxury.jpg",
       },
     ],
@@ -255,8 +257,8 @@ export const HOME_CONTENT: HomeContent = {
         name: "Straight",
         line: "Everything along one wall. Simple, neat and space-saving.",
         tag: "Small homes",
-        image: "/img/kitchen-detail-real.jpg",
-        href: "/kitchens#parallel",
+        image: "/img/collections/kitchen-straight-matte-blue.jpg",
+        href: "/kitchens#straight",
       },
       {
         id: "island",
@@ -338,8 +340,8 @@ export const HOME_CONTENT: HomeContent = {
 
   process: {
     kicker: "How it works",
-    title: "Your new kitchen in 3 easy steps",
-    subtitle: "Simple and easy, from the first chat to the day you start cooking.",
+    title: "From initial sketch to your living space",
+    subtitle: "A smooth, transparent journey from first sketch to handover.",
     steps: [
       {
         num: "01",
@@ -351,16 +353,16 @@ export const HOME_CONTENT: HomeContent = {
         num: "02",
         title: "See it in 3D",
         line: "Know exactly how it will look.",
-        desc: "We show you your kitchen in 3D first, then make it in our own factory.",
+        desc: "We show you your kitchen in photorealistic 3D, select physical material swatches, and finalize every detail.",
       },
       {
         num: "03",
         title: "Start cooking",
-        line: "Fitted in about 3 days.",
-        desc: "Our team fits everything cleanly at your home — no dust, no mess.",
+        line: "Swift, seamless fitting.",
+        desc: "Our master fitting team installs everything cleanly at your home — precision aligned, dust-free, and move-in ready.",
       },
     ],
-    cta: "Book a Home Visit",
+    cta: "Reserve Your Design Session",
   },
 
   styles: {
@@ -376,21 +378,85 @@ export const HOME_CONTENT: HomeContent = {
     kicker: "Colours & finishes",
     title: "Finishes you'll",
     accent: "love to touch",
-    subtitle: "From soft matte to mirror shine — over 500 options. Tap one to learn more.",
+    subtitle: "From velvety soft matte to mirror glass — an endless palette of tactile textures. Tap one to explore.",
     benefits: [
-      "Wipes clean with a damp cloth",
-      "Handles heat and steam from daily cooking",
-      "Comes in many shades to match your home",
+      "Wipes clean effortlessly with a soft damp cloth",
+      "Resistant to high heat, spice stains, and daily cooking steam",
+      "Available in tailored colors and tones to complement your home",
     ],
     swatches: [
-      { id: "satin", name: "Soft Matte", line: "Smooth and velvety. Hides fingerprints beautifully.", colorHint: "#EDE8E1", tag: "Most loved" },
-      { id: "laminate", name: "Easy-Care Laminate", line: "Tough, scratch-resistant and easy to wipe clean.", colorHint: "#C2B6A6", tag: "Hard-wearing" },
-      { id: "acrylic", name: "High Gloss", line: "A mirror-like shine that makes rooms feel bigger.", colorHint: "#1E293B", tag: "Shiny" },
-      { id: "glass", name: "Glass Doors", line: "Show off your best crockery and keep out the dust.", colorHint: "#4B443B", tag: "Display" },
-      { id: "membrane", name: "Classic Carved", line: "Soft curves and grooves for a traditional feel.", colorHint: "#D4C7B5", tag: "Traditional" },
-      { id: "stone", name: "Stone Look", line: "Looks like marble, and handles hot pans and stains.", colorHint: "#7E7468", tag: "Strong" },
-      { id: "metal", name: "Metal Shine", line: "Gold, bronze or silver touches for a rich look.", colorHint: "#B8923A", tag: "Rich" },
-      { id: "steel", name: "Stainless Steel", line: "Will not rust, so it is perfect near the sink.", colorHint: "#94A3B8", tag: "Rust-proof" },
+      {
+        id: "satin",
+        name: "Soft Matte",
+        line: "Smooth and velvety Italian super-matte finish. Completely fingerprint-resistant and calm under natural daylight.",
+        colorHint: "#EDE8E1",
+        tag: "Most loved",
+        image: "/img/kitchen-contemporary-real.jpg",
+        finishDetail: "Italian PU Spray Lacquer · Zero-Gloss",
+      },
+      {
+        id: "laminate",
+        name: "Easy-Care Laminate",
+        line: "Tough, high-pressure textured laminate. Exceptional scratch resistance and easy wipe-down maintenance.",
+        colorHint: "#C2B6A6",
+        tag: "Hard-wearing",
+        image: "/img/collections/kitchen-wood-white.jpg",
+        finishDetail: "1mm Calibrated HPL · Thermal Healing",
+      },
+      {
+        id: "acrylic",
+        name: "High Gloss",
+        line: "Glass-like optical acrylic with crystal reflections that expand the visual depth of your room.",
+        colorHint: "#1E293B",
+        tag: "Ultra reflective",
+        image: "/img/kitchen-detail-real.jpg",
+        finishDetail: "Optical 2mm Acrylic · UV Resistant",
+      },
+      {
+        id: "glass",
+        name: "Smoked Glass",
+        line: "Tinted tempered glass shutters with integrated warm backlighting to display fine dinnerware and glassware.",
+        colorHint: "#4B443B",
+        tag: "Display & bar",
+        image: "/img/bar-unit-luxury.jpg",
+        finishDetail: "Fluted & Smoked Toughened Glass",
+      },
+      {
+        id: "membrane",
+        name: "Classic Carved",
+        line: "Seamless vacuum-pressed membrane over 3D routed grooves, creating timeless neo-classical profiles.",
+        colorHint: "#D4C7B5",
+        tag: "Timeless profile",
+        image: "/img/kitchen-style-classic.jpg",
+        finishDetail: "Vacuum Wrapped · Seamless Edges",
+      },
+      {
+        id: "stone",
+        name: "Stone Look & Quartz",
+        line: "Seamless composite stone and quartz finishes that withstand sizzling pots, stains, and daily chopping.",
+        colorHint: "#7E7468",
+        tag: "Heat & stain proof",
+        image: "/img/kitchen-island-real.jpg",
+        finishDetail: "Engineered Quartz · 0% Porosity",
+      },
+      {
+        id: "metal",
+        name: "Metallic Accents",
+        line: "Brushed champagne gold, bronze, and anodised metallic profiles for subtle, architectural warmth.",
+        colorHint: "#B8923A",
+        tag: "Rich champagne gold",
+        image: "/img/hardware-fittings-luxury.jpg",
+        finishDetail: "Anodised Aluminium · PVD Coated",
+      },
+      {
+        id: "steel",
+        name: "Stainless Steel SS 304",
+        line: "Surgical-grade rust-proof SS 304 stainless steel carcass and internal wirework, impervious to water.",
+        colorHint: "#94A3B8",
+        tag: "Rust-proof & hygienic",
+        image: "/img/why-ss304-basket.jpg",
+        finishDetail: "IS 304 Food-Grade Steel",
+      },
     ],
   },
 
@@ -403,21 +469,21 @@ export const HOME_CONTENT: HomeContent = {
       {
         id: "sliding",
         name: "Sliding Wardrobes",
-        line: "Doors slide sideways, so they never bump into your bed.",
+        line: "Doors slide sideways smoothly, maximizing floor space in any room.",
         image: "/img/wardrobe-bespoke-real.jpg",
         href: "/wardrobes",
       },
       {
         id: "hinged",
         name: "Swing-Door Wardrobes",
-        line: "Doors open wide, so you can see everything at once.",
-        image: "/img/wardrobe-card.jpg",
+        line: "Doors open wide with architectural tall handles, giving you a full view at once.",
+        image: "/img/collections/wardrobe-white-tall-handles.jpg",
         href: "/wardrobes",
       },
       {
         id: "walk-in",
         name: "Walk-in Closets",
-        line: "Your own dressing room, with soft lights and open shelves.",
+        line: "Your own dedicated dressing room, with integrated lighting, jewelry trays and open displays.",
         image: "/img/walk-in-closet-luxury.jpg",
         href: "/walk-in-closets",
       },
@@ -460,10 +526,10 @@ export const HOME_CONTENT: HomeContent = {
   },
 
   projects: {
-    kicker: "Our work",
+    kicker: "Completed residences",
     title: "Homes we've",
     accent: "made beautiful",
-    subtitle: "Real kitchens and wardrobes we've made for families in Raipur and nearby.",
+    subtitle: "Real bespoke kitchens and wardrobes designed and fitted for residences across Raipur and Central India.",
     filters: [
       { id: "all", label: "All" },
       { id: "kitchen", label: "Kitchens" },
@@ -492,7 +558,7 @@ export const HOME_CONTENT: HomeContent = {
         id: "t-1",
         name: "Anuska Hormaz",
         city: "New homeowner",
-        quote: "We approached EBONY with zero experience. Our designer was very patient throughout. They installed the kitchen within 3 days of the building being ready, and post-installation service is commendable.",
+        quote: "We approached EBONY with zero experience. Our designer was very patient throughout. They installed the kitchen smoothly, and post-installation service is commendable.",
         avatar: "AH",
         rating: 5,
       },
@@ -500,7 +566,7 @@ export const HOME_CONTENT: HomeContent = {
         id: "t-2",
         name: "Ramesh Goradia",
         city: "Repeat client, Pune",
-        quote: "It's been nine years since we first contacted EBONY. We haven't had a single service issue. Because of the quality and design, we came back for our new home. Their products and services are worth every penny.",
+        quote: "Because of the impeccable quality and design, we chose EBONY for our new home. Their products and services are worth every penny.",
         avatar: "RG",
         rating: 5,
       },
@@ -547,15 +613,15 @@ export const HOME_CONTENT: HomeContent = {
     points: [
       {
         id: "lifetime-ss304",
-        title: "Lifetime Warranty on SS 304",
-        line: "Every SS 304 stainless steel basket and fitting we fit comes with a lifetime warranty.",
+        title: "Rust-Proof SS 304 Guarantee",
+        line: "Every SS 304 stainless steel basket and wet-zone fitting is backed by our rust-free promise.",
         icon: "ShieldCheck",
         image: "/img/why-ss304-basket.jpg",
       },
       {
         id: "warranty",
-        title: "10-Year Warranty",
-        line: "Strong materials and careful checks, backed by 10 years of warranty on woodwork.",
+        title: "Calibrated Build Quality",
+        line: "Multi-point precision checks and certified marine-grade joinery engineered to endure everyday Indian living.",
         icon: "Award",
         image: "/img/craftsmanship-detail.jpg",
       },
@@ -583,32 +649,32 @@ export const HOME_CONTENT: HomeContent = {
       {
         id: "pricing",
         title: "Clear, Honest Pricing",
-        line: "You get a clear quote upfront. No hidden costs, no surprises.",
+        line: "You get transparent, itemized investment estimates upfront. No hidden costs, no surprises.",
         icon: "BadgeCheck",
         image: "/img/kitchen-curves-arches.jpg",
       },
       {
         id: "visit",
-        title: "Home Design Visit",
-        line: "We visit your home, measure every wall and show you the design in 3D.",
+        title: "Bespoke On-Site Consultation",
+        line: "We visit your home, measure every wall and curate the design in immersive 3D.",
         icon: "Ruler",
         image: "/img/kitchen-layout-real.jpg",
       },
     ],
     footnote: {
       text: "We use waterproof plywood, strong boards and rust-proof steel where it matters most.",
-      label: "See our materials",
+      label: "Explore Material & Finish Standards",
       href: "/finishes",
     },
   },
 
   finalCta: {
-    kicker: "Home design visit",
+    kicker: "Private Design Session",
     title: "Let's design your",
-    accent: "dream kitchen",
-    subtitle: "Tell us a little about your home. We'll call you back and plan a visit at a time that suits you.",
-    formTitle: "Book your visit",
-    formNote: "Just 3 details. No pushy sales calls.",
-    primaryBtn: "Book My Visit",
+    accent: "dream space",
+    subtitle: "Share your floor plan or ideas. We'll plan an exclusive studio consultation at a time that suits you.",
+    formTitle: "Craft Your Dream Space",
+    formNote: "Just a few details to get started. No spam, ever.",
+    primaryBtn: "Bring Your Vision to Life",
   },
 }

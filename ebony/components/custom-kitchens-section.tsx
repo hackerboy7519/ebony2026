@@ -39,7 +39,7 @@ export function CustomKitchensSection() {
                 <h3 className="font-serif text-2xl text-slate-950 font-normal mb-1.5">{card.title}</h3>
                 <p className="text-[15px] text-slate-600 leading-relaxed flex-1">{card.line}</p>
                 <span className="mt-5 inline-flex items-center gap-2 text-[15px] font-semibold text-[#8E6D38]">
-                  Ask about this
+                  Curate This Style
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" />
                 </span>
               </div>

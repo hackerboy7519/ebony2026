@@ -3,6 +3,8 @@ import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { WardrobesSection } from "@/components/wardrobes-section"
+import { EnquiryModal } from "@/components/enquiry-modal"
+import { MobileStickyBar } from "@/components/mobile-sticky-bar"
 import { ArrowUpRight, CheckCircle2, Sparkles, Layers, SlidersHorizontal } from "lucide-react"
 
 export const metadata = {
@@ -37,7 +39,7 @@ export default function WardrobesPage() {
               </span>
               <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-normal leading-[1.1] tracking-tight mb-6">
                 Bespoke Wardrobes, <br />
-                <span className="italic">Built Around the Way You Live.</span>
+                <span className="not-italic text-[#D8B97F]">Built Around the Way You Live.</span>
               </h1>
               <p className="font-sans text-sm sm:text-base text-white/80 font-normal leading-relaxed mb-8 max-w-2xl">
                 Transform morning routines into an experience of quiet luxury and absolute order. Floor-to-ceiling sliding and hinged wardrobe systems engineered with Italian damping and sensor illumination.
@@ -54,7 +56,7 @@ export default function WardrobesPage() {
                   href="/contact"
                   className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-mono text-xs uppercase tracking-wider font-semibold transition-all duration-300 backdrop-blur-md"
                 >
-                  Book Studio Wardrobe Consult
+                  Curate Your Wardrobe Space
                 </Link>
               </div>
             </div>
@@ -158,7 +160,7 @@ export default function WardrobesPage() {
                   href="/contact"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-slate-950 hover:bg-[#B8923A] text-white font-mono text-xs uppercase tracking-wider font-bold transition-all duration-300"
                 >
-                  <span>Schedule Wardrobe Consultation</span>
+                  <span>Curate Your Storage Suite</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -182,12 +184,15 @@ export default function WardrobesPage() {
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#B8923A] hover:bg-[#C99E4B] text-slate-950 font-mono text-xs uppercase tracking-wider font-bold transition-all duration-300 shadow-xl"
             >
-              <span>Book Studio Wardrobe Consult</span>
+              <span>Curate Your Wardrobe Space</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
         </section>
       </main>
+
+      <EnquiryModal />
+      <MobileStickyBar />
 
       <Footer />
     </div>

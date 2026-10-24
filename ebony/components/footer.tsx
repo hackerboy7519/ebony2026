@@ -9,9 +9,10 @@ const WHATSAPP_URL = "https://wa.me/917974209352?text=Hello%20Ebony%2C%20I%20am%
 
 const EXPLORE = [
   { label: "Home", href: "/" },
+  { label: "Kitchens", href: "/kitchens" },
+  { label: "Wardrobes", href: "/wardrobes" },
   { label: "Collections", href: "/collections" },
   { label: "3D Kitchen Studio", href: "/kitchen-studio" },
-  { label: "Our Work", href: "/projects" },
   { label: "Colours & Finishes", href: "/finishes" },
   { label: "Fittings", href: "/hardware" },
   { label: "About Us", href: "/about" },
@@ -37,16 +38,18 @@ export function Footer() {
         {/* Closing line + quick actions */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 pb-14 border-b border-white/10">
           <div className="max-w-2xl">
-            <Image
-              src="/logo.png"
-              alt={BRAND.name}
-              width={140}
-              height={40}
-              className="object-contain brightness-125 mb-8"
-              style={{ width: "auto", height: "auto" }}
-            />
+            <Link href="/" className="inline-block mb-8 group cursor-pointer" aria-label="Ebony Home">
+              <Image
+                src="/logo.png"
+                alt={BRAND.name}
+                width={140}
+                height={40}
+                className="object-contain brightness-125 transition-transform duration-300 group-hover:scale-105"
+                style={{ width: "auto", height: "auto" }}
+              />
+            </Link>
             <p className="font-serif text-[2rem] sm:text-5xl leading-[1.15] tracking-tight">
-              Kitchens you&apos;ll love <span className="italic text-[#D8B97F]">coming home to.</span>
+              Kitchens you&apos;ll love <span className="not-italic text-[#D8B97F]">coming home to.</span>
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">

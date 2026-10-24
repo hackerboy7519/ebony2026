@@ -116,7 +116,7 @@ export function CollectionsBrowser() {
             <div>
               <span className="kicker">Trending now</span>
               <h2 className="font-serif text-[2.1rem] leading-[1.12] sm:text-5xl font-normal tracking-tight mt-4 text-slate-950">
-                Ideas families <span className="italic text-[#9A7637]">ask for most</span>
+                Ideas families <span className="not-italic text-[#9A7637]">ask for most</span>
               </h2>
             </div>
             <div className="hidden sm:flex gap-3 shrink-0">
@@ -327,7 +327,7 @@ export function CollectionsBrowser() {
                       }}
                       className="min-h-[52px] rounded-full bg-slate-950 hover:bg-[#B8923A] text-white font-semibold transition-colors active:scale-[0.99]"
                     >
-                      Get this design
+                      Bring This Look to Life
                     </button>
                     <a
                       href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -337,7 +337,7 @@ export function CollectionsBrowser() {
                       rel="noopener noreferrer"
                       className="min-h-[52px] rounded-full ring-1 ring-stone-300 text-slate-900 font-semibold flex items-center justify-center gap-2 hover:bg-stone-50 transition-colors"
                     >
-                      <MessageCircle className="w-4 h-4" /> Ask on WhatsApp
+                      <MessageCircle className="w-4 h-4" /> Consult on WhatsApp
                     </a>
                     {lightbox && lightbox.items.length > 1 && (
                       <div className="flex items-center justify-between pt-4 mt-2 border-t border-stone-200">

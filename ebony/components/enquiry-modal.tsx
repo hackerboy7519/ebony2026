@@ -172,11 +172,11 @@ export function EnquiryModal() {
                 <span>Plan Your Dream Space</span>
               </div>
               <h3 id="modal-title" className="font-serif text-2xl sm:text-3xl text-white font-normal">
-                {designName ? `Get the "${designName}" Look` : "Book a Studio Visit"}
+                {designName ? `Curate Your "${designName}" Space` : "Curate Your Space"}
               </h3>
               <p className="text-white/70 text-xs sm:text-sm mt-1 leading-relaxed">
-                Tell us a little about your home. We&apos;ll help you choose the right layout, materials,
-                and 3D plan.
+                Tell us a little about your home. We&apos;ll collaborate on layout, materials,
+                and an immersive 3D vision.
               </p>
             </div>
 
@@ -275,11 +275,11 @@ export function EnquiryModal() {
                   className="w-full py-3.5 rounded-full bg-[#B8923A] hover:bg-[#C99E4B] disabled:opacity-50 text-slate-950 font-mono text-xs uppercase tracking-wider font-bold transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-amber-500/20 active:scale-[0.99]"
                 >
                   {loading ? (
-                    <span>Sending...</span>
+                    <span>Curating Your Vision...</span>
                   ) : (
                     <>
-                      <span>Book a Visit</span>
-                      <Send className="w-3.5 h-3.5" />
+                      <span>Reserve Design Session</span>
+                      <Sparkles className="w-3.5 h-3.5" />
                     </>
                   )}
                 </button>
