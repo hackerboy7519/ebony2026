@@ -120,7 +120,7 @@ export function KitchenStudio() {
         {/* 3D viewer */}
         <section
           aria-label="Your kitchen in 3D"
-          className="sticky top-[60px] z-[5] lg:top-[84px] h-[54dvh] min-h-[300px] lg:h-[min(calc(100dvh-100px),860px)] lg:min-h-[420px] rounded-2xl lg:rounded-[20px] overflow-hidden bg-[#ECE8E1] shadow-[0_10px_30px_rgba(11,16,32,0.14)] lg:shadow-none"
+          className="sticky top-[77px] z-[5] lg:top-[84px] h-[54dvh] min-h-[300px] lg:h-[min(calc(100dvh-100px),860px)] lg:min-h-[420px] rounded-2xl lg:rounded-[20px] overflow-hidden bg-[#ECE8E1] shadow-[0_10px_30px_rgba(11,16,32,0.14)] lg:shadow-none"
         >
           <div ref={hostRef} key={sceneKey} className="absolute inset-0" />
 
@@ -287,7 +287,7 @@ export function KitchenStudio() {
             </div>
 
             {zone.kind === "door" && (
-              <div role="group" aria-label="Finish" className="flex gap-2 overflow-x-auto pb-1">
+              <div role="group" aria-label="Finish" className="flex gap-2 overflow-x-auto no-scrollbar">
                 {DOOR_FINISHES.map((df) => (
                   <button
                     key={df.id}

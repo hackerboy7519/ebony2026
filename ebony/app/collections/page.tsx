@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 // Small rounded photos that sit inside the headline between words
 function InlinePhoto({ src }: { src: string }) {
   return (
-    <span className="relative hidden sm:inline-block align-middle w-[1.85em] h-[0.92em] mx-[0.12em] -translate-y-[0.07em] rounded-full overflow-hidden ring-1 ring-black/5">
+    <span className="relative hidden sm:inline-block align-middle w-[1.85em] h-[0.92em] ml-[0.24em] -translate-y-[0.07em] rounded-full overflow-hidden ring-1 ring-black/5">
       <Image src={src} alt="" fill className="object-cover" sizes="160px" />
     </span>
   )
@@ -33,7 +33,7 @@ const HEADLINE_PHOTOS = [
 
 export default function CollectionsPage() {
   return (
-    <div className="bg-white min-h-screen text-slate-900 selection:bg-amber-500/20 selection:text-slate-900 overflow-x-hidden">
+    <div className="bg-white min-h-screen text-slate-900 selection:bg-amber-500/20 selection:text-slate-900 overflow-x-clip">
       <Navbar />
 
       <main className="pt-24 sm:pt-28">
@@ -41,8 +41,18 @@ export default function CollectionsPage() {
         <section className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-10 sm:pt-16 pb-14 sm:pb-20">
           <span className="kicker">Collections</span>
           <h1 className="font-serif font-normal text-slate-950 tracking-tight leading-[1.08] text-[2.5rem] sm:text-6xl lg:text-[4.4rem] mt-5 max-w-5xl text-balance">
-            Kitchens <InlinePhoto src={HEADLINE_PHOTOS[0]} />, wardrobes <InlinePhoto src={HEADLINE_PHOTOS[1]} /> and
-            TV &amp; bar units <InlinePhoto src={HEADLINE_PHOTOS[2]} /> made for{" "}
+            {/* Photos hug the word before them, so the text reads cleanly when they are hidden on phones */}
+            <span className="whitespace-nowrap">
+              Kitchens<InlinePhoto src={HEADLINE_PHOTOS[0]} />,
+            </span>{" "}
+            <span className="whitespace-nowrap">
+              wardrobes<InlinePhoto src={HEADLINE_PHOTOS[1]} />
+            </span>{" "}
+            and TV &amp; bar{" "}
+            <span className="whitespace-nowrap">
+              units<InlinePhoto src={HEADLINE_PHOTOS[2]} />
+            </span>{" "}
+            made for{" "}
             <span className="italic text-[#9A7637]">your home.</span>
           </h1>
 

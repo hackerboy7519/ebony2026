@@ -90,7 +90,7 @@ export function CollectionsBrowser() {
                   className="object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.05]"
                   sizes={index === 0 ? "(max-width: 1024px) 100vw, 58vw" : "(max-width: 1024px) 100vw, 42vw"}
                 />
-                <span className="absolute inset-0 bg-gradient-to-t from-[#0B0F19]/85 via-[#0B0F19]/25 to-transparent" />
+                <span className="absolute inset-0 bg-gradient-to-t from-[#0B0F19]/90 via-[#0B0F19]/55 to-[#0B0F19]/5" />
                 <span className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex items-end justify-between gap-5">
                   <span>
                     <span className="block text-[13px] font-semibold uppercase tracking-[0.16em] text-[#E8CF9C]">
@@ -182,7 +182,7 @@ export function CollectionsBrowser() {
             subtitle="Photos come from our design library and licensed stock. Every Ebony piece is made to your size, budget and taste."
           />
 
-          <div className="sticky top-[60px] sm:top-[64px] z-20 -mx-5 px-5 sm:mx-0 sm:px-0 py-3 mb-8 bg-white/95 backdrop-blur-md">
+          <div className="sticky top-[69px] z-20 -mx-5 px-5 sm:mx-0 sm:px-0 py-3 mb-8 bg-white/95 backdrop-blur-md">
             <div className="flex gap-2 overflow-x-auto no-scrollbar" role="group" aria-label="Category">
               {(["all", ...COLLECTION_CATEGORIES.map((c) => c.id)] as Filter[]).map((id) => {
                 const label = id === "all" ? "All ideas" : categoryLabel(id)

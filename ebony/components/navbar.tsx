@@ -9,10 +9,14 @@ import { cn } from "@/lib/utils"
 import { ArrowRight, MessageCircle, Phone, MapPin } from "lucide-react"
 import { openEnquiryModal } from "@/components/enquiry-modal"
 
+// Home is reached from the logo on wide screens, so it only appears in the full-screen menu
 const NAV_ITEMS = [
-  { label: "Home", href: "/" },
+  { label: "Home", href: "/", menuOnly: true },
   { label: "Kitchens", href: "/kitchens" },
   { label: "Wardrobes", href: "/wardrobes" },
+  { label: "Collections", href: "/collections" },
+  { label: "Chef's Corner", href: "/chefs-favourite-corner" },
+  { label: "3D Studio", href: "/kitchen-studio" },
   { label: "Our Work", href: "/projects" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -72,15 +76,15 @@ export function Navbar() {
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Main">
-            {NAV_ITEMS.map((item) => {
+          <nav className="hidden xl:flex items-center gap-7" aria-label="Main">
+            {NAV_ITEMS.filter((item) => !item.menuOnly).map((item) => {
               const active = pathname === item.href
               return (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "relative text-[15px] py-1 transition-colors duration-200",
+                    "relative whitespace-nowrap text-[15px] py-1 transition-colors duration-200",
                     "after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-[2px] after:rounded-full after:bg-[#C5A572] after:origin-left after:transition-transform after:duration-300",
                     active
                       ? "text-[#D8B97F] font-semibold after:scale-x-100"
@@ -93,10 +97,10 @@ export function Navbar() {
             })}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-5">
+          <div className="hidden xl:flex items-center gap-5">
             <a
               href={`tel:${BRAND.phoneRaw}`}
-              className="flex items-center gap-2 text-white/85 hover:text-[#D8B97F] text-[15px] font-medium transition-colors"
+              className="hidden 2xl:flex items-center gap-2 whitespace-nowrap text-white/85 hover:text-[#D8B97F] text-[15px] font-medium transition-colors"
             >
               <Phone className="w-4 h-4" />
               {BRAND.phone}
@@ -111,7 +115,7 @@ export function Navbar() {
           </div>
 
           {/* Phone + menu button (mobile & tablet) */}
-          <div className="flex items-center gap-2.5 lg:hidden">
+          <div className="flex items-center gap-2.5 xl:hidden">
             <a
               href={`tel:${BRAND.phoneRaw}`}
               className="w-11 h-11 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[#D8B97F]"
@@ -155,7 +159,7 @@ export function Navbar() {
       <div
         id="mobile-menu"
         className={cn(
-          "fixed inset-0 z-[100] lg:hidden bg-[#0B0F19] transition-[opacity,visibility] duration-500",
+          "fixed inset-0 z-[100] xl:hidden bg-[#0B0F19] transition-[opacity,visibility] duration-500",
           menuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         )}
         aria-hidden={!menuOpen}

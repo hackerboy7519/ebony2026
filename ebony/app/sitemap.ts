@@ -51,7 +51,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/collections`,
       lastModified: now,
       changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/chefs-favourite-corner`,
+      lastModified: now,
+      changeFrequency: "monthly",
       priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/kitchen-studio`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/process`,

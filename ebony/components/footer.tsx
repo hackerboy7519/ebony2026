@@ -9,6 +9,8 @@ const WHATSAPP_URL = "https://wa.me/917974209352?text=Hello%20Ebony%2C%20I%20am%
 
 const EXPLORE = [
   { label: "Home", href: "/" },
+  { label: "Collections", href: "/collections" },
+  { label: "3D Kitchen Studio", href: "/kitchen-studio" },
   { label: "Our Work", href: "/projects" },
   { label: "Colours & Finishes", href: "/finishes" },
   { label: "Fittings", href: "/hardware" },
@@ -22,7 +24,8 @@ const MAKE = [
   { label: "L-Shaped Kitchens", href: "/kitchens#l-shape" },
   { label: "Wardrobes", href: "/wardrobes" },
   { label: "Walk-in Closets", href: "/walk-in-closets" },
-  { label: "Bar & TV Units", href: "/projects#bar-unit" },
+  { label: "Bar & TV Units", href: "/collections" },
+  { label: "Commercial Kitchens", href: "/chefs-favourite-corner" },
 ]
 
 export function Footer() {

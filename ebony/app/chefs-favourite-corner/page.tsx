@@ -92,13 +92,13 @@ const STEPS = [
 
 export default function ChefsFavouriteCornerPage() {
   return (
-    <div className="bg-white min-h-screen text-slate-900 selection:bg-amber-500/20 selection:text-slate-900 overflow-x-hidden">
+    <div className="bg-white min-h-screen text-slate-900 selection:bg-amber-500/20 selection:text-slate-900 overflow-x-clip">
       <Navbar />
 
-      <main className="pt-[60px] sm:pt-[64px]">
+      <main className="pt-[69px]">
         {/* Hero: split screen, text left, kitchen right */}
         <section className="bg-[#0B0F19] text-white">
-          <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[calc(100dvh-64px)]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[calc(100dvh-69px)]">
             <div className="px-5 sm:px-8 lg:px-12 xl:pl-[max(3rem,calc((100vw-80rem)/2+3rem))] py-16 sm:py-20 flex flex-col justify-center">
               <span className="kicker kicker-dark">Chef&apos;s Favourite Corner</span>
               <h1 className="font-serif font-normal tracking-tight leading-[1.08] text-[2.5rem] sm:text-6xl mt-5 max-w-xl text-balance">

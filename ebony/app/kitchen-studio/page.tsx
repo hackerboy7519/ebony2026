@@ -13,7 +13,7 @@ export default function KitchenStudioPage() {
   return (
     <div className="bg-[#F7F6F3] min-h-screen text-[#0B1020] selection:bg-amber-500/20">
       <Navbar />
-      <main className="pt-[60px] sm:pt-[64px]">
+      <main className="pt-[69px]">
         <KitchenStudio />
       </main>
       <Footer />
